@@ -14,6 +14,8 @@ class CardsTest < ApplicationSystemTestCase
     visit cards_url
     click_on "New Card"
 
+    fill_in "Img", with: @card.img
+    fill_in "Name", with: @card.name
     click_on "Create Card"
 
     assert_text "Card was successfully created"
@@ -24,6 +26,8 @@ class CardsTest < ApplicationSystemTestCase
     visit cards_url
     click_on "Edit", match: :first
 
+    fill_in "Img", with: @card.img
+    fill_in "Name", with: @card.name
     click_on "Update Card"
 
     assert_text "Card was successfully updated"

@@ -1,47 +1,38 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Cards</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div id="wrapper" style="margin-top: 2em;">
+<div class="container" id="main-page">
+<% $x = 0 %>
     <% @cards.each do |card| %>
-      <tr>
-        <td><%= link_to 'Show', card %></td>
-        <td><%= link_to 'Edit', edit_card_path(card) %></td>
-        <td><%= link_to 'Destroy', card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <% if($x % 3 == 0 || $x == 0) %>
+    </div>
+    <div class="row">
     <% end %>
-  </tbody>
-</table>
-
-<br>
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+    <div class="col-sm-4">
+<div class="card mb-4" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-6">
+      <img src="https://storage.googleapis.com/ygoprodeck.com/pics/46986421.jpg" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-6">
+      <div class="card-body">
+        <h5 class="card-title"><%= card.name %></h5>
+        <p class="card-text">
+        Rarity: Common
+        <br>
+        Set name: Metal Raiders
+        </p>
       </div>
     </div>
   </div>
 </div>
+    </div>
+      <% $x = $x + 1 %>
+    <% end %>
+    <% if($x % 3 == 0 || $x == 0) %>
+    </div>
+    <% $x = 0 %>
+    <% end %>
+</div>
+
+<br>
 <%= link_to 'New Card', new_card_path %>
+</div>
