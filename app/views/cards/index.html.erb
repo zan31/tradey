@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Cards</h1>
+<% $krneki = 1 %>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Img</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cards.each do |card| %>
+    <% if($krneki == 2) %>
+    peder
+    <% $krneki = 0 %>
+    <% end %>
+      <tr>
+        <td><%= card.name %></td>
+        <td><%= card.img %></td>
+        <td><%= link_to 'Show', card %></td>
+        <td><%= link_to 'Edit', edit_card_path(card) %></td>
+        <td><%= link_to 'Destroy', card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      <% $krneki = $krneki + 1 %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= link_to 'New Card', new_card_path %>
