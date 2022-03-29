@@ -17,9 +17,44 @@
     #wrapper{
         width: 90% !important;
     }
+    #regcontainer{
+        width: 95% !important;
+    }
+    #logincontainer{
+        width: 95% !important;
+    }
   }
-
+body{
+    height: 100vh;
+}
 #wrapper{
     width: 80%;
     margin: auto;
 }
+.logo{
+    height: 3em;
+}
+#logincontainer{
+    padding-top: 2em;
+    width:40%;
+    margin:auto;
+}
+#regcontainer{
+    padding-top: 2em;
+    width:40%;
+    margin:auto;
+}
+.form-control:focus, .form-select:focus, .form-check-input:focus {
+    border-color: rgb(195,71,71) !important;
+    box-shadow: 0px 1px 1px rgb(195,71,71) inset, 0px 0px 5px rgb(195,71,71) !important;
+  }
+
+  .form-check-input:checked {
+    border-color: rgb(195,71,71) !important;
+    background-color: rgb(195,71,71) !important;
+  }
+  #login{
+    background-color: rgb(195,71,71) ;
+    border: none;
+    padding: 0.5em;
+  }

@@ -1,3 +1,8 @@
+<% 
+require 'faraday'
+require 'faraday/net_http'
+Faraday.default_adapter = :net_http
+%>
 <div id="wrapper" style="margin-top: 2em;">
 <div class="container" id="main-page">
 <% $x = 0 %>
@@ -10,7 +15,7 @@
 <div class="card mb-4" style="max-width: 540px;">
   <div class="row g-0">
     <div class="col-md-6">
-      <img src="https://storage.googleapis.com/ygoprodeck.com/pics/46986421.jpg" class="img-fluid rounded-start" alt="...">
+      <img src="https://static-3.studiobebop.net/ygo_data/card_images/Dark_Magician.jpg" class="img-fluid rounded-start" alt="...">
     </div>
     <div class="col-md-6">
       <div class="card-body">
@@ -36,3 +41,5 @@
 <br>
 <%= link_to 'New Card', new_card_path %>
 </div>
+<%response = Faraday.get('http://yugiohprices.com/api/price_for_print_tag/JMP-EN001')%>
+<%= response.body%>
