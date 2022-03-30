@@ -65,6 +65,6 @@ class CardsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def card_params
-      params.require(:card).permit(:name, :img)
+      params.require(:card).permit(:print_tag, :set)
     end
 end
