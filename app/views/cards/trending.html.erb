@@ -4,11 +4,61 @@ data = JSON.parse(response.body)
 %>
 <%rising = data['data']['rising'] %>
 <%falling = data['data']['falling'] %>
-<% rising.each do |ris| %>
-<% ped = ris['price_shift'].round(2) %>
-<%= Integer(ped*100) %>%
-<%end%>
+
 <% falling.each do |fal| %>
 <% ped = fal['price_shift'].round(2) %>
 <%= Integer(ped*100) %>%
 <%end%>
+<div id="container">
+<% rising.each do |ris| %>
+<div class="item">
+<% ped = ris['price_shift'].round(2) %>
+<div class="card mb-4" style="max-width:200px;">
+    <%split = ris['name'].split
+    splitc = split.join('_')
+    %>
+      <%= image_tag("http://yugiohprices.com/api/card_image/#{splitc}", class:"card-img-top") %>
+      <div class="card-body">
+        <h5 class="card-title"><%= ris['name'] %></h5>
+        <p class="card-text">
+        Print tag: <%= ris['card_number'] %>
+        <br>
+        <%= Integer(ped*100) %>%
+        </p>
+      </div>
+  </div>
+</div>
+<%end%>
+    
+</div>
+    <button id="slideBack" type="button">Prev</button>
+    <button id="slide" type="button">Next</button>
+<script>
+    var button = document.getElementById('slide');
+button.onclick = function () {
+    var container = document.getElementById('container');
+    sideScroll(container,'right',5,500,5);
+};
+
+var back = document.getElementById('slideBack');
+back.onclick = function () {
+    var container = document.getElementById('container');
+    sideScroll(container,'left',5,500,5);
+};
+
+function sideScroll(element,direction,speed,distance,step){
+    scrollAmount = 0;
+    var slideTimer = setInterval(function(){
+        if(direction == 'left'){
+            element.scrollLeft -= step;
+        } else {
+            element.scrollLeft += step;
+        }
+        scrollAmount += step;
+        if(scrollAmount >= distance){
+            window.clearInterval(slideTimer);
+        }
+    }, speed);
+}
+
+</script>

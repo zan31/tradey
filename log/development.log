@@ -7833,3 +7833,519 @@ Processing by CardsController#trending as HTML
 Completed 200 OK in 455ms (Views: 453.2ms | Allocations: 8695)
 
 
+Started GET "/trending" for 127.0.0.1 at 2022-03-31 11:54:27 +0200
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CardsController#trending as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/trending.html.erb within layouts/application
+  Rendered cards/trending.html.erb within layouts/application (Duration: 462.8ms | Allocations: 4815)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 539.5ms | Allocations: 13420)
+Completed 200 OK in 558ms (Views: 545.5ms | ActiveRecord: 0.0ms | Allocations: 17146)
+
+
+Started GET "/trending" for 127.0.0.1 at 2022-03-31 11:57:53 +0200
+Processing by CardsController#trending as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/trending.html.erb within layouts/application
+  Rendered cards/trending.html.erb within layouts/application (Duration: 378.1ms | Allocations: 3984)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 406.5ms | Allocations: 8834)
+Completed 200 OK in 413ms (Views: 410.5ms | ActiveRecord: 0.0ms | Allocations: 10368)
+
+
+Started GET "/trending" for 127.0.0.1 at 2022-03-31 11:58:23 +0200
+Processing by CardsController#trending as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/trending.html.erb within layouts/application
+  Rendered cards/trending.html.erb within layouts/application (Duration: 231.5ms | Allocations: 3985)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 251.3ms | Allocations: 8833)
+Completed 200 OK in 259ms (Views: 255.3ms | ActiveRecord: 0.0ms | Allocations: 10298)
+
+
+Started GET "/trending" for 127.0.0.1 at 2022-03-31 12:00:08 +0200
+Processing by CardsController#trending as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/trending.html.erb within layouts/application
+  Rendered cards/trending.html.erb within layouts/application (Duration: 515.8ms | Allocations: 3986)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 534.2ms | Allocations: 8855)
+Completed 200 OK in 541ms (Views: 537.4ms | ActiveRecord: 0.0ms | Allocations: 10327)
+
+
+Started GET "/trending" for 127.0.0.1 at 2022-03-31 12:00:25 +0200
+Processing by CardsController#trending as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/trending.html.erb within layouts/application
+  Rendered cards/trending.html.erb within layouts/application (Duration: 231.7ms | Allocations: 4017)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 246.1ms | Allocations: 8867)
+Completed 200 OK in 255ms (Views: 251.5ms | Allocations: 10347)
+
+
+Started GET "/trending" for 127.0.0.1 at 2022-03-31 12:01:11 +0200
+Processing by CardsController#trending as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/trending.html.erb within layouts/application
+  Rendered cards/trending.html.erb within layouts/application (Duration: 404.3ms | Allocations: 3978)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 418.8ms | Allocations: 8827)
+Completed 200 OK in 428ms (Views: 425.2ms | Allocations: 10284)
+
+
+Started GET "/trending" for 127.0.0.1 at 2022-03-31 12:02:47 +0200
+Processing by CardsController#trending as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/trending.html.erb within layouts/application
+  Rendered cards/trending.html.erb within layouts/application (Duration: 510.2ms | Allocations: 3976)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 530.3ms | Allocations: 8848)
+Completed 200 OK in 594ms (Views: 569.1ms | Allocations: 10321)
+
+
+Started GET "/trending" for 127.0.0.1 at 2022-03-31 12:03:22 +0200
+Processing by CardsController#trending as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/trending.html.erb within layouts/application
+  Rendered cards/trending.html.erb within layouts/application (Duration: 498.2ms | Allocations: 3969)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 518.0ms | Allocations: 8832)
+Completed 200 OK in 527ms (Views: 523.4ms | Allocations: 10295)
+
+
+Started GET "/trending" for 127.0.0.1 at 2022-03-31 12:04:15 +0200
+Processing by CardsController#trending as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/trending.html.erb within layouts/application
+  Rendered cards/trending.html.erb within layouts/application (Duration: 369.9ms | Allocations: 3968)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 388.2ms | Allocations: 8816)
+Completed 200 OK in 396ms (Views: 392.8ms | Allocations: 10279)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-31 12:04:27 +0200
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (4.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 381.6ms | Allocations: 13055)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 401.6ms | Allocations: 17173)
+Completed 200 OK in 422ms (Views: 403.5ms | ActiveRecord: 40.6ms | Allocations: 20030)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-03-31 12:04:30 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 2.1ms | Allocations: 271)
+  Rendered devise/shared/_links.html.erb (Duration: 3.5ms | Allocations: 622)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 23.3ms | Allocations: 4929)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 38.7ms | Allocations: 8991)
+Completed 200 OK in 77ms (Views: 44.4ms | ActiveRecord: 11.1ms | Allocations: 15192)
+
+
+Started GET "/trending" for 127.0.0.1 at 2022-03-31 12:04:35 +0200
+Processing by CardsController#trending as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/trending.html.erb within layouts/application
+  Rendered cards/trending.html.erb within layouts/application (Duration: 222.7ms | Allocations: 3563)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 234.3ms | Allocations: 7567)
+Completed 200 OK in 239ms (Views: 236.7ms | ActiveRecord: 0.0ms | Allocations: 8082)
+
+
+Started GET "/trending" for 127.0.0.1 at 2022-03-31 12:10:26 +0200
+Processing by CardsController#trending as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/trending.html.erb within layouts/application
+  Rendered cards/trending.html.erb within layouts/application (Duration: 508.7ms | Allocations: 3979)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 526.8ms | Allocations: 8827)
+Completed 200 OK in 537ms (Views: 533.7ms | Allocations: 10247)
+
+
+Started GET "/trending" for 127.0.0.1 at 2022-03-31 12:10:43 +0200
+Processing by CardsController#trending as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/trending.html.erb within layouts/application
+  Rendered cards/trending.html.erb within layouts/application (Duration: 497.6ms | Allocations: 3970)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 512.6ms | Allocations: 8818)
+Completed 200 OK in 520ms (Views: 516.9ms | Allocations: 10275)
+
+
+Started GET "/trending" for 127.0.0.1 at 2022-03-31 12:13:25 +0200
+Processing by CardsController#trending as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/trending.html.erb within layouts/application
+  Rendered cards/trending.html.erb within layouts/application (Duration: 350.7ms | Allocations: 3998)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 370.9ms | Allocations: 8846)
+Completed 200 OK in 379ms (Views: 376.4ms | Allocations: 10303)
+
+
+Started GET "/trending" for 127.0.0.1 at 2022-03-31 12:15:31 +0200
+Processing by CardsController#trending as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/trending.html.erb within layouts/application
+  Rendered cards/trending.html.erb within layouts/application (Duration: 491.6ms | Allocations: 3471)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 563.0ms | Allocations: 17508)
+Completed 200 OK in 567ms (Views: 564.6ms | Allocations: 18001)
+
+
+Started GET "/trending" for 127.0.0.1 at 2022-03-31 12:16:29 +0200
+Processing by CardsController#trending as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/trending.html.erb within layouts/application
+  Rendered cards/trending.html.erb within layouts/application (Duration: 248.5ms | Allocations: 4159)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 261.8ms | Allocations: 9007)
+Completed 200 OK in 270ms (Views: 267.0ms | Allocations: 10419)
+
+
+Started GET "/trending" for 127.0.0.1 at 2022-03-31 12:17:15 +0200
+Processing by CardsController#trending as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/trending.html.erb within layouts/application
+  Rendered cards/trending.html.erb within layouts/application (Duration: 397.5ms | Allocations: 4093)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 411.6ms | Allocations: 8941)
+Completed 200 OK in 417ms (Views: 415.2ms | Allocations: 10398)
+
+
+Started GET "/trending" for 127.0.0.1 at 2022-03-31 12:20:02 +0200
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CardsController#trending as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/trending.html.erb within layouts/application
+  Rendered cards/trending.html.erb within layouts/application (Duration: 437.8ms | Allocations: 4992)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 541.5ms | Allocations: 20754)
+Completed 200 OK in 560ms (Views: 546.5ms | ActiveRecord: 0.0ms | Allocations: 24479)
+
+
+Started GET "/trending" for 127.0.0.1 at 2022-03-31 12:26:41 +0200
+Processing by CardsController#trending as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/trending.html.erb within layouts/application
+  Rendered cards/trending.html.erb within layouts/application (Duration: 417.9ms | Allocations: 4307)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 437.5ms | Allocations: 9158)
+Completed 200 OK in 449ms (Views: 443.6ms | Allocations: 10686)
+
+
+Started GET "/trending" for 127.0.0.1 at 2022-03-31 12:29:50 +0200
+Processing by CardsController#trending as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/trending.html.erb within layouts/application
+  Rendered cards/trending.html.erb within layouts/application (Duration: 458.6ms | Allocations: 4295)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 482.6ms | Allocations: 9146)
+Completed 200 OK in 489ms (Views: 486.6ms | Allocations: 10613)
+
+
+Started GET "/trending" for 127.0.0.1 at 2022-03-31 12:30:42 +0200
+Processing by CardsController#trending as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/trending.html.erb within layouts/application
+  Rendered cards/trending.html.erb within layouts/application (Duration: 237.8ms | Allocations: 3969)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 257.2ms | Allocations: 8824)
+Completed 200 OK in 266ms (Views: 262.5ms | Allocations: 10298)
+
+
+Started GET "/trending" for 127.0.0.1 at 2022-03-31 12:33:21 +0200
+Processing by CardsController#trending as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/trending.html.erb within layouts/application
+  Rendered cards/trending.html.erb within layouts/application (Duration: 395.7ms | Allocations: 3981)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 435.9ms | Allocations: 14847)
+Completed 200 OK in 445ms (Views: 440.8ms | Allocations: 16314)
+
+
+Started GET "/trending" for 127.0.0.1 at 2022-03-31 12:33:40 +0200
+Processing by CardsController#trending as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/trending.html.erb within layouts/application
+  Rendered cards/trending.html.erb within layouts/application (Duration: 242.6ms | Allocations: 3471)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 267.2ms | Allocations: 13628)
+Completed 200 OK in 270ms (Views: 268.3ms | Allocations: 14122)
+
+
+Started GET "/trending" for 127.0.0.1 at 2022-03-31 12:34:12 +0200
+Processing by CardsController#trending as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/trending.html.erb within layouts/application
+  Rendered cards/trending.html.erb within layouts/application (Duration: 274.5ms | Allocations: 3971)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 296.6ms | Allocations: 8820)
+Completed 200 OK in 304ms (Views: 301.6ms | Allocations: 10232)
+
+
+Started GET "/trending" for 127.0.0.1 at 2022-03-31 12:34:55 +0200
+Processing by CardsController#trending as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/trending.html.erb within layouts/application
+  Rendered cards/trending.html.erb within layouts/application (Duration: 230.2ms | Allocations: 3470)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 277.6ms | Allocations: 13286)
+Completed 200 OK in 282ms (Views: 279.7ms | Allocations: 13779)
+
+
+Started GET "/trending" for 127.0.0.1 at 2022-03-31 12:38:55 +0200
+Processing by CardsController#trending as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/trending.html.erb within layouts/application
+  Rendered cards/trending.html.erb within layouts/application (Duration: 416.9ms | Allocations: 3471)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 450.0ms | Allocations: 14092)
+Completed 200 OK in 455ms (Views: 452.5ms | Allocations: 14540)
+
+
+Started GET "/trending" for 127.0.0.1 at 2022-03-31 12:39:59 +0200
+Processing by CardsController#trending as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/trending.html.erb within layouts/application
+  Rendered cards/trending.html.erb within layouts/application (Duration: 377.7ms | Allocations: 3471)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 410.7ms | Allocations: 13120)
+Completed 200 OK in 415ms (Views: 412.6ms | Allocations: 13568)
+
+
+Started GET "/trending" for 127.0.0.1 at 2022-03-31 12:40:10 +0200
+Processing by CardsController#trending as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/trending.html.erb within layouts/application
+  Rendered cards/trending.html.erb within layouts/application (Duration: 209.3ms | Allocations: 3471)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 244.5ms | Allocations: 13153)
+Completed 200 OK in 249ms (Views: 246.7ms | Allocations: 13601)
+
+
+Started GET "/trending" for 127.0.0.1 at 2022-03-31 12:40:25 +0200
+Processing by CardsController#trending as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/trending.html.erb within layouts/application
+  Rendered cards/trending.html.erb within layouts/application (Duration: 216.5ms | Allocations: 3490)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 247.2ms | Allocations: 14514)
+Completed 200 OK in 250ms (Views: 248.5ms | Allocations: 14962)
+
+
+Started GET "/trending" for 127.0.0.1 at 2022-03-31 12:42:14 +0200
+Processing by CardsController#trending as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/trending.html.erb within layouts/application
+  Rendered cards/trending.html.erb within layouts/application (Duration: 448.5ms | Allocations: 4009)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 466.3ms | Allocations: 8858)
+Completed 200 OK in 477ms (Views: 472.9ms | Allocations: 10276)
+
+
+Started GET "/trending" for 127.0.0.1 at 2022-03-31 12:42:33 +0200
+Processing by CardsController#trending as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/trending.html.erb within layouts/application
+  Rendered cards/trending.html.erb within layouts/application (Duration: 446.4ms | Allocations: 4002)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 465.0ms | Allocations: 8851)
+Completed 200 OK in 474ms (Views: 470.6ms | Allocations: 10309)
+
+
+Started GET "/trending" for 127.0.0.1 at 2022-03-31 12:43:52 +0200
+Processing by CardsController#trending as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/trending.html.erb within layouts/application
+  Rendered cards/trending.html.erb within layouts/application (Duration: 3346.8ms | Allocations: 4014)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3390.6ms | Allocations: 14675)
+Completed 200 OK in 3399ms (Views: 3395.5ms | Allocations: 16132)
+
+
+Started GET "/trending" for 127.0.0.1 at 2022-03-31 12:44:30 +0200
+Processing by CardsController#trending as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/trending.html.erb within layouts/application
+  Rendered cards/trending.html.erb within layouts/application (Duration: 380.8ms | Allocations: 4002)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 417.4ms | Allocations: 8857)
+Completed 200 OK in 426ms (Views: 422.8ms | Allocations: 10315)
+
+
+Started GET "/trending" for 127.0.0.1 at 2022-03-31 12:44:49 +0200
+Processing by CardsController#trending as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/trending.html.erb within layouts/application
+  Rendered cards/trending.html.erb within layouts/application (Duration: 475.8ms | Allocations: 4009)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 490.4ms | Allocations: 8869)
+Completed 200 OK in 500ms (Views: 495.6ms | Allocations: 10333)
+
+
+Started GET "/trending" for 127.0.0.1 at 2022-03-31 12:45:40 +0200
+Processing by CardsController#trending as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/trending.html.erb within layouts/application
+  Rendered cards/trending.html.erb within layouts/application (Duration: 268.5ms | Allocations: 3471)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 318.8ms | Allocations: 14200)
+Completed 200 OK in 323ms (Views: 320.7ms | Allocations: 14693)
+
+
+Started GET "/trending" for 127.0.0.1 at 2022-03-31 12:48:18 +0200
+Processing by CardsController#trending as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/trending.html.erb within layouts/application
+  Rendered cards/trending.html.erb within layouts/application (Duration: 479.9ms | Allocations: 4039)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 493.7ms | Allocations: 8888)
+Completed 200 OK in 502ms (Views: 498.9ms | Allocations: 10300)
+
+
+Started GET "/trending" for 127.0.0.1 at 2022-03-31 12:48:40 +0200
+Processing by CardsController#trending as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/trending.html.erb within layouts/application
+  Rendered cards/trending.html.erb within layouts/application (Duration: 226.3ms | Allocations: 4034)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 249.2ms | Allocations: 8888)
+Completed 200 OK in 259ms (Views: 255.0ms | Allocations: 10346)
+
+
+Started GET "/trending" for 127.0.0.1 at 2022-03-31 12:48:55 +0200
+Processing by CardsController#trending as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/trending.html.erb within layouts/application
+  Rendered cards/trending.html.erb within layouts/application (Duration: 239.9ms | Allocations: 4033)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 260.0ms | Allocations: 8883)
+Completed 200 OK in 272ms (Views: 266.3ms | Allocations: 10340)
+
+
+Started GET "/trending" for 127.0.0.1 at 2022-03-31 12:49:21 +0200
+Processing by CardsController#trending as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/trending.html.erb within layouts/application
+  Rendered cards/trending.html.erb within layouts/application (Duration: 226.0ms | Allocations: 4034)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 240.8ms | Allocations: 8883)
+Completed 200 OK in 249ms (Views: 246.6ms | Allocations: 10346)
+
+
+Started GET "/trending" for 127.0.0.1 at 2022-03-31 12:49:36 +0200
+Processing by CardsController#trending as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/trending.html.erb within layouts/application
+  Rendered cards/trending.html.erb within layouts/application (Duration: 351.5ms | Allocations: 3470)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 366.8ms | Allocations: 7461)
+Completed 200 OK in 372ms (Views: 368.8ms | Allocations: 7957)
+
+
+Started GET "/trending" for 127.0.0.1 at 2022-03-31 12:50:15 +0200
+Processing by CardsController#trending as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/trending.html.erb within layouts/application
+  Rendered cards/trending.html.erb within layouts/application (Duration: 233.5ms | Allocations: 4038)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 250.1ms | Allocations: 8888)
+Completed 200 OK in 258ms (Views: 255.0ms | Allocations: 10300)
+
+
+Started GET "/trending" for 127.0.0.1 at 2022-03-31 12:52:05 +0200
+Processing by CardsController#trending as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/trending.html.erb within layouts/application
+  Rendered cards/trending.html.erb within layouts/application (Duration: 463.4ms | Allocations: 3492)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 513.9ms | Allocations: 13776)
+Completed 200 OK in 519ms (Views: 516.8ms | Allocations: 14270)
+
+
+Started GET "/trending" for 127.0.0.1 at 2022-03-31 12:52:25 +0200
+Processing by CardsController#trending as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/trending.html.erb within layouts/application
+  Rendered cards/trending.html.erb within layouts/application (Duration: 230.8ms | Allocations: 3471)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 271.1ms | Allocations: 13660)
+Completed 200 OK in 276ms (Views: 273.0ms | Allocations: 14111)
+
+
+Started GET "/trending" for 127.0.0.1 at 2022-03-31 12:53:07 +0200
+Processing by CardsController#trending as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/trending.html.erb within layouts/application
+  Rendered cards/trending.html.erb within layouts/application (Duration: 2494.5ms | Allocations: 3937)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 2515.0ms | Allocations: 8786)
+Completed 200 OK in 2526ms (Views: 2521.9ms | Allocations: 10204)
+
+
+Started GET "/trending" for 127.0.0.1 at 2022-03-31 12:54:39 +0200
+Processing by CardsController#trending as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/trending.html.erb within layouts/application
+  Rendered cards/trending.html.erb within layouts/application (Duration: 490.6ms | Allocations: 3929)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 510.0ms | Allocations: 8778)
+Completed 200 OK in 519ms (Views: 514.8ms | Allocations: 10235)
+
+
+Started GET "/trending" for 127.0.0.1 at 2022-03-31 12:54:57 +0200
+Processing by CardsController#trending as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/trending.html.erb within layouts/application
+  Rendered cards/trending.html.erb within layouts/application (Duration: 236.9ms | Allocations: 3377)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 258.7ms | Allocations: 7370)
+Completed 200 OK in 262ms (Views: 260.5ms | Allocations: 7863)
+
+
+Started GET "/trending" for 127.0.0.1 at 2022-03-31 12:55:54 +0200
+Processing by CardsController#trending as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/trending.html.erb within layouts/application
+  Rendered cards/trending.html.erb within layouts/application (Duration: 886.5ms | Allocations: 3928)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 906.2ms | Allocations: 8782)
+Completed 200 OK in 916ms (Views: 912.6ms | Allocations: 10195)
+
+
+Started GET "/trending" for 127.0.0.1 at 2022-03-31 12:56:14 +0200
+Processing by CardsController#trending as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/trending.html.erb within layouts/application
+  Rendered cards/trending.html.erb within layouts/application (Duration: 1564.9ms | Allocations: 3928)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 1579.8ms | Allocations: 8777)
+Completed 200 OK in 1586ms (Views: 1583.7ms | Allocations: 10234)
+
+
+Started GET "/trending" for 127.0.0.1 at 2022-03-31 12:56:31 +0200
+Processing by CardsController#trending as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/trending.html.erb within layouts/application
+  Rendered cards/trending.html.erb within layouts/application (Duration: 1128.6ms | Allocations: 3922)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 1148.6ms | Allocations: 8771)
+Completed 200 OK in 1158ms (Views: 1154.4ms | Allocations: 10234)
+
+
+Started GET "/trending" for 127.0.0.1 at 2022-03-31 12:57:07 +0200
+Processing by CardsController#trending as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/trending.html.erb within layouts/application
+  Rendered cards/trending.html.erb within layouts/application (Duration: 3314.0ms | Allocations: 3382)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3353.6ms | Allocations: 13579)
+Completed 200 OK in 3358ms (Views: 3355.9ms | Allocations: 14072)
+
+

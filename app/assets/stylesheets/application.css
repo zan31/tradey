@@ -24,6 +24,9 @@
         width: 95% !important;
     }
   }
+  html {
+    scroll-behavior: smooth;
+  }
 body{
     height: 100vh;
 }
@@ -60,4 +63,31 @@ body{
   }
 #show-container{
     margin-top:2em;
+}
+#container {
+    -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  
+    grid-auto-flow: column;
+    grid-template-columns: auto;
+    width: 80%;
+    height: 50%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    grid-gap: 0 50px;
+
+
+    padding-right: 0;  
+}
+#container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+  }
+
+.item {
+    padding: 0 10px;
+    height: 100%;
+    width: 250px;
+    border-radius: 5px;
 }
