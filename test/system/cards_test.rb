@@ -14,6 +14,7 @@ class CardsTest < ApplicationSystemTestCase
     visit cards_url
     click_on "New Card"
 
+    fill_in "Price", with: @card.price
     fill_in "Print tag", with: @card.print_tag
     fill_in "Set", with: @card.set
     click_on "Create Card"
@@ -26,6 +27,7 @@ class CardsTest < ApplicationSystemTestCase
     visit cards_url
     click_on "Edit", match: :first
 
+    fill_in "Price", with: @card.price
     fill_in "Print tag", with: @card.print_tag
     fill_in "Set", with: @card.set
     click_on "Update Card"

@@ -1,14 +1,39 @@
-<p id="notice"><%= notice %></p>
+<%response = Faraday.get("http://yugiohprices.com/api/price_for_print_tag/#{@card.print_tag}")%>
+<% data = JSON.parse(response.body) %>
+<%split = data["data"]['name'].split
+  splitc = split.join('_')
+  split1 = split.join('%20')
+  %>
+<%response2 = Faraday.get("http://yugiohprices.com/api/card_data/#{split1}")%>
+<% data2 = JSON.parse(response2.body) %>
+<div class="container" id="show-container">
+<div class="card mb-4">
+  <div class="row g-0">
+    <div class="col-md-3">
+    
+      <%= image_tag("http://yugiohprices.com/api/card_image/#{splitc}", class:"img-fluid rounded-start") %>
+    </div>
+    <div class="col-md-9">
+      <div class="card-body">
+        <h5 class="card-title"><%= data2["data"]['name'] %></h5>
+        <p class="card-text">
+        Description: <%= data2['data']['text'] %>
+        <br>
+        Print tag: <%= @card.print_tag %>
+        <br>
+        Set name: <%= @card.set %>
+        <br>
+        Price: <%= @card.price %> €
+        </p>
+        <%= link_to '<i class="bi bi-door-closed-fill"></i> Back'.html_safe, cards_path %>
+      </div>
+    </div>
+  </div>
+        <div class="card-footer text-muted">
+    <%= time_ago_in_words(@card.created_at) %> ago
+</div>
+</div>
 
-<p>
-  <strong>Print tag:</strong>
-  <%= @card.print_tag %>
-</p>
-
-<p>
-  <strong>Set:</strong>
-  <%= @card.set %>
-</p>
-
-<%= link_to 'Edit', edit_card_path(@card) %> |
-<%= link_to 'Back', cards_path %>
+    </div>
+</div>
+</div>

@@ -1,12 +1,7 @@
-<% 
-require 'faraday'
-require 'faraday/net_http'
-Faraday.default_adapter = :net_http
-%>
 <div id="wrapper" style="margin-top: 2em;">
 <div class="container" id="main-page">
 <% $x = 0 %>
-    <% @cards.each do |card| %>
+    <% @cards.reverse.each do |card| %>
 <%response = Faraday.get("http://yugiohprices.com/api/price_for_print_tag/#{card.print_tag}")%>
 <% data = JSON.parse(response.body) %>
     <% if($x % 3 == 0 || $x == 0) %>
@@ -29,7 +24,10 @@ Faraday.default_adapter = :net_http
         Print tag: <%= card.print_tag %>
         <br>
         Set name: <%= card.set %>
+        <br>
+        Price: <%= card.price %> €
         </p>
+        <%= link_to '<i class="bi bi-door-closed-fill"></i> Inspect'.html_safe, card, class:"stretched-link" %>
       </div>
     </div>
   </div>

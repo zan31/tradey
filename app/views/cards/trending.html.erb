@@ -1,0 +1,14 @@
+<%
+response = Faraday.get("http://yugiohprices.com/api/rising_and_falling")
+data = JSON.parse(response.body)
+%>
+<%rising = data['data']['rising'] %>
+<%falling = data['data']['falling'] %>
+<% rising.each do |ris| %>
+<% ped = ris['price_shift'].round(2) %>
+<%= Integer(ped*100) %>%
+<%end%>
+<% falling.each do |fal| %>
+<% ped = fal['price_shift'].round(2) %>
+<%= Integer(ped*100) %>%
+<%end%>

@@ -10,6 +10,10 @@ class CardsController < ApplicationController
   def show
   end
 
+  def trending
+
+  end
+
   # GET /cards/new
   def new
     @card = Card.new
@@ -65,6 +69,6 @@ class CardsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def card_params
-      params.require(:card).permit(:print_tag, :set)
+      params.require(:card).permit(:print_tag, :set, :price)
     end
 end

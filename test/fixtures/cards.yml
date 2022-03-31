@@ -3,7 +3,9 @@
 one:
   print_tag: MyString
   set: MyString
+  price: 1.5
 
 two:
   print_tag: MyString
   set: MyString
+  price: 1.5

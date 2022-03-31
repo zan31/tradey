@@ -58,3 +58,6 @@ body{
     border: none;
     padding: 0.5em;
   }
+#show-container{
+    margin-top:2em;
+}
