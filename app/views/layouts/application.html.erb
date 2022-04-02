@@ -29,31 +29,31 @@ Faraday.default_adapter = :net_http
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
        <% if user_signed_in? %> 
         <li class="nav-item">
-          <%= link_to '<i class="bi bi-file-music-fill"></i> New card'.html_safe, new_card_path, class:"nav-link" %>
+          <%= link_to 'New card'.html_safe, new_card_path, class:"nav-link" %>
         </li>
         <li class="nav-item">
-            <%= link_to '<i class="bi bi-person-fill"></i> Edit account'.html_safe, edit_user_registration_path, class:"nav-link" %>
+            <%= link_to 'Edit account'.html_safe, edit_user_registration_path, class:"nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to '<i class="bi bi-door-closed-fill"></i> Logout'.html_safe, destroy_user_session_path, method: :delete, class:"nav-link"%>
+            <%= link_to 'Logout'.html_safe, destroy_user_session_path, method: :delete, class:"nav-link"%>
           </li>
         <% else %>
           <li class="nav-item">
-            <%= link_to '<i class="bi bi-door-open-fill"></i> Login'.html_safe, new_user_session_path, class:"nav-link" %> 
+            <%= link_to 'Login'.html_safe, new_user_session_path, class:"nav-link" %> 
           </li>
           <li class="nav-item" style="color: #fdd605;">
-            <%= link_to '<i class="bi bi-door-open"></i> Registration'.html_safe, new_user_registration_path, class:"nav-link"%>
+            <%= link_to 'Registration'.html_safe, new_user_registration_path, class:"nav-link"%>
           </li>
-          <li class="nav-item dropdown">
+      <% end %>
+      <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Card stuff
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><%= link_to 'Trending'.html_safe, trending_path, class:"nav-link"%></li>
+            <li><%= link_to 'Top'.html_safe, top_path, class:"nav-link"%></li>
           </ul>
         </li>
-      <% end %>
       </ul>
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -78,7 +78,7 @@ setTimeout(function () {
 setTimeout(function () {
             // Closing the alert
             document.querySelector('#flash').style.display = "none";
-        }, 2500);
+        }, 5000);
     </script>
     <% end %>
     <%= yield %>

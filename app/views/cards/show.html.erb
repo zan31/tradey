@@ -4,8 +4,6 @@
   splitc = split.join('_')
   split1 = split.join('%20')
   %>
-<%response2 = Faraday.get("http://yugiohprices.com/api/card_data/#{split1}")%>
-<% data2 = JSON.parse(response2.body) %>
 <div class="container" id="show-container">
 <div class="card mb-4">
   <div class="row g-0">
@@ -15,13 +13,11 @@
     </div>
     <div class="col-md-9">
       <div class="card-body">
-        <h5 class="card-title"><%= data2["data"]['name'] %></h5>
+        <h5 class="card-title"><%= data["data"]['name'] %></h5>
         <p class="card-text">
-        Description: <%= data2['data']['text'] %>
-        <br>
         Print tag: <%= @card.print_tag %>
         <br>
-        Set name: <%= @card.set %>
+        Set name: <%= data["data"]['price_data']['name'] %>
         <br>
         Price: <%= @card.price %> €
         </p>
@@ -30,10 +26,11 @@
     </div>
   </div>
         <div class="card-footer text-muted">
-    <%= time_ago_in_words(@card.created_at) %> ago
+    Listed <%= time_ago_in_words(@card.created_at) %> ago
 </div>
 </div>
 
     </div>
 </div>
 </div>
+<%= link_to 'Edit', edit_card_path(@card) %>

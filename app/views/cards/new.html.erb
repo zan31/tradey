@@ -1,5 +1,74 @@
-<h1>New Card</h1>
+<div class="container" style="margin-top:2em;">
+<% params = request.query_parameters %>
+<% if(params == {}) %>
+<h1 class="display-5">Write a name</h1>
+<form id="card_form" onsubmit="card_function()">
+  <div class="mb-4">
+    <label class="form-label" for="card_name">Card name</label><br>
+    <input class="form-control" type="text" value="" name="card" id="card_name">
+  </div>
+  <div class="mb-4">
+    <input type="submit" class="btn btn-primary" id="login">
+  </div>
+  <script>
+    function card_function {
+        var curr_url = window.location.href;
+        var action_src = $("card").val();
+        var form = $('card_form').val();
 
-<%= render 'form', card: @card %>
+        urlLink = curr_url + action_src;
 
+        your_form.action = urlLink;
+    }
+  </script>
+<%end%>
+<%if(params != {})%>
+<%if(params['card'] != nil)%>
+<% card1 = params['card'].humanize.gsub(/\b('?[a-z])/) { $1.capitalize }%>
+<%split = card1.split()
+splitc = split.join('+')
+%>
+<%response = Faraday.get("http://yugiohprices.com/api/card_versions/#{splitc}")%>
+<% data = JSON.parse(response.body) %>
+
+<% if(data['status']=='fail') %>
+<% controller.redirect_to new_card_path, alert: "No cards matching this name were found in our database." %>
+<%else%>
+<h1 class="display-5"><%=card1%></h1>
+<%= form_with(model: @card) do |form| %>
+  <% if @card.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger">
+      <h2><%= pluralize(@card.errors.count, "error") %> prohibited this card from being saved:</h2>
+
+      <ul>
+        <% @card.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <label class="form-label" for="card_print_tag">Choose set</label>
+    <select name="card[print_tag]" id="card_print_tag" class="form-select">
+    <%for i in data['data'] do%>
+     <option value="<%=i['print_tag']%>"><%=i['print_tag']%> | <%=i['name']%></option>
+     <%end%>
+    </select>
+
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :price, class:"form-label" %>
+    <%= form.number_field :price, step: 0.01, min: 0, class:"form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.submit "List", class:"btn btn-primary", id:"login"%>
+  </div>
+<% end %>
+<% end %>
+<%end%>
+<% end %>
 <%= link_to 'Back', cards_path %>
+</div>

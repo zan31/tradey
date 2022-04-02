@@ -1,5 +1,6 @@
 class CardsController < ApplicationController
   before_action :set_card, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, only: [ :new, :create, :edit, :update, :destroy ]
 
   # GET /cards or /cards.json
   def index
@@ -11,7 +12,9 @@ class CardsController < ApplicationController
   end
 
   def trending
+  end
 
+  def top
   end
 
   # GET /cards/new
@@ -26,6 +29,7 @@ class CardsController < ApplicationController
   # POST /cards or /cards.json
   def create
     @card = Card.new(card_params)
+    @card.user = current_user
 
     respond_to do |format|
       if @card.save
@@ -69,6 +73,6 @@ class CardsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def card_params
-      params.require(:card).permit(:print_tag, :set, :price)
+      params.require(:card).permit(:print_tag, :price)
     end
 end

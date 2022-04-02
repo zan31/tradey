@@ -2,18 +2,19 @@
 response = Faraday.get("http://yugiohprices.com/api/rising_and_falling")
 data = JSON.parse(response.body)
 %>
+<%if(data['status']=='success')%>
 <%rising = data['data']['rising'] %>
 <%falling = data['data']['falling'] %>
-
-<% falling.each do |fal| %>
-<% ped = fal['price_shift'].round(2) %>
-<%= Integer(ped*100) %>%
-<%end%>
-<div id="container">
+<div class="trendwrapper" style="margin-top: 2em;">
+<div class="btntrend">
+    <button id="slideBack" class="btn btn-light" type="button"><i class="bi bi-caret-left" id="slide"></i></button>
+</div>
+<div class="trend" id="container">
+<h1 class="display-6" style="color:green;">Rising cards</h1>
 <% rising.each do |ris| %>
 <div class="item">
 <% ped = ris['price_shift'].round(2) %>
-<div class="card mb-4" style="max-width:200px;">
+<div class="card sm-3 h-100" style="max-width:250px;">
     <%split = ris['name'].split
     splitc = split.join('_')
     %>
@@ -23,7 +24,7 @@ data = JSON.parse(response.body)
         <p class="card-text">
         Print tag: <%= ris['card_number'] %>
         <br>
-        <%= Integer(ped*100) %>%
+        <span style="color:green;"><i class="bi bi-arrow-up"></i> <%= Integer(ped*100) %>%</span>
         </p>
       </div>
   </div>
@@ -31,19 +32,63 @@ data = JSON.parse(response.body)
 <%end%>
     
 </div>
-    <button id="slideBack" type="button">Prev</button>
-    <button id="slide" type="button">Next</button>
+<div class="btntrend">
+    <button id="slide1" class="btn btn-light"><i class="bi bi-caret-right" id="slide"></i></button>
+</div>
+</div>
+<div class="trendwrapper">
+<div class="btntrend">
+    <button id="slideBack1" class="btn btn-light" type="button"><i class="bi bi-caret-left" id="slide"></i></button>
+</div>
+<div class="trend" id="container1" style="margin-top: 2em;">
+<h1 class="display-6" style="color:red;">Falling cards</h1>
+<% falling.each do |fal| %>
+<div class="item">
+<% ped = fal['price_shift'].round(2) %>
+<div class="card sm-3 h-100" style="max-width:250px;">
+    <%split = fal['name'].split
+    splitc = split.join('_')
+    %>
+      <%= image_tag("http://yugiohprices.com/api/card_image/#{splitc}", class:"card-img-top") %>
+      <div class="card-body">
+        <h5 class="card-title"><%= fal['name'] %></h5>
+        <p class="card-text">
+        Print tag: <%= fal['card_number'] %>
+        <br>
+        <span style="color:red;"><i class="bi bi-arrow-down"></i> <%= Integer(ped*100) %>%</span>
+        </p>
+      </div>
+  </div>
+</div>
+<%end%>
+    
+</div>
+<div class="btntrend">
+    <button id="slide2" class="btn btn-light"><i class="bi bi-caret-right" id="slide"></i></button>
+</div>
+</div>
 <script>
-    var button = document.getElementById('slide');
+var button1 = document.getElementById('slide2');
+button1.onclick = function () {
+    var container1 = document.getElementById('container1');
+    sideScroll(container1,'right',5,350,5);
+};
+var back1 = document.getElementById('slideBack1');
+back1.onclick = function () {
+    var container1 = document.getElementById('container1');
+    sideScroll(container1,'left',5,350,5);
+};
+
+var button = document.getElementById('slide1');
 button.onclick = function () {
     var container = document.getElementById('container');
-    sideScroll(container,'right',5,500,5);
+    sideScroll(container,'right',5,350,5);
 };
 
 var back = document.getElementById('slideBack');
 back.onclick = function () {
     var container = document.getElementById('container');
-    sideScroll(container,'left',5,500,5);
+    sideScroll(container,'left',5,350,5);
 };
 
 function sideScroll(element,direction,speed,distance,step){
@@ -62,3 +107,4 @@ function sideScroll(element,direction,speed,distance,step){
 }
 
 </script>
+<%end%>

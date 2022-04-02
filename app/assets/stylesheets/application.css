@@ -16,6 +16,7 @@
 @media only screen and (max-width: 767px) {
     #wrapper{
         width: 90% !important;
+        margin:auto !important;
     }
     #regcontainer{
         width: 95% !important;
@@ -64,13 +65,13 @@ body{
 #show-container{
     margin-top:2em;
 }
-#container {
+.trend {
+    display: inline;
     -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  
     grid-auto-flow: column;
     grid-template-columns: auto;
-    width: 80%;
-    height: 50%;
+    width: 90%;
     overflow-x: scroll;
     overflow-y: hidden;
     margin: 0 auto;
@@ -81,7 +82,15 @@ body{
 
     padding-right: 0;  
 }
-#container::-webkit-scrollbar {
+.trendwrapper {
+    display: grid;
+    grid-template-columns: 0.1fr 1fr 0.1fr; /* fraction*/
+  }
+.btntrend{
+    vertical-align: middle;
+    margin: auto;
+}
+.trend::-webkit-scrollbar {
     display: none; /* Chrome, Safari and Opera */
   }
 
@@ -90,4 +99,7 @@ body{
     height: 100%;
     width: 250px;
     border-radius: 5px;
+}
+#slide{
+  font-size: 2em;
 }

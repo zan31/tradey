@@ -1,0 +1,41 @@
+<%
+response = Faraday.get("http://yugiohprices.com/api/top_100_cards?rarity=not%20relevant")
+data = JSON.parse(response.body)
+%>
+<%if(data['status']=='success')%>
+<%top = data['data'] 
+arr = top[0..19]
+%>
+<div class="container">
+    <h1 class="display-4">Top 20 most expensive cards</h1>
+    <% $x = 1 %>
+    <% arr.each do |t| %>
+    <h1 class="display-4"><%=$x%>.</h1>
+<div class="card mb-3">
+    <%split = t['name'].split
+    splitc = split.join('_')
+    %>
+    <div class="row g-0">
+    <div class="col-md-3">
+      <%= image_tag("http://yugiohprices.com/api/card_image/#{splitc}", class:"img-fluid rounded-start") %>
+      </div>
+      <div class="col-md-9">
+      <div class="card-body">
+        <h5 class="card-title"><%= t['name'] %></h5>
+        <p class="card-text">
+        <b>Print tag:</b> <%= t['card_number'] %>
+        <br>
+        <b>Set name:</b> <%= t['card_set'] %>
+        <br>
+        <b>Price:</b> <%= t['price'] %> €
+        </p>
+        </div>
+  </div>
+</div>
+</div>
+<% $x = $x + 1 %>
+    <%end%>
+</div>
+<%else%>
+<div class="alert alert-danger"role="alert">Sorry something went wrong</div>
+<%end%>
