@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   root to: "cards#index"
   get 'trending', to: 'cards#trending'
   get 'top', to: 'cards#top'
+  get 'search' => 'cards#search'
 end

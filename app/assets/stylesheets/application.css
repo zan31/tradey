@@ -62,6 +62,9 @@ body{
     border: none;
     padding: 0.5em;
   }
+  #srcbtn:focus{
+    background-color:rgb(195,71,71);
+  }
 #show-container{
     margin-top:2em;
 }

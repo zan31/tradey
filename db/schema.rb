@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2022_03_31_183930) do
 
   create_table "cards", force: :cascade do |t|
     t.string "print_tag"
+    t.string "name"
     t.float "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

@@ -1,0 +1,66 @@
+<% @users.each do |user| %>
+<div class="card" id="postcard">
+  <div class="row g-0">
+    <div class="col-md-12">
+  </div>
+  </div>
+ <div class="card-body">
+    <h5 class="card-title"><span style="color:white; padding: 0.2rem; border-radius: 5%; background-color: rgb(64, 64, 64);">
+    @<%=user.name%> 
+    </span></h5>
+    <p class="card-text ">
+    </p>
+  </div>
+    <div class="card-footer text-muted">
+     <div class="row g-0">
+    <div class="col-md-12">
+    Joined <%= time_ago_in_words(user.created_at) %> ago
+    </div>
+</div>
+</div>
+  </div>
+</div>
+<%end%>
+<% @cards.each do |card| %>
+<div id="wrapper" style="margin-top: 2em;">
+<div class="container" id="main-page">
+<% $x = 0 %>
+    <% @cards.reverse.each do |card| %>
+<%response = Faraday.get("http://yugiohprices.com/api/price_for_print_tag/#{card.print_tag}")%>
+<% data = JSON.parse(response.body) %>
+    <% if($x % 4 == 0 || $x == 0) %>
+    </div>
+    <div class="row">
+    <% end %>
+    <div class="col-sm-3">
+<div class="card mb-3 h-100" style="max-width:250px;">
+    <%split = data["data"]['name'].split
+    splitc = split.join('_')
+    %>
+      <%= image_tag("http://yugiohprices.com/api/card_image/#{splitc}", class:"card-img-top") %>
+      <div class="card-body">
+        <h5 class="card-title"><%= card.name %></h5>
+        <p class="card-text">
+        <b>Print tag:</b> <%= card.print_tag %>
+        <br>
+        <b>Set name:</b> <%= data['data']['price_data']['name'] %>
+        <br>
+        <b>Price:</b> <%= card.price %> €
+        </p>
+        <%= link_to '', card, class:"stretched-link" %>
+  </div>
+<div class="card-footer text-muted">
+    Listed <%= time_ago_in_words(card.created_at) %> ago
+</div>
+</div>
+
+    </div>
+      <% $x = $x + 1 %>
+    <% end %>
+    <% if($x % 4 == 0 || $x == 0) %>
+    </div>
+    <% $x = 0 %>
+    <% end %>
+</div>
+</div>
+<%end%>

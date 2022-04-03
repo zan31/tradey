@@ -22,6 +22,13 @@ class CardsController < ApplicationController
     @card = Card.new
   end
 
+  def search
+    @users = User.search(params[:keyword].downcase)
+    @cards = Card.search(params[:keyword].downcase)
+    @keyword = params[:keyword]
+    render "_card"
+  end
+
   # GET /cards/1/edit
   def edit
   end
@@ -73,6 +80,6 @@ class CardsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def card_params
-      params.require(:card).permit(:print_tag, :price)
+      params.require(:card).permit(:print_tag, :price, :name)
     end
 end

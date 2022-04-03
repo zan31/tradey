@@ -55,10 +55,11 @@ Faraday.default_adapter = :net_http
           </ul>
         </li>
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+      <%= link_to '<i class="bi bi-x-lg"></i>'.html_safe, root_path, class:"nav-link", style:"color:rgb(195,71,71);"%>
+      <%= form_with url: search_path, method: :get, class:"d-flex"  , local: true do |f| %>
+          <%= f.text_field :keyword, value: @keyword, class:"form-control me-2", type:"search", placeholder:"Search"%>
+          <%= f.submit 'Search', class:"btn btn-outline-danger", style:"border-color: rgb(195,71,71);", id:"srcbtn" %>
+        <% end %>
     </div>
   </div>
 </nav>
