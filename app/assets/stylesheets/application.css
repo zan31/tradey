@@ -106,3 +106,8 @@ body{
 #slide{
   font-size: 2em;
 }
+#usercard {
+  width: 30%; 
+  margin:auto; 
+  margin-top: 2rem;
+}

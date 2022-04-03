@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_31_183930) do
+ActiveRecord::Schema.define(version: 2022_04_03_174632) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,10 +19,19 @@ ActiveRecord::Schema.define(version: 2022_03_31_183930) do
     t.string "print_tag"
     t.string "name"
     t.float "price"
+    t.boolean "psa"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_cards_on_user_id"
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.string "print_tag"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -39,4 +48,5 @@ ActiveRecord::Schema.define(version: 2022_03_31_183930) do
   end
 
   add_foreign_key "cards", "users"
+  add_foreign_key "favorites", "users"
 end

@@ -67,6 +67,11 @@ splitc = split.join('+')
   </div>
 
   <div class="mb-3">
+    <%= form.label 'Psa-10', class:"form-check-label" %>
+    <%= form.check_box :psa, class:"form-check-input" %>
+  </div>
+
+  <div class="mb-3">
     <%= form.submit "List", class:"btn btn-primary", id:"login"%>
   </div>
 <% end %>

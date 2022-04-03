@@ -50,6 +50,9 @@ Faraday.default_adapter = :net_http
             Card stuff
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <% if user_signed_in? %>
+            <li><%= link_to 'Favorites'.html_safe, favorites_path, class:"nav-link"%></li>
+            <%end%>
             <li><%= link_to 'Trending'.html_safe, trending_path, class:"nav-link"%></li>
             <li><%= link_to 'Top'.html_safe, top_path, class:"nav-link"%></li>
           </ul>

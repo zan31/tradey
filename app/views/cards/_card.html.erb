@@ -1,14 +1,9 @@
 <% @users.each do |user| %>
-<div class="card" id="postcard">
-  <div class="row g-0">
-    <div class="col-md-12">
-  </div>
-  </div>
+<div class="card" id="usercard">
  <div class="card-body">
-    <h5 class="card-title"><span style="color:white; padding: 0.2rem; border-radius: 5%; background-color: rgb(64, 64, 64);">
-    @<%=user.name%> 
-    </span></h5>
+    <h5 class="card-title">@<%=user.name%> </h5>
     <p class="card-text ">
+    <% @usercards = Card.where(user_id: user.id) %> <%= @usercards.count %> listed cards
     </p>
   </div>
     <div class="card-footer text-muted">

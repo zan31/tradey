@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :cards
+  has_many :favorites
 
   def self.search(keyword)
     where(["LOWER(name) like?", "%#{keyword}%"])
