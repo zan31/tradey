@@ -24,7 +24,10 @@
 <%end%>
 <%if(params != {})%>
 <%if(params['card'] != nil)%>
-<% card1 = params['card'].humanize.gsub(/\b('?[a-z])/) { $1.capitalize }%>
+<% 
+card1 = params['card'].humanize.gsub(/\b('?[a-z])/) { $1.capitalize}
+%>
+<%card1 = card1.puncs%>
 <%split = card1.split()
 splitc = split.join('+')
 %>
