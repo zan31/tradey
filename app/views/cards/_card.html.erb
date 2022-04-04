@@ -16,11 +16,10 @@
   </div>
 </div>
 <%end%>
-<% @cards.each do |card| %>
 <div id="wrapper" style="margin-top: 2em;">
 <div class="container" id="main-page">
 <% $x = 0 %>
-    <% @cards.reverse.each do |card| %>
+<% @cards.reverse.each do |card| %>
 <%response = Faraday.get("http://yugiohprices.com/api/price_for_print_tag/#{card.print_tag}")%>
 <% data = JSON.parse(response.body) %>
     <% if($x % 4 == 0 || $x == 0) %>
@@ -28,19 +27,52 @@
     <div class="row">
     <% end %>
     <div class="col-sm-3">
+    <%if card.psa%>
+<div class="card mb-3 h-100" style="max-width:250px; border-color:#EEBC1D !important;">
+<%else%>
 <div class="card mb-3 h-100" style="max-width:250px;">
+<%end%>
     <%split = data["data"]['name'].split
     splitc = split.join('_')
     %>
       <%= image_tag("http://yugiohprices.com/api/card_image/#{splitc}", class:"card-img-top") %>
       <div class="card-body">
+      <%if card.psa%>
+        <h5 class="card-title"><%= card.name %> <span style="color: #EEBC1D;">PSA-10</span></h5>
+        <%else%>
         <h5 class="card-title"><%= card.name %></h5>
+        <%end%>
         <p class="card-text">
         <b>Print tag:</b> <%= card.print_tag %>
         <br>
         <b>Set name:</b> <%= data['data']['price_data']['name'] %>
         <br>
         <b>Price:</b> <%= card.price %> €
+        <br>
+        <b>Suggested price:</b>
+        <%if card.psa%>
+        <% 
+        sugg = data['data']['price_data']['price_data']['data']['prices']['high']
+        diff = sugg - card.price 
+        %>
+        <%= data['data']['price_data']['price_data']['data']['prices']['high'] %> €
+        <%else%>
+        <% 
+        sugg = data['data']['price_data']['price_data']['data']['prices']['average']
+        diff = sugg - card.price 
+        %>
+        <%= data['data']['price_data']['price_data']['data']['prices']['average'] %> €
+        <%end%>
+        <br>
+        <%if(diff > 0)%>
+        <span style="color:green;">Good deal</span>
+        <%end%>
+        <%if(diff < 0)%>
+        <span style="color:red;">Overpriced</span>
+        <%end%>
+        <%if(diff == 0)%>
+        <span style="color:orange;">Perfect price</span>
+        <%end%>
         </p>
         <%= link_to '', card, class:"stretched-link" %>
   </div>
@@ -58,4 +90,3 @@
     <% end %>
 </div>
 </div>
-<%end%>

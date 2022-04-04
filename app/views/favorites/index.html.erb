@@ -1,27 +1,39 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Favorites</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Print tag</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @favorites.each do |favorite| %>
-      <tr>
-        <td><%= favorite.print_tag %></td>
-        <td><%= link_to 'Show', favorite %></td>
-        <td><%= link_to 'Edit', edit_favorite_path(favorite) %></td>
-        <td><%= link_to 'Destroy', favorite, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
+<div id="wrapper" style="margin-top: 2em;">
 <%= link_to 'New Favorite', new_favorite_path %>
+<div class="container" id="main-page">
+<% $x = 0 %>
+    <% @favorites.each do |card| %>
+      <%response = Faraday.get("http://yugiohprices.com/api/price_for_print_tag/#{card.print_tag}")%>
+<% data = JSON.parse(response.body) %>
+    <% if($x % 4 == 0 || $x == 0) %>
+    </div>
+    <div class="row">
+    <% end %>
+    <div class="col-sm-3">
+<div class="card mb-3 h-100" style="max-width:250px;">
+    <%split = data["data"]['name'].split
+    splitc = split.join('_')
+    %>
+      <%= image_tag("http://yugiohprices.com/api/card_image/#{splitc}", class:"card-img-top") %>
+      <div class="card-body">
+        <h5 class="card-title"><%= data['data']['name'] %></h5>
+        <p class="card-text">
+        <b>Print tag:</b> <%= card.print_tag %>
+        <br>
+        <b>Set name:</b> <%= data['data']['price_data']['name'] %>
+        <br>
+        <b>Suggested price:</b>
+        <%= data['data']['price_data']['price_data']['data']['prices']['average'] %> €
+        <br>
+        </p>
+        <%= link_to '', card, class:"stretched-link" %>
+  </div>
+</div>
+
+    </div>
+      <% $x = $x + 1 %>
+    <% end %>
+    <% if($x % 4 == 0 || $x == 0) %>
+    </div>
+    <% $x = 0 %>
+    <% end %>
