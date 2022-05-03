@@ -24907,3 +24907,2242 @@ Processing by CardsController#index as HTML
 Completed 200 OK in 2692ms (Views: 2687.7ms | ActiveRecord: 3.0ms | Allocations: 15261)
 
 
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2022-05-03 12:06:59 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 34ms (ActiveRecord: 16.2ms | Allocations: 8100)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-03 12:06:59 +0200
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (2.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 2995.5ms | Allocations: 8514)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3013.1ms | Allocations: 13537)
+Completed 200 OK in 3016ms (Views: 3012.0ms | ActiveRecord: 2.0ms | Allocations: 14094)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-05-03 12:07:04 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.4ms | Allocations: 783)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 12.6ms | Allocations: 4589)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.3ms | Allocations: 9510)
+Completed 200 OK in 30ms (Views: 27.7ms | ActiveRecord: 0.0ms | Allocations: 11405)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2022-05-03 12:07:05 +0200
+Processing by Devise::PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.6ms | Allocations: 238)
+  Rendered devise/shared/_links.html.erb (Duration: 1.4ms | Allocations: 279)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 8.9ms | Allocations: 1658)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.7ms | Allocations: 6658)
+Completed 200 OK in 33ms (Views: 29.2ms | ActiveRecord: 0.0ms | Allocations: 8236)
+
+
+Started POST "/users/password" for 127.0.0.1 at 2022-05-03 12:07:14 +0200
+Processing by Devise::PasswordsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"zan.hrastnik31@gmail.com"}, "commit"=>"Send me reset password instructions"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "zan.hrastnik31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."reset_password_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["reset_password_token", "d4d219379dd50f33dbbbf99a30fe31f0cc7f6290587f435650712c0ad15cfe50"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (2.0ms)[0m  [1m[33mUPDATE "users" SET "reset_password_token" = $1, "reset_password_sent_at" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["reset_password_token", "d4d219379dd50f33dbbbf99a30fe31f0cc7f6290587f435650712c0ad15cfe50"], ["reset_password_sent_at", "2022-05-03 10:07:14.770042"], ["updated_at", "2022-05-03 10:07:14.770277"], ["id", 1]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  Rendering devise/mailer/reset_password_instructions.html.erb
+  Rendered devise/mailer/reset_password_instructions.html.erb (Duration: 1.1ms | Allocations: 365)
+Devise::Mailer#reset_password_instructions: processed outbound mail in 7.2ms
+Delivered mail 6270fed2c4939_1b9e6af4-486@zans-zenbook.mail (1660.1ms)
+Date: Tue, 03 May 2022 12:07:14 +0200
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: zan.hrastnik31@gmail.com
+Message-ID: <6270fed2c4939_1b9e6af4-486@zans-zenbook.mail>
+Subject: Reset password instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Hello zan.hrastnik31@gmail.com!</p>
+
+<p>Someone has requested a link to change your password. You can do this through the link below.</p>
+
+<p><a href="http://tradey-ruby.herokuapp.com/users/password/edit?reset_password_token=peY6Fmwy1WKz6Z8zfKCS">Change my password</a></p>
+
+<p>If you didn't request this, please ignore this email.</p>
+<p>Your password won't change until you access the link above and create a new one.</p>
+
+Redirected to http://127.0.0.1:3000/users/sign_in
+Completed 302 Found in 1802ms (ActiveRecord: 6.0ms | Allocations: 23833)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-05-03 12:07:16 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.2ms | Allocations: 224)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 9.3ms | Allocations: 1844)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 27.1ms | Allocations: 6561)
+Completed 200 OK in 34ms (Views: 29.5ms | ActiveRecord: 0.0ms | Allocations: 7341)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-05-03 12:07:44 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"zan.hrastnik31@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "zan.hrastnik31@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 237ms (ActiveRecord: 1.2ms | Allocations: 5785)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-03 12:07:44 +0200
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (2.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 2489.0ms | Allocations: 8469)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+  Rendered layout layouts/application.html.erb (Duration: 2510.1ms | Allocations: 14383)
+Completed 200 OK in 2512ms (Views: 2505.9ms | ActiveRecord: 5.1ms | Allocations: 14925)
+
+
+Started GET "/cards/10" for 127.0.0.1 at 2022-05-03 12:07:50 +0200
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mCard Load (1.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:78:in `set_card'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cards/show.html.erb:27
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cards/show.html.erb:28
+  Rendered cards/show.html.erb within layouts/application (Duration: 750.4ms | Allocations: 10587)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 756.9ms | Allocations: 15365)
+Completed 200 OK in 765ms (Views: 754.5ms | ActiveRecord: 4.8ms | Allocations: 16703)
+
+
+Started GET "/admin" for 127.0.0.1 at 2022-05-03 12:13:29 +0200
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "cards"[0m
+  [1m[36mCard Load (1.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" ORDER BY "cards"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites"[0m
+  [1m[36mFavorite Load (0.8ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" ORDER BY "favorites"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering layout /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/application.html.erb
+  Rendering /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/rails_admin/main/dashboard.html.erb within layouts/rails_admin/application
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/rails_admin/main/dashboard.html.erb within layouts/rails_admin/application (Duration: 11.1ms | Allocations: 7112)
+[Webpacker] Compiling...
+Started GET "/" for 127.0.0.1 at 2022-05-03 12:13:44 +0200
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (3.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 3032.0ms | Allocations: 14527)
+[Webpacker] Compiled all packs in /home/zan31/Documents/GitHub/tradey-zan/public/packs
+[Webpacker] DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div(20em, 16) or calc(20em / 16)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+   ╷
+12 │ $fa-fw-width:          (20em / 16);
+   │                         ^^^^^^^^^
+   ╵
+    node_modules/@fortawesome/fontawesome-free/scss/_variables.scss 12:25  @import
+    node_modules/@fortawesome/fontawesome-free/scss/solid.scss 5:9         @import
+    node_modules/rails_admin/src/rails_admin/styles/base.scss 15:9         @import
+    app/javascript/stylesheets/rails_admin.scss 1:9                        root stylesheet
+
+DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div(4em, 3) or calc(4em / 3)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+  ╷
+6 │   font-size: (4em / 3);
+  │               ^^^^^^^
+  ╵
+    node_modules/@fortawesome/fontawesome-free/scss/_larger.scss 6:15     @import
+    node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss 8:9  @import
+    node_modules/rails_admin/src/rails_admin/styles/base.scss 16:9        @import
+    app/javascript/stylesheets/rails_admin.scss 1:9                       root stylesheet
+
+DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div(3em, 4) or calc(3em / 4)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+  ╷
+7 │   line-height: (3em / 4);
+  │                 ^^^^^^^
+  ╵
+    node_modules/@fortawesome/fontawesome-free/scss/_larger.scss 7:17     @import
+    node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss 8:9  @import
+    node_modules/rails_admin/src/rails_admin/styles/base.scss 16:9        @import
+    app/javascript/stylesheets/rails_admin.scss 1:9                       root stylesheet
+
+DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div($fa-li-width * 5, 4) or calc($fa-li-width * 5 / 4)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+  ╷
+6 │   margin-left: $fa-li-width * 5/4;
+  │                ^^^^^^^^^^^^^^^^^^
+  ╵
+    node_modules/@fortawesome/fontawesome-free/scss/_list.scss 6:16        @import
+    node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss 10:9  @import
+    node_modules/rails_admin/src/rails_admin/styles/base.scss 16:9         @import
+    app/javascript/stylesheets/rails_admin.scss 1:9                        root stylesheet
+
+DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div(40px - $avatar-size, 2) or calc((40px - $avatar-size) / 2)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+   ╷
+22 │         top: ((40px - $avatar-size) / 2);
+   │               ^^^^^^^^^^^^^^^^^^^^^^^^^
+   ╵
+    node_modules/rails_admin/src/rails_admin/styles/base/theming.scss 22:15  @import
+    node_modules/rails_admin/src/rails_admin/styles/base.scss 24:9           @import
+    app/javascript/stylesheets/rails_admin.scss 1:9                          root stylesheet
+
+WARNING: 4 repetitive deprecation warnings omitted.
+
+
+[Webpacker] Hash: 317d68180edb5b53159b
+Version: webpack 4.46.0
+Time: 20555ms
+Built at: 05/03/2022 12:13:52 PM
+                                                   Asset      Size               Chunks                         Chunk Names
+                  js/application-2f9638af500a3aa95f0b.js   1.4 MiB          application  [emitted] [immutable]  application
+              js/application-2f9638af500a3aa95f0b.js.map  1.43 MiB          application  [emitted] [dev]        application
+                  js/rails_admin-bebd4c560bfafdf37953.js  2.56 MiB          rails_admin  [emitted] [immutable]  rails_admin
+              js/rails_admin-bebd4c560bfafdf37953.js.map  2.73 MiB          rails_admin  [emitted] [dev]        rails_admin
+    js/vendors~actioncable-c592403c886988a78232.chunk.js    43 KiB  vendors~actioncable  [emitted] [immutable]  vendors~actioncable
+js/vendors~actioncable-c592403c886988a78232.chunk.js.map    37 KiB  vendors~actioncable  [emitted] [dev]        vendors~actioncable
+                                           manifest.json  1.55 KiB                       [emitted]              
+              media/fonts/bootstrap-icons-a13b8155.woff2   100 KiB                       [emitted]              
+               media/fonts/bootstrap-icons-c1d7432e.woff   134 KiB                       [emitted]              
+              media/webfonts/fa-solid-900-1551f4f6.woff2  76.4 KiB                       [emitted]              
+                media/webfonts/fa-solid-900-7a8b4f13.svg   897 KiB                       [emitted]              
+                media/webfonts/fa-solid-900-9bbb245e.eot   198 KiB                       [emitted]              
+                media/webfonts/fa-solid-900-be9ee23c.ttf   198 KiB                       [emitted]              
+               media/webfonts/fa-solid-900-eeccf4f6.woff  99.3 KiB                       [emitted]              
+Entrypoint application = js/application-2f9638af500a3aa95f0b.js js/application-2f9638af500a3aa95f0b.js.map
+Entrypoint rails_admin = js/rails_admin-bebd4c560bfafdf37953.js js/rails_admin-bebd4c560bfafdf37953.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 652 bytes {application} [built]
+[./app/javascript/packs/rails_admin.js] 84 bytes {rails_admin} [built]
+[./app/javascript/stylesheets/application.scss] 664 bytes {application} [built]
+[./app/javascript/stylesheets/rails_admin.scss] 664 bytes {rails_admin} [built]
+[./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./app/javascript/stylesheets/application.scss] ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/javascript/stylesheets/application.scss 743 KiB {application} [built]
+[./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./app/javascript/stylesheets/rails_admin.scss] ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/javascript/stylesheets/rails_admin.scss 1.19 MiB {rails_admin} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} {rails_admin} [built]
+    + 127 hidden modules
+
+Started GET "/admin" for 127.0.0.1 at 2022-05-03 12:13:53 +0200
+Processing by RailsAdmin::MainController#dashboard as HTML
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/_head.html.erb (Duration: 23178.0ms | Allocations: 129787)
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/_secondary_navigation.html.erb (Duration: 3.2ms | Allocations: 936)
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/_navigation.html.erb (Duration: 28.3ms | Allocations: 4842)
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/_sidebar_navigation.html.erb (Duration: 6.4ms | Allocations: 3568)
+  Rendering /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/content.html.erb
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "cards"[0m
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/content.html.erb (Duration: 5.8ms | Allocations: 1949)
+  Rendered layout /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/application.html.erb (Duration: 23307.2ms | Allocations: 155502)
+Completed 200 OK in 23573ms (Views: 23314.0ms | ActiveRecord: 30.1ms | Allocations: 260766)
+
+
+  [1m[36mCard Load (2.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" ORDER BY "cards"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (3.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites"[0m
+  [1m[36mFavorite Load (1.5ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" ORDER BY "favorites"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering layout /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/application.html.erb
+  Rendering /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/rails_admin/main/dashboard.html.erb within layouts/rails_admin/application
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/rails_admin/main/dashboard.html.erb within layouts/rails_admin/application (Duration: 8.4ms | Allocations: 5047)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/_head.html.erb (Duration: 15.6ms | Allocations: 4230)
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/_secondary_navigation.html.erb (Duration: 0.8ms | Allocations: 304)
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/_navigation.html.erb (Duration: 3.1ms | Allocations: 658)
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/_sidebar_navigation.html.erb (Duration: 2.2ms | Allocations: 963)
+  Rendering /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/content.html.erb
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/content.html.erb (Duration: 1.4ms | Allocations: 572)
+  Rendered layout /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/application.html.erb (Duration: 42.9ms | Allocations: 13111)
+Completed 200 OK in 243ms (Views: 44.4ms | ActiveRecord: 80.5ms | Allocations: 56512)
+
+
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+  Rendered layout layouts/application.html.erb (Duration: 9815.3ms | Allocations: 322824)
+Completed 200 OK in 9822ms (Views: 9797.9ms | ActiveRecord: 21.8ms | Allocations: 324660)
+
+
+Started GET "/admin/card" for 127.0.0.1 at 2022-05-03 12:14:10 +0200
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"model_name"=>"card"}
+  Rendering layout /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/application.html.erb
+  Rendering /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/rails_admin/main/index.html.erb within layouts/rails_admin/application
+  [1m[36mCard Load (1.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" ORDER BY cards.id desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/rails_admin/main/index.html.erb within layouts/rails_admin/application (Duration: 84.5ms | Allocations: 48677)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/_head.html.erb (Duration: 3.5ms | Allocations: 1803)
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/_secondary_navigation.html.erb (Duration: 0.8ms | Allocations: 327)
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/_navigation.html.erb (Duration: 1.4ms | Allocations: 541)
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/_sidebar_navigation.html.erb (Duration: 1.7ms | Allocations: 969)
+  Rendering /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/content.html.erb
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/content.html.erb (Duration: 4.5ms | Allocations: 2113)
+  Rendered layout /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/application.html.erb (Duration: 97.3ms | Allocations: 54665)
+Completed 200 OK in 107ms (Views: 95.2ms | ActiveRecord: 3.8ms | Allocations: 57379)
+
+
+Started GET "/admin/card/export?model_name=card" for 127.0.0.1 at 2022-05-03 12:14:12 +0200
+Processing by RailsAdmin::MainController#export as HTML
+  Parameters: {"model_name"=>"card"}
+  Rendering layout /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/application.html.erb
+  Rendering /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/rails_admin/main/export.html.erb within layouts/rails_admin/application
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT ''::text AS str;[0m
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/rails_admin/main/export.html.erb within layouts/rails_admin/application (Duration: 40.4ms | Allocations: 11881)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/_head.html.erb (Duration: 5.6ms | Allocations: 1794)
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/_secondary_navigation.html.erb (Duration: 1.9ms | Allocations: 345)
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/_navigation.html.erb (Duration: 3.3ms | Allocations: 552)
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/_sidebar_navigation.html.erb (Duration: 4.0ms | Allocations: 974)
+  Rendering /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/content.html.erb
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/content.html.erb (Duration: 9.1ms | Allocations: 2336)
+  Rendered layout /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/application.html.erb (Duration: 65.7ms | Allocations: 18086)
+Completed 200 OK in 75ms (Views: 66.9ms | ActiveRecord: 2.6ms | Allocations: 19748)
+
+
+Started GET "/admin/" for 127.0.0.1 at 2022-05-03 12:14:14 +0200
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "cards"[0m
+  [1m[36mCard Load (1.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" ORDER BY "cards"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites"[0m
+  [1m[36mFavorite Load (0.8ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" ORDER BY "favorites"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering layout /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/application.html.erb
+  Rendering /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/rails_admin/main/dashboard.html.erb within layouts/rails_admin/application
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/rails_admin/main/dashboard.html.erb within layouts/rails_admin/application (Duration: 34.8ms | Allocations: 5066)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/_head.html.erb (Duration: 9.5ms | Allocations: 1854)
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/_secondary_navigation.html.erb (Duration: 1.4ms | Allocations: 303)
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/_navigation.html.erb (Duration: 2.6ms | Allocations: 505)
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/_sidebar_navigation.html.erb (Duration: 3.3ms | Allocations: 963)
+  Rendering /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/content.html.erb
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/content.html.erb (Duration: 1.6ms | Allocations: 572)
+  Rendered layout /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/application.html.erb (Duration: 54.8ms | Allocations: 9492)
+Completed 200 OK in 84ms (Views: 55.9ms | ActiveRecord: 8.7ms | Allocations: 17421)
+
+
+Started GET "/admin/" for 127.0.0.1 at 2022-05-03 12:21:25 +0200
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ config/initializers/rails_admin.rb:8:in `block (2 levels) in <main>'
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 14.9ms | Allocations: 13522)
+
+
+  
+NameError (uninitialized constant Ability):
+  
+rails_admin (3.0.0) lib/rails_admin/extensions/cancancan/authorization_adapter.rb:15:in `initialize'
+rails_admin (3.0.0) lib/rails_admin/config.rb:174:in `new'
+rails_admin (3.0.0) lib/rails_admin/config.rb:174:in `block in authorize_with'
+rails_admin (3.0.0) app/controllers/rails_admin/application_controller.rb:57:in `instance_eval'
+rails_admin (3.0.0) app/controllers/rails_admin/application_controller.rb:57:in `_authorize!'
+activesupport (6.1.5) lib/active_support/callbacks.rb:427:in `block in make_lambda'
+activesupport (6.1.5) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (6.1.5) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.1.5) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (6.1.5) lib/active_support/callbacks.rb:512:in `block in invoke_before'
+activesupport (6.1.5) lib/active_support/callbacks.rb:512:in `each'
+activesupport (6.1.5) lib/active_support/callbacks.rb:512:in `invoke_before'
+activesupport (6.1.5) lib/active_support/callbacks.rb:115:in `block in run_callbacks'
+actiontext (6.1.5) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (6.1.5) lib/action_text/engine.rb:59:in `block (4 levels) in <class:Engine>'
+activesupport (6.1.5) lib/active_support/callbacks.rb:126:in `instance_exec'
+activesupport (6.1.5) lib/active_support/callbacks.rb:126:in `block in run_callbacks'
+activesupport (6.1.5) lib/active_support/callbacks.rb:137:in `run_callbacks'
+actionpack (6.1.5) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.5) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.5) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.5) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.5) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.5) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.5) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.5) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.5) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.5) lib/abstract_controller/base.rb:165:in `process'
+actionview (6.1.5) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.5) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.5) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.5) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.5) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.5) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.5) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.5) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.5) lib/action_dispatch/routing/route_set.rb:842:in `call'
+railties (6.1.5) lib/rails/engine.rb:539:in `call'
+railties (6.1.5) lib/rails/railtie.rb:207:in `public_send'
+railties (6.1.5) lib/rails/railtie.rb:207:in `method_missing'
+actionpack (6.1.5) lib/action_dispatch/routing/mapper.rb:20:in `block in <class:Constraints>'
+actionpack (6.1.5) lib/action_dispatch/routing/mapper.rb:49:in `serve'
+actionpack (6.1.5) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.5) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.5) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.5) lib/action_dispatch/routing/route_set.rb:842:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.5) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.5) lib/action_dispatch/http/content_security_policy.rb:19:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.5) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.5) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.5) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.5) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.5) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.5) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.5) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/host_authorization.rb:148:in `call'
+rack-mini-profiler (2.3.4) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.2) lib/rack/proxy.rb:67:in `call'
+railties (6.1.5) lib/rails/engine.rb:539:in `call'
+puma (5.6.2) lib/puma/configuration.rb:252:in `call'
+puma (5.6.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.2) lib/puma/server.rb:441:in `process_client'
+puma (5.6.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2022-05-03 12:21:27 +0200
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (1.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 3614.9ms | Allocations: 16556)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+  Rendered layout layouts/application.html.erb (Duration: 3713.2ms | Allocations: 53050)
+Completed 200 OK in 3724ms (Views: 3707.1ms | ActiveRecord: 10.0ms | Allocations: 56081)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2022-05-03 12:21:35 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (4.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 25ms (ActiveRecord: 4.9ms | Allocations: 3803)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-03 12:21:35 +0200
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (1.8ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 2889.3ms | Allocations: 8461)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 2910.0ms | Allocations: 13594)
+Completed 200 OK in 2912ms (Views: 2909.2ms | ActiveRecord: 1.8ms | Allocations: 14161)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-05-03 12:21:39 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 3.2ms | Allocations: 778)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 13.0ms | Allocations: 4621)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.5ms | Allocations: 9600)
+Completed 200 OK in 28ms (Views: 26.4ms | ActiveRecord: 0.0ms | Allocations: 11881)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-05-03 12:21:41 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 2.1ms | Allocations: 237)
+  Rendered devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 227)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 14.6ms | Allocations: 3199)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 30.6ms | Allocations: 8051)
+Completed 200 OK in 42ms (Views: 37.1ms | ActiveRecord: 0.0ms | Allocations: 9866)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-05-03 12:21:42 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 217)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 28.1ms | Allocations: 1727)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 40.1ms | Allocations: 6475)
+Completed 200 OK in 44ms (Views: 41.5ms | ActiveRecord: 0.0ms | Allocations: 7258)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-05-03 12:21:42 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 44)
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 163)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 7.1ms | Allocations: 1973)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.4ms | Allocations: 6706)
+Completed 200 OK in 21ms (Views: 19.6ms | ActiveRecord: 0.0ms | Allocations: 7380)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-05-03 12:21:43 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 216)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.8ms | Allocations: 1724)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 6466)
+Completed 200 OK in 22ms (Views: 18.8ms | ActiveRecord: 0.0ms | Allocations: 7169)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2022-05-03 12:21:48 +0200
+Processing by Devise::PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 62)
+  Rendered devise/shared/_links.html.erb (Duration: 1.2ms | Allocations: 245)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 7.1ms | Allocations: 1311)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.3ms | Allocations: 6401)
+Completed 200 OK in 34ms (Views: 30.8ms | ActiveRecord: 0.0ms | Allocations: 8169)
+
+
+Started POST "/users/password" for 127.0.0.1 at 2022-05-03 12:21:53 +0200
+Processing by Devise::PasswordsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"zan.hrastnik31@gmail.com"}, "commit"=>"Send me reset password instructions"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "zan.hrastnik31@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."reset_password_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["reset_password_token", "640ddf2f483ac173b74fcb912fbe8e50f76becb81e71bb14c17964fb3ec538b9"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (1.3ms)[0m  [1m[33mUPDATE "users" SET "reset_password_token" = $1, "reset_password_sent_at" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["reset_password_token", "640ddf2f483ac173b74fcb912fbe8e50f76becb81e71bb14c17964fb3ec538b9"], ["reset_password_sent_at", "2022-05-03 10:21:53.816451"], ["updated_at", "2022-05-03 10:21:53.816694"], ["id", 1]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  Rendering devise/mailer/reset_password_instructions.html.erb
+  Rendered devise/mailer/reset_password_instructions.html.erb (Duration: 1.8ms | Allocations: 376)
+Devise::Mailer#reset_password_instructions: processed outbound mail in 6.6ms
+Delivered mail 62710241ceb4d_329e4790-480@zans-zenbook.mail (1609.3ms)
+Date: Tue, 03 May 2022 12:21:53 +0200
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: zan.hrastnik31@gmail.com
+Message-ID: <62710241ceb4d_329e4790-480@zans-zenbook.mail>
+Subject: Reset password instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Hello zan.hrastnik31@gmail.com!</p>
+
+<p>Someone has requested a link to change your password. You can do this through the link below.</p>
+
+<p><a href="http://tradey-ruby.herokuapp.com/users/password/edit?reset_password_token=USwfD__ZZfrmHG-56hxd">Change my password</a></p>
+
+<p>If you didn't request this, please ignore this email.</p>
+<p>Your password won't change until you access the link above and create a new one.</p>
+
+Redirected to http://127.0.0.1:3000/users/sign_in
+Completed 302 Found in 1755ms (ActiveRecord: 5.9ms | Allocations: 26735)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-05-03 12:21:55 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 224)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 6.9ms | Allocations: 1886)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.4ms | Allocations: 6680)
+Completed 200 OK in 26ms (Views: 23.7ms | ActiveRecord: 0.0ms | Allocations: 7478)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-05-03 12:22:04 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"zan.hrastnik31@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "zan.hrastnik31@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 291ms (ActiveRecord: 1.8ms | Allocations: 4166)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-03 12:22:05 +0200
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (1.9ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 2609.4ms | Allocations: 8467)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (6.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+  Rendered layout layouts/application.html.erb (Duration: 2696.6ms | Allocations: 14491)
+Completed 200 OK in 2699ms (Views: 2689.1ms | ActiveRecord: 8.5ms | Allocations: 15043)
+
+
+Started GET "/favorites" for 127.0.0.1 at 2022-05-03 12:22:26 +0200
+Processing by FavoritesController#index as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:7:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering favorites/index.html.erb within layouts/application
+  [1m[36mFavorite Load (1.7ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/favorites/index.html.erb:5
+  Rendered favorites/index.html.erb within layouts/application (Duration: 543.7ms | Allocations: 5619)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 555.9ms | Allocations: 10790)
+Completed 200 OK in 576ms (Views: 553.7ms | ActiveRecord: 10.4ms | Allocations: 14756)
+
+
+Started GET "/cards_imports/new" for 127.0.0.1 at 2022-05-03 12:22:32 +0200
+Processing by CardsImportsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards_imports/new.html.erb within layouts/application
+  Rendered cards_imports/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 901)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+  Rendered layout layouts/application.html.erb (Duration: 16.7ms | Allocations: 7377)
+Completed 200 OK in 25ms (Views: 18.7ms | ActiveRecord: 1.9ms | Allocations: 9588)
+
+
+Started POST "/cards_imports" for 127.0.0.1 at 2022-05-03 12:27:01 +0200
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CardsImportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "cards_import"=>{"file"=>#<ActionDispatch::Http::UploadedFile:0x000055ad926c8190 @tempfile=#<Tempfile:/tmp/RackMultipart20220503-13792-vlwr7d.xlsx>, @original_filename="jako.xlsx", @content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", @headers="Content-Disposition: form-data; name=\"cards_import[file]\"; filename=\"jako.xlsx\"\r\nContent-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\r\n">}, "commit"=>"Import File"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cards_imports_controller.rb:7:in `create'
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 9.7ms | Allocations: 13803)
+
+
+  
+ArgumentError (missing required workbook file):
+  
+app/controllers/cards_import.rb:19:in `new'
+app/controllers/cards_import.rb:19:in `open_spreadsheet'
+app/controllers/cards_import.rb:25:in `load_imported_cards'
+app/controllers/cards_import.rb:37:in `imported_cards'
+app/controllers/cards_import.rb:41:in `save'
+app/controllers/cards_imports_controller.rb:8:in `create'
+Started GET "/cards_imports/new" for 127.0.0.1 at 2022-05-03 12:27:05 +0200
+Processing by CardsImportsController#new as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 649)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1..2)):
+  
+app/controllers/cards_import.rb:7:in `initialize'
+app/controllers/cards_imports_controller.rb:3:in `new'
+app/controllers/cards_imports_controller.rb:3:in `new'
+Started GET "/cards_imports/new" for 127.0.0.1 at 2022-05-03 12:27:08 +0200
+Processing by CardsImportsController#new as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 588)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1..2)):
+  
+app/controllers/cards_import.rb:7:in `initialize'
+app/controllers/cards_imports_controller.rb:3:in `new'
+app/controllers/cards_imports_controller.rb:3:in `new'
+Started GET "/" for 127.0.0.1 at 2022-05-03 12:27:17 +0200
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (2.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 3191.5ms | Allocations: 16518)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+  Rendered layout layouts/application.html.erb (Duration: 3285.2ms | Allocations: 52961)
+Completed 200 OK in 3302ms (Views: 3281.9ms | ActiveRecord: 11.3ms | Allocations: 55987)
+
+
+Started GET "/accounts/zan31" for 127.0.0.1 at 2022-05-03 12:27:23 +0200
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"zan31"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["name", "zan31"], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:13:in `load_user'
+  Rendering layout layouts/application.html.erb
+  Rendering accounts/show.html.erb within layouts/application
+  [1m[36mCard Load (1.7ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/accounts/show.html.erb:6
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/accounts/show.html.erb:61
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/accounts/show.html.erb:62
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/accounts/show.html.erb:62
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/accounts/show.html.erb:62
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/accounts/show.html.erb:62
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/accounts/show.html.erb:62
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/accounts/show.html.erb:62
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/accounts/show.html.erb:62
+  Rendered accounts/show.html.erb within layouts/application (Duration: 2327.0ms | Allocations: 16339)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 2336.1ms | Allocations: 21429)
+Completed 200 OK in 2347ms (Views: 2334.0ms | ActiveRecord: 5.7ms | Allocations: 24178)
+
+
+Started GET "/cards/new" for 127.0.0.1 at 2022-05-03 12:27:36 +0200
+Processing by CardsController#new as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering cards/new.html.erb within layouts/application
+  Rendered cards/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 785)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 5684)
+Completed 200 OK in 20ms (Views: 11.0ms | ActiveRecord: 1.6ms | Allocations: 7761)
+
+
+Started GET "/cards/new?card=dark+magician" for 127.0.0.1 at 2022-05-03 12:27:43 +0200
+Processing by CardsController#new as HTML
+  Parameters: {"card"=>"dark magician"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering cards/new.html.erb within layouts/application
+  Rendered cards/new.html.erb within layouts/application (Duration: 490.6ms | Allocations: 5685)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 509.7ms | Allocations: 10656)
+Completed 200 OK in 518ms (Views: 510.7ms | ActiveRecord: 1.2ms | Allocations: 12451)
+
+
+Started POST "/cards" for 127.0.0.1 at 2022-05-03 12:28:05 +0200
+Processing by CardsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "card"=>{"name"=>"Dark Magician", "print_tag"=>"SYE-001", "price"=>"2", "psa"=>"0"}, "commit"=>"List"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/cards_controller.rb:42:in `block in create'
+  [1m[36mCard Create (5.0ms)[0m  [1m[32mINSERT INTO "cards" ("print_tag", "name", "price", "psa", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["print_tag", "SYE-001"], ["name", "Dark Magician"], ["price", 2.0], ["psa", false], ["created_at", "2022-05-03 10:28:05.256177"], ["updated_at", "2022-05-03 10:28:05.256177"], ["user_id", 1]]
+  ↳ app/controllers/cards_controller.rb:42:in `block in create'
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/cards_controller.rb:42:in `block in create'
+Redirected to http://127.0.0.1:3000/cards/44
+Completed 302 Found in 25ms (ActiveRecord: 9.8ms | Allocations: 4998)
+
+
+Started GET "/cards/44" for 127.0.0.1 at 2022-05-03 12:28:05 +0200
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"44"}
+  [1m[36mCard Load (1.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:78:in `set_card'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cards/show.html.erb:27
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cards/show.html.erb:28
+  Rendered cards/show.html.erb within layouts/application (Duration: 647.4ms | Allocations: 10701)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 658.5ms | Allocations: 15599)
+Completed 200 OK in 666ms (Views: 655.4ms | ActiveRecord: 5.1ms | Allocations: 17121)
+
+
+Started GET "/cards_imports/new" for 127.0.0.1 at 2022-05-03 12:28:16 +0200
+Processing by CardsImportsController#new as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 592)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1..2)):
+  
+app/controllers/cards_import.rb:7:in `initialize'
+app/controllers/cards_imports_controller.rb:3:in `new'
+app/controllers/cards_imports_controller.rb:3:in `new'
+Started GET "/cards/44" for 127.0.0.1 at 2022-05-03 12:28:20 +0200
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"44"}
+  [1m[36mCard Load (2.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:78:in `set_card'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cards/show.html.erb:27
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cards/show.html.erb:28
+  Rendered cards/show.html.erb within layouts/application (Duration: 796.4ms | Allocations: 10179)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 810.1ms | Allocations: 15083)
+Completed 200 OK in 820ms (Views: 806.7ms | ActiveRecord: 7.3ms | Allocations: 16274)
+
+
+Started GET "/search?keyword=dark&commit=Search" for 127.0.0.1 at 2022-05-03 12:28:38 +0200
+Processing by CardsController#search as HTML
+  Parameters: {"keyword"=>"dark", "commit"=>"Search"}
+  Rendering layout layouts/application.html.erb
+  Rendering cards/_card.html.erb within layouts/application
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (LOWER(name) like'%dark%')[0m
+  ↳ app/views/cards/_card.html.erb:1
+  [1m[36mCard Load (1.8ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE (LOWER(name) like'%dark%' OR Lower(print_tag) like'%dark%')[0m
+  ↳ app/views/cards/_card.html.erb:23
+  Rendered cards/_card.html.erb within layouts/application (Duration: 856.0ms | Allocations: 5843)
+  Rendered layout layouts/application.html.erb (Duration: 856.5ms | Allocations: 5911)
+Completed 500 Internal Server Error in 862ms (ActiveRecord: 5.0ms | Allocations: 6719)
+
+
+  
+ActionView::Template::Error (809: unexpected token at '<html>
+<head><title>503 Service Temporarily Unavailable</title></head>
+<body>
+<center><h1>503 Service Temporarily Unavailable</h1></center>
+<hr><center>cloudflare</center>
+</body>
+</html>
+'):
+    22: <% $x = 0 %>
+    23: <% @cards.reverse.each do |card| %>
+    24: <%response = Faraday.get("http://yugiohprices.com/api/price_for_print_tag/#{card.print_tag}")%>
+    25: <% data = JSON.parse(response.body) %>
+    26:     <% if($x % 4 == 0 || $x == 0) %>
+    27:     </div>
+    28:     <div class="row">
+  
+app/views/cards/_card.html.erb:25
+app/views/cards/_card.html.erb:23:in `each'
+app/views/cards/_card.html.erb:23
+app/controllers/cards_controller.rb:29:in `search'
+Started GET "/search?keyword=dark&commit=Search" for 127.0.0.1 at 2022-05-03 12:28:47 +0200
+Processing by CardsController#search as HTML
+  Parameters: {"keyword"=>"dark", "commit"=>"Search"}
+  Rendering layout layouts/application.html.erb
+  Rendering cards/_card.html.erb within layouts/application
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (LOWER(name) like'%dark%')[0m
+  ↳ app/views/cards/_card.html.erb:1
+  [1m[36mCard Load (1.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE (LOWER(name) like'%dark%' OR Lower(print_tag) like'%dark%')[0m
+  ↳ app/views/cards/_card.html.erb:23
+  Rendered cards/_card.html.erb within layouts/application (Duration: 1716.6ms | Allocations: 6803)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+  Rendered layout layouts/application.html.erb (Duration: 1738.0ms | Allocations: 12604)
+Completed 200 OK in 1743ms (Views: 1734.0ms | ActiveRecord: 5.4ms | Allocations: 13281)
+
+
+Started GET "/search?keyword=zan&commit=Search" for 127.0.0.1 at 2022-05-03 12:28:55 +0200
+Processing by CardsController#search as HTML
+  Parameters: {"keyword"=>"zan", "commit"=>"Search"}
+  Rendering layout layouts/application.html.erb
+  Rendering cards/_card.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (LOWER(name) like'%zan%')[0m
+  ↳ app/views/cards/_card.html.erb:1
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/cards/_card.html.erb:6
+  [1m[36mCard Load (1.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE (LOWER(name) like'%zan%' OR Lower(print_tag) like'%zan%')[0m
+  ↳ app/views/cards/_card.html.erb:23
+  Rendered cards/_card.html.erb within layouts/application (Duration: 10.9ms | Allocations: 2323)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+  Rendered layout layouts/application.html.erb (Duration: 26.0ms | Allocations: 8103)
+Completed 200 OK in 30ms (Views: 21.3ms | ActiveRecord: 6.0ms | Allocations: 8771)
+
+
+Started GET "/accounts/zan31" for 127.0.0.1 at 2022-05-03 12:28:56 +0200
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"zan31"}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["name", "zan31"], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:13:in `load_user'
+  Rendering layout layouts/application.html.erb
+  Rendering accounts/show.html.erb within layouts/application
+  [1m[36mCard Load (2.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/accounts/show.html.erb:6
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/accounts/show.html.erb:61
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/accounts/show.html.erb:62
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/accounts/show.html.erb:62
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/accounts/show.html.erb:62
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/accounts/show.html.erb:62
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/accounts/show.html.erb:62
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/accounts/show.html.erb:62
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/accounts/show.html.erb:62
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/accounts/show.html.erb:62
+  Rendered accounts/show.html.erb within layouts/application (Duration: 2553.3ms | Allocations: 13830)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 2571.0ms | Allocations: 18716)
+Completed 200 OK in 2582ms (Views: 2565.4ms | ActiveRecord: 9.5ms | Allocations: 20124)
+
+
+Started GET "/trending" for 127.0.0.1 at 2022-05-03 12:29:01 +0200
+Processing by CardsController#trending as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/trending.html.erb within layouts/application
+  Rendered cards/trending.html.erb within layouts/application (Duration: 282.2ms | Allocations: 5083)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+  Rendered layout layouts/application.html.erb (Duration: 313.0ms | Allocations: 11067)
+Completed 200 OK in 316ms (Views: 311.9ms | ActiveRecord: 2.5ms | Allocations: 11669)
+
+
+Started GET "/top" for 127.0.0.1 at 2022-05-03 12:29:08 +0200
+Processing by CardsController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/top.html.erb within layouts/application
+  Rendered cards/top.html.erb within layouts/application (Duration: 272.1ms | Allocations: 3064)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+  Rendered layout layouts/application.html.erb (Duration: 299.1ms | Allocations: 9047)
+Completed 200 OK in 303ms (Views: 297.8ms | ActiveRecord: 2.7ms | Allocations: 9648)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-03 12:29:15 +0200
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (2.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 2724.2ms | Allocations: 9108)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+  Rendered layout layouts/application.html.erb (Duration: 2747.1ms | Allocations: 14903)
+Completed 200 OK in 2750ms (Views: 2743.4ms | ActiveRecord: 5.4ms | Allocations: 15391)
+
+
+Started GET "/favorites" for 127.0.0.1 at 2022-05-03 12:29:24 +0200
+Processing by FavoritesController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:7:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering favorites/index.html.erb within layouts/application
+  [1m[36mFavorite Load (2.6ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/favorites/index.html.erb:5
+  Rendered favorites/index.html.erb within layouts/application (Duration: 532.9ms | Allocations: 5589)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 550.4ms | Allocations: 10742)
+Completed 200 OK in 573ms (Views: 549.4ms | ActiveRecord: 11.1ms | Allocations: 14691)
+
+
+Started GET "/admin" for 127.0.0.1 at 2022-05-03 12:31:39 +0200
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ config/initializers/rails_admin.rb:8:in `block (2 levels) in <main>'
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 1.4ms | Allocations: 3623)
+
+
+  
+NameError (uninitialized constant Ability):
+  
+rails_admin (3.0.0) lib/rails_admin/extensions/cancancan/authorization_adapter.rb:15:in `initialize'
+rails_admin (3.0.0) lib/rails_admin/config.rb:174:in `new'
+rails_admin (3.0.0) lib/rails_admin/config.rb:174:in `block in authorize_with'
+rails_admin (3.0.0) app/controllers/rails_admin/application_controller.rb:57:in `instance_eval'
+rails_admin (3.0.0) app/controllers/rails_admin/application_controller.rb:57:in `_authorize!'
+activesupport (6.1.5) lib/active_support/callbacks.rb:427:in `block in make_lambda'
+activesupport (6.1.5) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (6.1.5) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.1.5) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (6.1.5) lib/active_support/callbacks.rb:512:in `block in invoke_before'
+activesupport (6.1.5) lib/active_support/callbacks.rb:512:in `each'
+activesupport (6.1.5) lib/active_support/callbacks.rb:512:in `invoke_before'
+activesupport (6.1.5) lib/active_support/callbacks.rb:115:in `block in run_callbacks'
+actiontext (6.1.5) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (6.1.5) lib/action_text/engine.rb:59:in `block (4 levels) in <class:Engine>'
+activesupport (6.1.5) lib/active_support/callbacks.rb:126:in `instance_exec'
+activesupport (6.1.5) lib/active_support/callbacks.rb:126:in `block in run_callbacks'
+activesupport (6.1.5) lib/active_support/callbacks.rb:137:in `run_callbacks'
+actionpack (6.1.5) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.5) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.5) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.5) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.5) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.5) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.5) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.5) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.5) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.5) lib/abstract_controller/base.rb:165:in `process'
+actionview (6.1.5) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.5) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.5) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.5) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.5) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.5) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.5) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.5) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.5) lib/action_dispatch/routing/route_set.rb:842:in `call'
+railties (6.1.5) lib/rails/engine.rb:539:in `call'
+railties (6.1.5) lib/rails/railtie.rb:207:in `public_send'
+railties (6.1.5) lib/rails/railtie.rb:207:in `method_missing'
+actionpack (6.1.5) lib/action_dispatch/routing/mapper.rb:20:in `block in <class:Constraints>'
+actionpack (6.1.5) lib/action_dispatch/routing/mapper.rb:49:in `serve'
+actionpack (6.1.5) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.5) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.5) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.5) lib/action_dispatch/routing/route_set.rb:842:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.5) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.5) lib/action_dispatch/http/content_security_policy.rb:19:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.5) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.5) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.5) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.5) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.5) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.5) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.5) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/host_authorization.rb:148:in `call'
+rack-mini-profiler (2.3.4) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.2) lib/rack/proxy.rb:67:in `call'
+railties (6.1.5) lib/rails/engine.rb:539:in `call'
+puma (5.6.2) lib/puma/configuration.rb:252:in `call'
+puma (5.6.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.2) lib/puma/server.rb:441:in `process_client'
+puma (5.6.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/admin" for 127.0.0.1 at 2022-05-03 12:34:35 +0200
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ config/initializers/rails_admin.rb:8:in `block (2 levels) in <main>'
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "cards"[0m
+  [1m[36mCard Load (3.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" ORDER BY "cards"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites"[0m
+  [1m[36mFavorite Load (1.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" ORDER BY "favorites"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering layout /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/application.html.erb
+  Rendering /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/rails_admin/main/dashboard.html.erb within layouts/rails_admin/application
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/rails_admin/main/dashboard.html.erb within layouts/rails_admin/application (Duration: 14.2ms | Allocations: 6691)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/_head.html.erb (Duration: 5.6ms | Allocations: 2204)
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/_secondary_navigation.html.erb (Duration: 2.7ms | Allocations: 1320)
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/_navigation.html.erb (Duration: 4.7ms | Allocations: 1939)
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/_sidebar_navigation.html.erb (Duration: 2.4ms | Allocations: 1146)
+  Rendering /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/content.html.erb
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/content.html.erb (Duration: 2.6ms | Allocations: 873)
+  Rendered layout /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/application.html.erb (Duration: 36.3ms | Allocations: 14555)
+Completed 200 OK in 218ms (Views: 40.2ms | ActiveRecord: 37.7ms | Allocations: 105048)
+
+
+Started GET "/admin/card" for 127.0.0.1 at 2022-05-03 12:34:38 +0200
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"model_name"=>"card"}
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ config/initializers/rails_admin.rb:8:in `block (2 levels) in <main>'
+  Rendering layout /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/application.html.erb
+  Rendering /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/rails_admin/main/index.html.erb within layouts/rails_admin/application
+  [1m[36mCard Load (1.8ms)[0m  [1m[34mSELECT "cards".* FROM "cards" ORDER BY cards.id desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/rails_admin/main/index.html.erb within layouts/rails_admin/application (Duration: 88.7ms | Allocations: 51018)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/_head.html.erb (Duration: 2.8ms | Allocations: 1803)
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/_secondary_navigation.html.erb (Duration: 1.5ms | Allocations: 779)
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/_navigation.html.erb (Duration: 2.2ms | Allocations: 993)
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/_sidebar_navigation.html.erb (Duration: 1.8ms | Allocations: 969)
+  Rendering /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/content.html.erb
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/content.html.erb (Duration: 5.0ms | Allocations: 2113)
+  Rendered layout /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/application.html.erb (Duration: 102.1ms | Allocations: 57458)
+Completed 200 OK in 127ms (Views: 101.9ms | ActiveRecord: 6.6ms | Allocations: 61104)
+
+
+Started GET "/admin/favorite" for 127.0.0.1 at 2022-05-03 12:34:39 +0200
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"model_name"=>"favorite"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ config/initializers/rails_admin.rb:8:in `block (2 levels) in <main>'
+  Rendering layout /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/application.html.erb
+  Rendering /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/rails_admin/main/index.html.erb within layouts/rails_admin/application
+  [1m[36mFavorite Load (1.7ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" ORDER BY favorites.id desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2)[0m  [["id", 2], ["id", 1]]
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/rails_admin/main/index.html.erb within layouts/rails_admin/application (Duration: 41.8ms | Allocations: 22891)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/_head.html.erb (Duration: 3.3ms | Allocations: 1801)
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/_secondary_navigation.html.erb (Duration: 1.4ms | Allocations: 772)
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/_navigation.html.erb (Duration: 2.0ms | Allocations: 979)
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/_sidebar_navigation.html.erb (Duration: 1.4ms | Allocations: 969)
+  Rendering /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/content.html.erb
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/content.html.erb (Duration: 3.0ms | Allocations: 1989)
+  Rendered layout /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/application.html.erb (Duration: 53.0ms | Allocations: 29168)
+Completed 200 OK in 63ms (Views: 50.7ms | ActiveRecord: 4.5ms | Allocations: 32105)
+
+
+Started GET "/admin/user" for 127.0.0.1 at 2022-05-03 12:34:40 +0200
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"model_name"=>"user"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ config/initializers/rails_admin.rb:8:in `block (2 levels) in <main>'
+  Rendering layout /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/application.html.erb
+  Rendering /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/rails_admin/main/index.html.erb within layouts/rails_admin/application
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY users.id desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  [1m[36mCard Load (1.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mFavorite Load (1.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mCard Load (1.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mFavorite Load (1.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/rails_admin/main/index.html.erb within layouts/rails_admin/application (Duration: 103.8ms | Allocations: 37247)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/_head.html.erb (Duration: 4.0ms | Allocations: 1805)
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/_secondary_navigation.html.erb (Duration: 1.6ms | Allocations: 778)
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/_navigation.html.erb (Duration: 2.1ms | Allocations: 993)
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/_sidebar_navigation.html.erb (Duration: 1.9ms | Allocations: 969)
+  Rendering /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/content.html.erb
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/content.html.erb (Duration: 3.6ms | Allocations: 1993)
+  Rendered layout /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/application.html.erb (Duration: 117.2ms | Allocations: 43569)
+Completed 200 OK in 135ms (Views: 110.9ms | ActiveRecord: 9.6ms | Allocations: 47412)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2022-05-03 12:34:44 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 22ms (ActiveRecord: 1.0ms | Allocations: 3280)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-03 12:34:44 +0200
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (2.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 3137.9ms | Allocations: 9501)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3160.2ms | Allocations: 14798)
+Completed 200 OK in 3164ms (Views: 3159.9ms | ActiveRecord: 2.6ms | Allocations: 15680)
+
+
+Started GET "/admin" for 127.0.0.1 at 2022-05-03 12:34:52 +0200
+Processing by RailsAdmin::MainController#dashboard as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 281)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-05-03 12:34:53 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.7ms | Allocations: 781)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 8.7ms | Allocations: 3550)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.2ms | Allocations: 8535)
+Completed 200 OK in 26ms (Views: 23.6ms | ActiveRecord: 0.0ms | Allocations: 10761)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2022-05-03 12:34:58 +0200
+Processing by Devise::PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.7ms | Allocations: 236)
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 278)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1658)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.0ms | Allocations: 6788)
+Completed 200 OK in 21ms (Views: 18.9ms | ActiveRecord: 0.0ms | Allocations: 8491)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-05-03 12:35:01 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"zan.hrastnik31@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "zan.hrastnik31@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/admin/
+Completed 302 Found in 238ms (ActiveRecord: 1.3ms | Allocations: 5345)
+
+
+Started GET "/admin/" for 127.0.0.1 at 2022-05-03 12:35:01 +0200
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ config/initializers/rails_admin.rb:8:in `block (2 levels) in <main>'
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "cards"[0m
+  [1m[36mCard Load (1.8ms)[0m  [1m[34mSELECT "cards".* FROM "cards" ORDER BY "cards"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites"[0m
+  [1m[36mFavorite Load (1.1ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" ORDER BY "favorites"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering layout /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/application.html.erb
+  Rendering /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/rails_admin/main/dashboard.html.erb within layouts/rails_admin/application
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/rails_admin/main/dashboard.html.erb within layouts/rails_admin/application (Duration: 10.0ms | Allocations: 5114)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/_head.html.erb (Duration: 4.7ms | Allocations: 1908)
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/_secondary_navigation.html.erb (Duration: 1.7ms | Allocations: 749)
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/_navigation.html.erb (Duration: 2.3ms | Allocations: 956)
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/_sidebar_navigation.html.erb (Duration: 2.1ms | Allocations: 967)
+  Rendering /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/content.html.erb
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/content.html.erb (Duration: 1.2ms | Allocations: 579)
+  Rendered layout /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/application.html.erb (Duration: 21.8ms | Allocations: 10065)
+Completed 200 OK in 54ms (Views: 22.7ms | ActiveRecord: 9.7ms | Allocations: 18950)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-03 12:35:05 +0200
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (1.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 2532.7ms | Allocations: 9217)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+  Rendered layout layouts/application.html.erb (Duration: 2554.3ms | Allocations: 15158)
+Completed 200 OK in 2556ms (Views: 2552.5ms | ActiveRecord: 2.8ms | Allocations: 15644)
+
+
+Started GET "/cards/new" for 127.0.0.1 at 2022-05-03 12:35:10 +0200
+Processing by CardsController#new as HTML
+  [1m[36mUser Load (4.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering cards/new.html.erb within layouts/application
+  Rendered cards/new.html.erb within layouts/application (Duration: 0.5ms | Allocations: 76)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.7ms | Allocations: 4972)
+Completed 200 OK in 32ms (Views: 19.0ms | ActiveRecord: 4.9ms | Allocations: 6752)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2022-05-03 12:35:13 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 13ms (ActiveRecord: 2.1ms | Allocations: 2110)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-03 12:35:13 +0200
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (2.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 3071.4ms | Allocations: 9116)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3089.0ms | Allocations: 14028)
+Completed 200 OK in 3091ms (Views: 3087.5ms | ActiveRecord: 2.6ms | Allocations: 14514)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-05-03 12:35:18 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 216)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1750)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 6480)
+Completed 200 OK in 17ms (Views: 14.4ms | ActiveRecord: 0.0ms | Allocations: 7189)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-05-03 12:35:19 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"zan.hrastnik31@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "zan.hrastnik31@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 226ms (ActiveRecord: 1.2ms | Allocations: 2609)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-03 12:35:20 +0200
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (1.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 2510.3ms | Allocations: 9133)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+  Rendered layout layouts/application.html.erb (Duration: 2535.4ms | Allocations: 14958)
+Completed 200 OK in 2538ms (Views: 2532.2ms | ActiveRecord: 4.4ms | Allocations: 15449)
+
+
+Started GET "/cards/10" for 127.0.0.1 at 2022-05-03 12:37:02 +0200
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mCard Load (1.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:78:in `set_card'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cards/show.html.erb:27
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cards/show.html.erb:28
+  Rendered cards/show.html.erb within layouts/application (Duration: 818.8ms | Allocations: 10423)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 827.7ms | Allocations: 15309)
+Completed 200 OK in 834ms (Views: 824.0ms | ActiveRecord: 5.8ms | Allocations: 16624)
+
+
+Started GET "/cards_imports/new" for 127.0.0.1 at 2022-05-03 12:43:44 +0200
+Processing by CardsImportsController#new as HTML
+Completed 500 Internal Server Error in 1ms (Allocations: 678)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1..2)):
+  
+app/controllers/cards_import.rb:7:in `initialize'
+app/controllers/cards_imports_controller.rb:3:in `new'
+app/controllers/cards_imports_controller.rb:3:in `new'
+Started GET "/cards_imports/new" for 127.0.0.1 at 2022-05-03 12:47:00 +0200
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CardsImportsController#new as HTML
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 3355)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1..2)):
+  
+app/controllers/cards_import.rb:7:in `initialize'
+app/controllers/cards_imports_controller.rb:3:in `new'
+app/controllers/cards_imports_controller.rb:3:in `new'
+Started GET "/cards_imports/new" for 127.0.0.1 at 2022-05-03 12:47:09 +0200
+Processing by CardsImportsController#new as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1895)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1..2)):
+  
+app/controllers/cards_import.rb:7:in `initialize'
+app/controllers/cards_imports_controller.rb:3:in `new'
+app/controllers/cards_imports_controller.rb:3:in `new'
+Started GET "/cards_imports/new" for 127.0.0.1 at 2022-05-03 12:47:29 +0200
+Processing by CardsImportsController#new as HTML
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 3236)
+
+
+  
+NameError (undefined local variable or method `current_user' for #<CardsImport:0x00007f68c03270a0>):
+  
+app/controllers/cards_import.rb:7:in `initialize'
+app/controllers/cards_imports_controller.rb:3:in `new'
+app/controllers/cards_imports_controller.rb:3:in `new'
+Started GET "/cards_imports/new" for 127.0.0.1 at 2022-05-03 12:47:31 +0200
+Processing by CardsImportsController#new as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 1761)
+
+
+  
+NameError (undefined local variable or method `current_user' for #<CardsImport:0x00007f68bce6a448>):
+  
+app/controllers/cards_import.rb:7:in `initialize'
+app/controllers/cards_imports_controller.rb:3:in `new'
+app/controllers/cards_imports_controller.rb:3:in `new'
+Started GET "/cards_imports/new" for 127.0.0.1 at 2022-05-03 12:47:41 +0200
+Processing by CardsImportsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards_imports/new.html.erb within layouts/application
+  Rendered cards_imports/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1189)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+  Rendered layout layouts/application.html.erb (Duration: 160.1ms | Allocations: 46045)
+Completed 200 OK in 168ms (Views: 147.1ms | ActiveRecord: 16.2ms | Allocations: 49324)
+
+
+Started POST "/cards_imports" for 127.0.0.1 at 2022-05-03 12:47:54 +0200
+Processing by CardsImportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "cards_import"=>{"file"=>#<ActionDispatch::Http::UploadedFile:0x000055b5cf028930 @tempfile=#<Tempfile:/tmp/RackMultipart20220503-3043-u9oy6u.xlsx>, @original_filename="jako.xlsx", @content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", @headers="Content-Disposition: form-data; name=\"cards_import[file]\"; filename=\"jako.xlsx\"\r\nContent-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\r\n">}, "commit"=>"Import File"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cards_imports_controller.rb:7:in `create'
+  [1m[36mCard Load (2.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/cards_import.rb:29:in `block in load_imported_cards'
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 10.4ms | Allocations: 11633)
+
+
+  
+NameError (undefined local variable or method `user' for #<CardsImport:0x000055b5cf06afd8 @file=#<ActionDispatch::Http::UploadedFile:0x000055b5cf028930 @tempfile=#<Tempfile:/tmp/RackMultipart20220503-3043-u9oy6u.xlsx>, @original_filename="jako.xlsx", @content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", @headers="Content-Disposition: form-data; name=\"cards_import[file]\"; filename=\"jako.xlsx\"\r\nContent-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\r\n">>
+Did you mean?  super):
+  
+app/controllers/cards_import.rb:31:in `block in load_imported_cards'
+app/controllers/cards_import.rb:27:in `map'
+app/controllers/cards_import.rb:27:in `load_imported_cards'
+app/controllers/cards_import.rb:37:in `imported_cards'
+app/controllers/cards_import.rb:41:in `save'
+app/controllers/cards_imports_controller.rb:9:in `create'
+Started GET "/cards_imports/new" for 127.0.0.1 at 2022-05-03 12:50:02 +0200
+Processing by CardsImportsController#new as HTML
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 3185)
+
+
+  
+NameError (undefined local variable or method `current_user' for #<CardsImport:0x00007f68bccaab80>):
+  
+app/controllers/cards_import.rb:7:in `initialize'
+app/controllers/cards_imports_controller.rb:3:in `new'
+app/controllers/cards_imports_controller.rb:3:in `new'
+Started GET "/cards_imports/new" for 127.0.0.1 at 2022-05-03 12:50:04 +0200
+Processing by CardsImportsController#new as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 1757)
+
+
+  
+NameError (undefined local variable or method `current_user' for #<CardsImport:0x00007f68bcb9d198>):
+  
+app/controllers/cards_import.rb:7:in `initialize'
+app/controllers/cards_imports_controller.rb:3:in `new'
+app/controllers/cards_imports_controller.rb:3:in `new'
+Started GET "/cards/10" for 127.0.0.1 at 2022-05-03 12:51:23 +0200
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mCard Load (1.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:78:in `set_card'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cards/show.html.erb:27
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cards/show.html.erb:28
+  Rendered cards/show.html.erb within layouts/application (Duration: 912.8ms | Allocations: 22714)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 924.1ms | Allocations: 27842)
+Completed 200 OK in 952ms (Views: 916.2ms | ActiveRecord: 21.4ms | Allocations: 35934)
+
+
+Started GET "/cards_imports/new" for 127.0.0.1 at 2022-05-03 12:51:28 +0200
+Processing by CardsImportsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards_imports/new.html.erb within layouts/application
+  Rendered cards_imports/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 512)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+  Rendered layout layouts/application.html.erb (Duration: 19.6ms | Allocations: 6965)
+Completed 200 OK in 27ms (Views: 20.6ms | ActiveRecord: 1.5ms | Allocations: 8501)
+
+
+Started POST "/cards_imports" for 127.0.0.1 at 2022-05-03 12:51:35 +0200
+Processing by CardsImportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "cards_import"=>{"file"=>#<ActionDispatch::Http::UploadedFile:0x000055b5cf8aaae0 @tempfile=#<Tempfile:/tmp/RackMultipart20220503-3043-33kclx.xlsx>, @original_filename="jako.xlsx", @content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", @headers="Content-Disposition: form-data; name=\"cards_import[file]\"; filename=\"jako.xlsx\"\r\nContent-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\r\n">}, "commit"=>"Import File"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cards_imports_controller.rb:7:in `create'
+  [1m[36mCard Load (2.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/cards_import.rb:30:in `block in load_imported_cards'
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cards_import.rb:42:in `map'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/cards_import.rb:43:in `each'
+  [1m[36mCard Create (3.7ms)[0m  [1m[32mINSERT INTO "cards" ("print_tag", "name", "price", "psa", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["print_tag", "SKE-001"], ["name", "Blue-Eyes White Dragon"], ["price", 2.0], ["psa", false], ["created_at", "2022-05-03 10:51:35.037672"], ["updated_at", "2022-05-03 10:51:35.037672"], ["user_id", 1]]
+  ↳ app/controllers/cards_import.rb:43:in `each'
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/cards_import.rb:43:in `each'
+Redirected to http://127.0.0.1:3000/cards
+Completed 302 Found in 47ms (ActiveRecord: 14.1ms | Allocations: 7921)
+
+
+Started GET "/cards" for 127.0.0.1 at 2022-05-03 12:51:35 +0200
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (1.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 3408.7ms | Allocations: 10932)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+  Rendered layout layouts/application.html.erb (Duration: 3429.0ms | Allocations: 16728)
+Completed 200 OK in 3432ms (Views: 3426.0ms | ActiveRecord: 4.1ms | Allocations: 17389)
+
+
+Started GET "/cards_imports/new" for 127.0.0.1 at 2022-05-03 12:52:10 +0200
+Processing by CardsImportsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards_imports/new.html.erb within layouts/application
+  Rendered cards_imports/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 513)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+  Rendered layout layouts/application.html.erb (Duration: 50.4ms | Allocations: 13675)
+Completed 200 OK in 57ms (Views: 39.4ms | ActiveRecord: 12.6ms | Allocations: 15866)
+
+
+Started POST "/cards_imports" for 127.0.0.1 at 2022-05-03 12:52:19 +0200
+Processing by CardsImportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "cards_import"=>{"file"=>#<ActionDispatch::Http::UploadedFile:0x00007f68bca932e8 @tempfile=#<Tempfile:/tmp/RackMultipart20220503-3043-e4au0k.xlsx>, @original_filename="jako.xlsx", @content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", @headers="Content-Disposition: form-data; name=\"cards_import[file]\"; filename=\"jako.xlsx\"\r\nContent-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\r\n">}, "commit"=>"Import File"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cards_imports_controller.rb:7:in `create'
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 1.8ms | Allocations: 2887)
+
+
+  
+NameError (undefined local variable or method `current_user' for #<CardsImport:0x00007f68bcb5e7b8 @file=#<ActionDispatch::Http::UploadedFile:0x00007f68bca932e8 @tempfile=#<Tempfile:/tmp/RackMultipart20220503-3043-e4au0k.xlsx>, @original_filename="jako.xlsx", @content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", @headers="Content-Disposition: form-data; name=\"cards_import[file]\"; filename=\"jako.xlsx\"\r\nContent-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\r\n">>):
+  
+app/controllers/cards_import.rb:25:in `load_imported_cards'
+app/controllers/cards_import.rb:38:in `imported_cards'
+app/controllers/cards_import.rb:42:in `save'
+app/controllers/cards_imports_controller.rb:9:in `create'
+Started POST "/cards_imports" for 127.0.0.1 at 2022-05-03 12:52:34 +0200
+Processing by CardsImportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "cards_import"=>{"file"=>#<ActionDispatch::Http::UploadedFile:0x000055b5cefc9cf0 @tempfile=#<Tempfile:/tmp/RackMultipart20220503-3043-ldz9b9.xlsx>, @original_filename="jako.xlsx", @content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", @headers="Content-Disposition: form-data; name=\"cards_import[file]\"; filename=\"jako.xlsx\"\r\nContent-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\r\n">}, "commit"=>"Import File"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cards_imports_controller.rb:7:in `create'
+  [1m[36mCard Load (1.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/cards_import.rb:30:in `block in load_imported_cards'
+Completed 500 Internal Server Error in 62ms (ActiveRecord: 21.1ms | Allocations: 17784)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/cards_import.rb:32:in `block in load_imported_cards'
+app/controllers/cards_import.rb:28:in `map'
+app/controllers/cards_import.rb:28:in `load_imported_cards'
+app/controllers/cards_import.rb:38:in `imported_cards'
+app/controllers/cards_import.rb:42:in `save'
+app/controllers/cards_imports_controller.rb:9:in `create'
+Started POST "/cards_imports" for 127.0.0.1 at 2022-05-03 12:52:52 +0200
+Processing by CardsImportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "cards_import"=>{"file"=>#<ActionDispatch::Http::UploadedFile:0x00007f68bccd2680 @tempfile=#<Tempfile:/tmp/RackMultipart20220503-3043-m7i3wr.xlsx>, @original_filename="jako.xlsx", @content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", @headers="Content-Disposition: form-data; name=\"cards_import[file]\"; filename=\"jako.xlsx\"\r\nContent-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\r\n">}, "commit"=>"Import File"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cards_imports_controller.rb:7:in `create'
+  [1m[36mCard Load (1.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/cards_import.rb:30:in `block in load_imported_cards'
+Completed 500 Internal Server Error in 64ms (ActiveRecord: 20.7ms | Allocations: 17757)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/cards_import.rb:32:in `block in load_imported_cards'
+app/controllers/cards_import.rb:28:in `map'
+app/controllers/cards_import.rb:28:in `load_imported_cards'
+app/controllers/cards_import.rb:38:in `imported_cards'
+app/controllers/cards_import.rb:42:in `save'
+app/controllers/cards_imports_controller.rb:9:in `create'
+Started GET "/cards_imports/new" for 127.0.0.1 at 2022-05-03 12:53:50 +0200
+Processing by CardsImportsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards_imports/new.html.erb within layouts/application
+  Rendered cards_imports/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 513)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+  Rendered layout layouts/application.html.erb (Duration: 46.1ms | Allocations: 13561)
+Completed 200 OK in 51ms (Views: 33.7ms | ActiveRecord: 13.9ms | Allocations: 15745)
+
+
+Started POST "/cards_imports" for 127.0.0.1 at 2022-05-03 12:53:52 +0200
+Processing by CardsImportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "cards_import"=>{"file"=>#<ActionDispatch::Http::UploadedFile:0x000055b5cf578818 @tempfile=#<Tempfile:/tmp/RackMultipart20220503-3043-zaje02.xlsx>, @original_filename="jako.xlsx", @content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", @headers="Content-Disposition: form-data; name=\"cards_import[file]\"; filename=\"jako.xlsx\"\r\nContent-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\r\n">}, "commit"=>"Import File"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cards_imports_controller.rb:7:in `create'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.8ms | Allocations: 1673)
+
+
+  
+ArgumentError (wrong number of arguments (given 2, expected 1)):
+  
+app/controllers/cards_imports_controller.rb:8:in `create'
+Started POST "/cards_imports" for 127.0.0.1 at 2022-05-03 12:54:57 +0200
+Processing by CardsImportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "cards_import"=>{"file"=>#<ActionDispatch::Http::UploadedFile:0x00007f68c00590a8 @tempfile=#<Tempfile:/tmp/RackMultipart20220503-3043-w4jvhr.xlsx>, @original_filename="jako.xlsx", @content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", @headers="Content-Disposition: form-data; name=\"cards_import[file]\"; filename=\"jako.xlsx\"\r\nContent-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\r\n">}, "commit"=>"Import File"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cards_imports_controller.rb:7:in `create'
+  [1m[36mCard Load (1.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/cards_import.rb:30:in `block in load_imported_cards'
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 18.0ms | Allocations: 18334)
+
+
+  
+NameError (undefined local variable or method `user' for #<CardsImport:0x00007f68c018b430 @file=#<ActionDispatch::Http::UploadedFile:0x00007f68c00590a8 @tempfile=#<Tempfile:/tmp/RackMultipart20220503-3043-w4jvhr.xlsx>, @original_filename="jako.xlsx", @content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", @headers="Content-Disposition: form-data; name=\"cards_import[file]\"; filename=\"jako.xlsx\"\r\nContent-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\r\n">>
+Did you mean?  super):
+  
+app/controllers/cards_import.rb:32:in `block in load_imported_cards'
+app/controllers/cards_import.rb:28:in `map'
+app/controllers/cards_import.rb:28:in `load_imported_cards'
+app/controllers/cards_import.rb:38:in `imported_cards'
+app/controllers/cards_import.rb:42:in `save'
+app/controllers/cards_imports_controller.rb:9:in `create'
+Started POST "/cards_imports" for 127.0.0.1 at 2022-05-03 12:55:53 +0200
+Processing by CardsImportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "cards_import"=>{"file"=>#<ActionDispatch::Http::UploadedFile:0x00007f68bce724b8 @tempfile=#<Tempfile:/tmp/RackMultipart20220503-3043-dnm329.xlsx>, @original_filename="jako.xlsx", @content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", @headers="Content-Disposition: form-data; name=\"cards_import[file]\"; filename=\"jako.xlsx\"\r\nContent-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\r\n">}, "commit"=>"Import File"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cards_imports_controller.rb:7:in `create'
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 9.9ms | Allocations: 12888)
+
+
+  
+NameError (undefined local variable or method `user' for #<CardsImportsController:0x00000000029ea0>
+Did you mean?  @user):
+  
+app/controllers/cards_imports_controller.rb:8:in `create'
+Started POST "/cards_imports" for 127.0.0.1 at 2022-05-03 12:56:07 +0200
+Processing by CardsImportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "cards_import"=>{"file"=>#<ActionDispatch::Http::UploadedFile:0x00007f68bcbf9bf0 @tempfile=#<Tempfile:/tmp/RackMultipart20220503-3043-iuftp7.xlsx>, @original_filename="jako.xlsx", @content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", @headers="Content-Disposition: form-data; name=\"cards_import[file]\"; filename=\"jako.xlsx\"\r\nContent-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\r\n">}, "commit"=>"Import File"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cards_imports_controller.rb:7:in `create'
+  [1m[36mCard Load (1.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/cards_import.rb:30:in `block in load_imported_cards'
+Completed 500 Internal Server Error in 59ms (ActiveRecord: 17.5ms | Allocations: 18323)
+
+
+  
+NameError (undefined local variable or method `user' for #<CardsImport:0x00007f68bcd13450 @file=#<ActionDispatch::Http::UploadedFile:0x00007f68bcbf9bf0 @tempfile=#<Tempfile:/tmp/RackMultipart20220503-3043-iuftp7.xlsx>, @original_filename="jako.xlsx", @content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", @headers="Content-Disposition: form-data; name=\"cards_import[file]\"; filename=\"jako.xlsx\"\r\nContent-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\r\n">>
+Did you mean?  super):
+  
+app/controllers/cards_import.rb:32:in `block in load_imported_cards'
+app/controllers/cards_import.rb:28:in `map'
+app/controllers/cards_import.rb:28:in `load_imported_cards'
+app/controllers/cards_import.rb:38:in `imported_cards'
+app/controllers/cards_import.rb:42:in `save'
+app/controllers/cards_imports_controller.rb:9:in `create'
+Started POST "/cards_imports" for 127.0.0.1 at 2022-05-03 12:58:04 +0200
+Processing by CardsImportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "cards_import"=>{"file"=>#<ActionDispatch::Http::UploadedFile:0x000055b5cf1bd2c8 @tempfile=#<Tempfile:/tmp/RackMultipart20220503-3043-l1t8t3.xlsx>, @original_filename="jako.xlsx", @content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", @headers="Content-Disposition: form-data; name=\"cards_import[file]\"; filename=\"jako.xlsx\"\r\nContent-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\r\n">}, "commit"=>"Import File"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cards_imports_controller.rb:7:in `create'
+  [1m[36mCard Load (1.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/cards_import.rb:29:in `block in load_imported_cards'
+Completed 500 Internal Server Error in 62ms (ActiveRecord: 17.5ms | Allocations: 18458)
+
+
+  
+NameError (undefined local variable or method `user' for #<CardsImport:0x000055b5cf924cc8 @file=#<ActionDispatch::Http::UploadedFile:0x000055b5cf1bd2c8 @tempfile=#<Tempfile:/tmp/RackMultipart20220503-3043-l1t8t3.xlsx>, @original_filename="jako.xlsx", @content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", @headers="Content-Disposition: form-data; name=\"cards_import[file]\"; filename=\"jako.xlsx\"\r\nContent-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\r\n">>
+Did you mean?  super):
+  
+app/controllers/cards_import.rb:31:in `block in load_imported_cards'
+app/controllers/cards_import.rb:27:in `map'
+app/controllers/cards_import.rb:27:in `load_imported_cards'
+app/controllers/cards_import.rb:37:in `imported_cards'
+app/controllers/cards_import.rb:41:in `save'
+app/controllers/cards_imports_controller.rb:9:in `create'
+Started POST "/cards_imports" for 127.0.0.1 at 2022-05-03 13:04:47 +0200
+Processing by CardsImportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "cards_import"=>{"file"=>#<ActionDispatch::Http::UploadedFile:0x00007f68bca13d18 @tempfile=#<Tempfile:/tmp/RackMultipart20220503-3043-17j304.xlsx>, @original_filename="jako.xlsx", @content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", @headers="Content-Disposition: form-data; name=\"cards_import[file]\"; filename=\"jako.xlsx\"\r\nContent-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\r\n">}, "commit"=>"Import File"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cards_imports_controller.rb:7:in `create'
+  [1m[36mCard Load (1.8ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/cards_import.rb:29:in `block in load_imported_cards'
+Completed 500 Internal Server Error in 71ms (ActiveRecord: 17.6ms | Allocations: 21415)
+
+
+  
+NameError (undefined local variable or method `current_user' for #<CardsImport:0x00007f68bcd51480 @file=#<ActionDispatch::Http::UploadedFile:0x00007f68bca13d18 @tempfile=#<Tempfile:/tmp/RackMultipart20220503-3043-17j304.xlsx>, @original_filename="jako.xlsx", @content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", @headers="Content-Disposition: form-data; name=\"cards_import[file]\"; filename=\"jako.xlsx\"\r\nContent-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\r\n">>):
+  
+app/controllers/cards_import.rb:31:in `block in load_imported_cards'
+app/controllers/cards_import.rb:27:in `map'
+app/controllers/cards_import.rb:27:in `load_imported_cards'
+app/controllers/cards_import.rb:37:in `imported_cards'
+app/controllers/cards_import.rb:41:in `save'
+app/controllers/cards_imports_controller.rb:9:in `create'
+Started POST "/cards_imports" for 127.0.0.1 at 2022-05-03 13:06:09 +0200
+Processing by CardsImportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "cards_import"=>{"file"=>#<ActionDispatch::Http::UploadedFile:0x000055b5cf69a930 @tempfile=#<Tempfile:/tmp/RackMultipart20220503-3043-q3usdy.xlsx>, @original_filename="jako.xlsx", @content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", @headers="Content-Disposition: form-data; name=\"cards_import[file]\"; filename=\"jako.xlsx\"\r\nContent-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\r\n">}, "commit"=>"Import File"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cards_imports_controller.rb:7:in `create'
+  [1m[36mCard Load (1.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/cards_import.rb:29:in `block in load_imported_cards'
+  Rendering layout layouts/application.html.erb
+  Rendering cards_imports/new.html.erb within layouts/application
+  Rendered cards_imports/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 514)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 5632)
+Completed 200 OK in 87ms (Views: 14.1ms | ActiveRecord: 22.5ms | Allocations: 24442)
+
+
+Started POST "/cards_imports" for 127.0.0.1 at 2022-05-03 13:06:19 +0200
+Processing by CardsImportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "cards_import"=>{"file"=>#<ActionDispatch::Http::UploadedFile:0x00007f68bd0914b0 @tempfile=#<Tempfile:/tmp/RackMultipart20220503-3043-mzrqrl.xlsx>, @original_filename="jako.xlsx", @content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", @headers="Content-Disposition: form-data; name=\"cards_import[file]\"; filename=\"jako.xlsx\"\r\nContent-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\r\n">}, "commit"=>"Import File"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cards_imports_controller.rb:7:in `create'
+  [1m[36mCard Load (1.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/cards_import.rb:29:in `block in load_imported_cards'
+  Rendering layout layouts/application.html.erb
+  Rendering cards_imports/new.html.erb within layouts/application
+  Rendered cards_imports/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 263)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 5055)
+Completed 200 OK in 25ms (Views: 10.0ms | ActiveRecord: 2.6ms | Allocations: 9893)
+
+
+Started POST "/cards_imports" for 127.0.0.1 at 2022-05-03 13:06:22 +0200
+Processing by CardsImportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"Import File"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cards_imports_controller.rb:7:in `create'
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 1.9ms | Allocations: 2068)
+
+
+  
+NoMethodError (undefined method `each' for nil:NilClass):
+  
+app/controllers/cards_import.rb:8:in `initialize'
+app/controllers/cards_imports_controller.rb:8:in `new'
+app/controllers/cards_imports_controller.rb:8:in `create'
+Started GET "/cards_imports" for 127.0.0.1 at 2022-05-03 13:06:25 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/cards_imports"):
+  
+Started GET "/cards_imports" for 127.0.0.1 at 2022-05-03 13:06:27 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/cards_imports"):
+  
+Started GET "/cards_imports" for 127.0.0.1 at 2022-05-03 13:06:30 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/cards_imports"):
+  
+Started GET "/cards_imports/new" for 127.0.0.1 at 2022-05-03 13:06:33 +0200
+Processing by CardsImportsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards_imports/new.html.erb within layouts/application
+  Rendered cards_imports/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 302)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+  Rendered layout layouts/application.html.erb (Duration: 28.6ms | Allocations: 6599)
+Completed 200 OK in 31ms (Views: 26.8ms | ActiveRecord: 3.1ms | Allocations: 7110)
+
+
+Started POST "/cards_imports" for 127.0.0.1 at 2022-05-03 13:06:37 +0200
+Processing by CardsImportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "cards_import"=>{"file"=>#<ActionDispatch::Http::UploadedFile:0x00007f68bd039120 @tempfile=#<Tempfile:/tmp/RackMultipart20220503-3043-1lr515.xlsx>, @original_filename="jako.xlsx", @content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", @headers="Content-Disposition: form-data; name=\"cards_import[file]\"; filename=\"jako.xlsx\"\r\nContent-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\r\n">}, "commit"=>"Import File"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cards_imports_controller.rb:7:in `create'
+  [1m[36mCard Load (1.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/cards_import.rb:29:in `block in load_imported_cards'
+  Rendering layout layouts/application.html.erb
+  Rendering cards_imports/new.html.erb within layouts/application
+  Rendered cards_imports/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 264)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 5056)
+Completed 200 OK in 27ms (Views: 12.4ms | ActiveRecord: 2.4ms | Allocations: 9658)
+
+
+Started GET "/cards_imports" for 127.0.0.1 at 2022-05-03 13:08:44 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/cards_imports"):
+  
+Started GET "/cards_imports/new" for 127.0.0.1 at 2022-05-03 13:08:47 +0200
+Processing by CardsImportsController#new as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cards_imports_controller.rb:4:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering cards_imports/new.html.erb within layouts/application
+  Rendered cards_imports/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 512)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.5ms | Allocations: 5694)
+Completed 200 OK in 75ms (Views: 21.3ms | ActiveRecord: 12.0ms | Allocations: 15548)
+
+
+Started POST "/cards_imports" for 127.0.0.1 at 2022-05-03 13:08:53 +0200
+Processing by CardsImportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "cards_import"=>{"file"=>#<ActionDispatch::Http::UploadedFile:0x00007f68bca09f98 @tempfile=#<Tempfile:/tmp/RackMultipart20220503-3043-fir378.xlsx>, @original_filename="jako.xlsx", @content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", @headers="Content-Disposition: form-data; name=\"cards_import[file]\"; filename=\"jako.xlsx\"\r\nContent-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\r\n">}, "commit"=>"Import File"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cards_imports_controller.rb:8:in `create'
+  [1m[36mCard Load (2.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/cards_import.rb:29:in `block in load_imported_cards'
+  Rendering layout layouts/application.html.erb
+  Rendering cards_imports/new.html.erb within layouts/application
+  Rendered cards_imports/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 332)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 36.2ms | Allocations: 5297)
+Completed 200 OK in 117ms (Views: 37.6ms | ActiveRecord: 16.1ms | Allocations: 15628)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2022-05-03 13:17:09 +0200
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 47ms (ActiveRecord: 12.8ms | Allocations: 15048)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-03 13:17:09 +0200
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (1.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 3675.2ms | Allocations: 16339)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3766.8ms | Allocations: 51761)
+Completed 200 OK in 3822ms (Views: 3797.7ms | ActiveRecord: 7.2ms | Allocations: 55741)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-05-03 13:17:15 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 7.7ms | Allocations: 786)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 26.8ms | Allocations: 4650)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 42.2ms | Allocations: 9607)
+Completed 200 OK in 52ms (Views: 48.8ms | ActiveRecord: 0.0ms | Allocations: 12026)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-05-03 13:17:16 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"zan.hrastnik31@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "zan.hrastnik31@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 248ms (ActiveRecord: 2.6ms | Allocations: 5579)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-03 13:17:16 +0200
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (1.7ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 2896.6ms | Allocations: 10012)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 2906.5ms | Allocations: 15102)
+Completed 200 OK in 2915ms (Views: 2905.9ms | ActiveRecord: 3.3ms | Allocations: 16837)
+
+
+Started GET "/cards_imports/new" for 127.0.0.1 at 2022-05-03 13:17:22 +0200
+Processing by CardsImportsController#new as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cards_imports/new.html.erb within layouts/application
+  Rendered cards_imports/new.html.erb within layouts/application (Duration: 3.9ms | Allocations: 905)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.7ms | Allocations: 6098)
+Completed 200 OK in 39ms (Views: 25.4ms | ActiveRecord: 2.0ms | Allocations: 9664)
+
+
+Started POST "/cards_imports" for 127.0.0.1 at 2022-05-03 13:17:28 +0200
+Processing by CardsImportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "cards_import"=>{"file"=>#<ActionDispatch::Http::UploadedFile:0x00007fd48c1b4500 @tempfile=#<Tempfile:/tmp/RackMultipart20220503-8457-aug96x.xlsx>, @original_filename="jako.xlsx", @content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", @headers="Content-Disposition: form-data; name=\"cards_import[file]\"; filename=\"jako.xlsx\"\r\nContent-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\r\n">}, "commit"=>"Import File"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mCard Load (2.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/cards_import.rb:29:in `block in load_imported_cards'
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cards_import.rb:42:in `map'
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/cards_import.rb:43:in `each'
+  [1m[36mCard Create (6.5ms)[0m  [1m[32mINSERT INTO "cards" ("print_tag", "name", "price", "psa", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["print_tag", "SKE-001"], ["name", "Blue-Eyes White Dragon"], ["price", 2.0], ["psa", false], ["created_at", "2022-05-03 11:17:28.605244"], ["updated_at", "2022-05-03 11:17:28.605244"], ["user_id", 1]]
+  ↳ app/controllers/cards_import.rb:43:in `each'
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/cards_import.rb:43:in `each'
+Redirected to http://127.0.0.1:3000/cards
+Completed 302 Found in 67ms (ActiveRecord: 17.1ms | Allocations: 10854)
+
+
+Started GET "/cards" for 127.0.0.1 at 2022-05-03 13:17:28 +0200
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (1.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 3407.0ms | Allocations: 10885)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3422.2ms | Allocations: 15925)
+Completed 200 OK in 3429ms (Views: 3422.0ms | ActiveRecord: 2.5ms | Allocations: 17501)
+
+
+Started GET "/cards/46" for 127.0.0.1 at 2022-05-03 13:23:36 +0200
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"46"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mCard Load (1.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:78:in `set_card'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cards/show.html.erb:28
+  Rendered cards/show.html.erb within layouts/application (Duration: 872.1ms | Allocations: 9654)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 890.3ms | Allocations: 14558)
+Completed 200 OK in 935ms (Views: 889.5ms | ActiveRecord: 25.4ms | Allocations: 21421)
+
+
+Started DELETE "/cards/46" for 127.0.0.1 at 2022-05-03 13:30:18 +0200
+Processing by CardsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"46"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mCard Load (1.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:78:in `set_card'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/cards_controller.rb:67:in `destroy'
+  [1m[36mCard Destroy (2.2ms)[0m  [1m[31mDELETE FROM "cards" WHERE "cards"."id" = $1[0m  [["id", 46]]
+  ↳ app/controllers/cards_controller.rb:67:in `destroy'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/cards_controller.rb:67:in `destroy'
+Redirected to http://127.0.0.1:3000/cards
+Completed 302 Found in 52ms (ActiveRecord: 28.7ms | Allocations: 8263)
+
+
+Started GET "/cards" for 127.0.0.1 at 2022-05-03 13:30:18 +0200
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (1.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 3542.0ms | Allocations: 9827)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3556.7ms | Allocations: 14732)
+Completed 200 OK in 3564ms (Views: 3556.2ms | ActiveRecord: 3.0ms | Allocations: 16206)
+
+
+Started GET "/cards/45" for 127.0.0.1 at 2022-05-03 13:31:06 +0200
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"45"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mCard Load (4.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:78:in `set_card'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cards/show.html.erb:28
+  Rendered cards/show.html.erb within layouts/application (Duration: 788.6ms | Allocations: 6996)
+  Rendered layout layouts/application.html.erb (Duration: 789.0ms | Allocations: 7070)
+Completed 500 Internal Server Error in 811ms (ActiveRecord: 9.3ms | Allocations: 10251)
+
+
+  
+ActionView::Template::Error (no implicit conversion of String into Integer):
+    40:     </div>
+    41: </div>
+    42: </div>
+    43: <%=data2["data"]["created_at"]%>
+  
+app/views/cards/show.html.erb:43:in `[]'
+app/views/cards/show.html.erb:43
+Started GET "/cards/45" for 127.0.0.1 at 2022-05-03 13:31:18 +0200
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"45"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mCard Load (1.7ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:78:in `set_card'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cards/show.html.erb:28
+  Rendered cards/show.html.erb within layouts/application (Duration: 615.9ms | Allocations: 6805)
+  Rendered layout layouts/application.html.erb (Duration: 616.6ms | Allocations: 6879)
+Completed 500 Internal Server Error in 639ms (ActiveRecord: 5.8ms | Allocations: 10294)
+
+
+  
+ActionView::Template::Error (no implicit conversion of String into Integer):
+    40:     </div>
+    41: </div>
+    42: </div>
+    43: <%=data2["data"]["created_at"].to_i%>
+  
+app/views/cards/show.html.erb:43:in `[]'
+app/views/cards/show.html.erb:43
+Started GET "/cards/45" for 127.0.0.1 at 2022-05-03 13:32:20 +0200
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"45"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mCard Load (0.8ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:78:in `set_card'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cards/show.html.erb:28
+  Rendered cards/show.html.erb within layouts/application (Duration: 643.8ms | Allocations: 7293)
+  Rendered layout layouts/application.html.erb (Duration: 644.1ms | Allocations: 7367)
+Completed 500 Internal Server Error in 656ms (ActiveRecord: 3.3ms | Allocations: 10654)
+
+
+  
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+    40:     </div>
+    41: </div>
+    42: </div>
+    43: <%=data2[0]["data"]["created_at"]%>
+  
+app/views/cards/show.html.erb:43
+Started GET "/cards/45" for 127.0.0.1 at 2022-05-03 13:32:32 +0200
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"45"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mCard Load (2.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:78:in `set_card'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cards/show.html.erb:28
+  Rendered cards/show.html.erb within layouts/application (Duration: 845.7ms | Allocations: 6805)
+  Rendered layout layouts/application.html.erb (Duration: 846.3ms | Allocations: 6880)
+Completed 500 Internal Server Error in 867ms (ActiveRecord: 6.1ms | Allocations: 10188)
+
+
+  
+ActionView::Template::Error (no implicit conversion of String into Integer):
+    40:     </div>
+    41: </div>
+    42: </div>
+    43: <%=data2["data"]["created_at"][0]%>
+  
+app/views/cards/show.html.erb:43:in `[]'
+app/views/cards/show.html.erb:43
+Started GET "/cards/45" for 127.0.0.1 at 2022-05-03 13:32:37 +0200
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"45"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mCard Load (1.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:78:in `set_card'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cards/show.html.erb:28
+  Rendered cards/show.html.erb within layouts/application (Duration: 711.7ms | Allocations: 6801)
+  Rendered layout layouts/application.html.erb (Duration: 712.0ms | Allocations: 6875)
+Completed 500 Internal Server Error in 725ms (ActiveRecord: 4.2ms | Allocations: 10158)
+
+
+  
+ActionView::Template::Error (no implicit conversion of String into Integer):
+    40:     </div>
+    41: </div>
+    42: </div>
+    43: <%=data2["data"]["created_at"][1]%>
+  
+app/views/cards/show.html.erb:43:in `[]'
+app/views/cards/show.html.erb:43
+Started GET "/cards/45" for 127.0.0.1 at 2022-05-03 13:32:46 +0200
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"45"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mCard Load (0.9ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:78:in `set_card'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cards/show.html.erb:28
+  Rendered cards/show.html.erb within layouts/application (Duration: 632.0ms | Allocations: 6806)
+  Rendered layout layouts/application.html.erb (Duration: 632.3ms | Allocations: 6880)
+Completed 500 Internal Server Error in 643ms (ActiveRecord: 3.2ms | Allocations: 10163)
+
+
+  
+ActionView::Template::Error (no implicit conversion of String into Integer):
+    40:     </div>
+    41: </div>
+    42: </div>
+    43: <%=data2["data"]["created_at"].first%>
+  
+app/views/cards/show.html.erb:43:in `[]'
+app/views/cards/show.html.erb:43
+Started GET "/cards/45" for 127.0.0.1 at 2022-05-03 13:33:18 +0200
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"45"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mCard Load (2.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:78:in `set_card'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cards/show.html.erb:28
+  Rendered cards/show.html.erb within layouts/application (Duration: 514.9ms | Allocations: 6813)
+  Rendered layout layouts/application.html.erb (Duration: 515.4ms | Allocations: 6887)
+Completed 500 Internal Server Error in 537ms (ActiveRecord: 6.6ms | Allocations: 10170)
+
+
+  
+ActionView::Template::Error (no implicit conversion of String into Integer):
+    40:     </div>
+    41: </div>
+    42: </div>
+    43: <%jako = data2["data"]["created_at"].first%>
+    44: <%=jako%>
+  
+app/views/cards/show.html.erb:43:in `[]'
+app/views/cards/show.html.erb:43
+Started GET "/cards/45" for 127.0.0.1 at 2022-05-03 13:33:41 +0200
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"45"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mCard Load (0.9ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:78:in `set_card'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cards/show.html.erb:28
+  Rendered cards/show.html.erb within layouts/application (Duration: 494.9ms | Allocations: 7261)
+  Rendered layout layouts/application.html.erb (Duration: 495.3ms | Allocations: 7335)
+Completed 500 Internal Server Error in 508ms (ActiveRecord: 3.9ms | Allocations: 10618)
+
+
+  
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+    40:     </div>
+    41: </div>
+    42: </div>
+    43: <%jako = data2[0]["data"]["created_at"]%>
+    44: <%=jako%>
+  
+app/views/cards/show.html.erb:43
+Started GET "/cards/45" for 127.0.0.1 at 2022-05-03 13:33:51 +0200
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"45"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mCard Load (0.9ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:78:in `set_card'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cards/show.html.erb:28
+  Rendered cards/show.html.erb within layouts/application (Duration: 674.4ms | Allocations: 5879)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 683.6ms | Allocations: 11871)
+Completed 200 OK in 696ms (Views: 685.2ms | ActiveRecord: 3.6ms | Allocations: 15199)
+
+
+Started GET "/cards/45" for 127.0.0.1 at 2022-05-03 13:33:57 +0200
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"45"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mCard Load (2.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:78:in `set_card'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cards/show.html.erb:28
+  Rendered cards/show.html.erb within layouts/application (Duration: 680.1ms | Allocations: 6025)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 696.1ms | Allocations: 12018)
+Completed 200 OK in 719ms (Views: 701.8ms | ActiveRecord: 5.3ms | Allocations: 15337)
+
+
+Started GET "/cards/45" for 127.0.0.1 at 2022-05-03 13:34:04 +0200
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"45"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mCard Load (2.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:78:in `set_card'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cards/show.html.erb:28
+  Rendered cards/show.html.erb within layouts/application (Duration: 548.6ms | Allocations: 6021)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 570.0ms | Allocations: 11994)
+Completed 200 OK in 592ms (Views: 574.3ms | ActiveRecord: 5.8ms | Allocations: 15321)
+
+
+Started GET "/cards/45" for 127.0.0.1 at 2022-05-03 13:34:19 +0200
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"45"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mCard Load (1.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:78:in `set_card'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cards/show.html.erb:28
+  Rendered cards/show.html.erb within layouts/application (Duration: 664.2ms | Allocations: 6011)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 681.7ms | Allocations: 11983)
+Completed 200 OK in 695ms (Views: 682.6ms | ActiveRecord: 4.4ms | Allocations: 15302)
+
+

@@ -28,9 +28,11 @@ class CardsImport
       row = Hash[[header, spreadsheet.row(i)].transpose]
       card = Card.find_by_id(row["id"]) || Card.new
       card.attributes = row.to_hash
+      card.user_id = User.current.id
       card
     end
   end
+
 
   def imported_cards
     @imported_cards ||= load_imported_cards

@@ -9,8 +9,25 @@
       "js.map": [
         "/packs/js/application-2f9638af500a3aa95f0b.js.map"
       ]
+    },
+    "rails_admin": {
+      "js": [
+        "/packs/js/rails_admin-bebd4c560bfafdf37953.js"
+      ],
+      "js.map": [
+        "/packs/js/rails_admin-bebd4c560bfafdf37953.js.map"
+      ]
     }
   },
   "media/fonts/bootstrap-icons.woff2?524846017b983fc8ded9325d94ed40f3": "/packs/media/fonts/bootstrap-icons-a13b8155.woff2",
-  "media/fonts/bootstrap-icons.woff?524846017b983fc8ded9325d94ed40f3": "/packs/media/fonts/bootstrap-icons-c1d7432e.woff"
+  "media/fonts/bootstrap-icons.woff?524846017b983fc8ded9325d94ed40f3": "/packs/media/fonts/bootstrap-icons-c1d7432e.woff",
+  "media/webfonts/fa-solid-900.eot": "/packs/media/webfonts/fa-solid-900-9bbb245e.eot",
+  "media/webfonts/fa-solid-900.svg": "/packs/media/webfonts/fa-solid-900-7a8b4f13.svg",
+  "media/webfonts/fa-solid-900.ttf": "/packs/media/webfonts/fa-solid-900-be9ee23c.ttf",
+  "media/webfonts/fa-solid-900.woff": "/packs/media/webfonts/fa-solid-900-eeccf4f6.woff",
+  "media/webfonts/fa-solid-900.woff2": "/packs/media/webfonts/fa-solid-900-1551f4f6.woff2",
+  "rails_admin.js": "/packs/js/rails_admin-bebd4c560bfafdf37953.js",
+  "rails_admin.js.map": "/packs/js/rails_admin-bebd4c560bfafdf37953.js.map",
+  "vendors~actioncable.js": "/packs/js/vendors~actioncable-c592403c886988a78232.chunk.js",
+  "vendors~actioncable.js.map": "/packs/js/vendors~actioncable-c592403c886988a78232.chunk.js.map"
 }

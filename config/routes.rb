@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'cards_imports/new'
   get 'cards_imports/create'
   resources :favorites

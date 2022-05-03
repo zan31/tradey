@@ -1,6 +1,7 @@
 class CardsImportsController < ApplicationController
   def new
     @cards_import = CardsImport.new
+    @user = current_user
   end
 
   def create
