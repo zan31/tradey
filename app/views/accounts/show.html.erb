@@ -1,6 +1,7 @@
 <% content_for :title, @user.name %>
 <div id="wrapper" style="margin-top: 2em;">
 <div class="container" id="main-page">
+<h1 class="display-2">These are the cards of <%= @user.name%></h1>
 <% $x = 0 %>
 <% @cards.reverse.each do |card| %>
 <%response = Faraday.get("http://yugiohprices.com/api/price_for_print_tag/#{card.print_tag}")%>
@@ -57,6 +58,11 @@
         <span style="color:orange;">Perfect price</span>
         <%end%>
         </p>
+        <%if user_signed_in? %>
+      <% if(current_user.id == card.user.id)%> 
+        <%= link_to 'Delete', card, method: :delete, data: { confirm: 'Are you sure?' }, class:"link-danger" %>
+        <%end%>
+        <%end%> 
   </div>
 <div class="card-footer text-muted">
     Listed <%= time_ago_in_words(card.created_at) %> ago

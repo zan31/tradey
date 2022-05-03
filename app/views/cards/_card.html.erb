@@ -5,6 +5,7 @@
     <p class="card-text ">
     <% @usercards = Card.where(user_id: user.id) %> <%= @usercards.count %> listed cards
     </p>
+    <%= link_to '', account_path(user.name), class:"stretched-link" %>
   </div>
     <div class="card-footer text-muted">
      <div class="row g-0">

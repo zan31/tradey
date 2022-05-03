@@ -4,6 +4,7 @@ class AccountsController < ApplicationController
 
     def show
         @cards = Card.where(user_id: @user.id)
+        @user = @user
     end
 
     private 
