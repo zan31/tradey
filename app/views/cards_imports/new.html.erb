@@ -1,0 +1,27 @@
+<h1>Import Cards From Excel</h1>
+
+<p>
+  Note: Only import spreadsheets that were previously downloaded from this
+  application.
+</p>
+
+<h3>Requirements</h3>
+<ul>
+  <li>Here you could list the validations you have in place for your model</li>
+  <li>That way your user has a better chance of successful import</li>
+</ul>
+
+<h5>Select File</h5>
+<%= form_for @cards_import do |f| %>
+  <% if @cards_import.errors.any? %>
+    <%= pluralize(@cards_import.errors.count, "error") %> prevented us from
+    importing your spreadsheet. Please update your spreadsheet and try agin.
+    <ul>
+      <% @cards_import.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  <%= f.file_field :file %>
+  <%= f.submit "Import File" %>
+<% end %>

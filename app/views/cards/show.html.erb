@@ -1,5 +1,7 @@
 <%response = Faraday.get("http://yugiohprices.com/api/price_for_print_tag/#{@card.print_tag}")%>
 <% data = JSON.parse(response.body) %>
+<%response2 = Faraday.get("http://yugiohprices.com/api/price_history/#{@card.print_tag}")%>
+<% data2 = JSON.parse(response2.body) %>
 <%split = data["data"]['name'].split
   splitc = split.join('_')
   split1 = split.join('%20')
@@ -22,6 +24,11 @@
         Price: <%= @card.price %> €
         </p>
         <%= link_to '<i class="bi bi-door-closed-fill"></i> Back'.html_safe, cards_path %>
+        <%if user_signed_in? %>
+      <% if(current_user.id == @card.user.id)%> 
+        <%= link_to 'Delete', @card, method: :delete, data: { confirm: 'Are you sure?' }, class:"link-danger" %>
+        <%end%>
+        <%end%> 
       </div>
     </div>
   </div>
@@ -33,4 +40,4 @@
     </div>
 </div>
 </div>
-<%= link_to 'Edit', edit_card_path(@card) %>
+<%=data2%>
