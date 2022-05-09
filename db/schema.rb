@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2022_04_25_112957) do
     t.string "print_tag"
     t.string "name"
     t.float "price"
-    t.boolean "psa"
+    t.integer "psa"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false

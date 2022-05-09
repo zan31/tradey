@@ -9,20 +9,24 @@
     <div class="row">
     <% end %>
     <div class="col-sm-3">
-    <%if card.psa%>
+    <%if card.psa == 10 %>
 <div class="card mb-3 h-100" style="max-width:250px; border-color:#EEBC1D !important;">
-<%else%>
-<div class="card mb-3 h-100" style="max-width:250px;">
+<%elsif card.psa == 5 %>
+<div class="card mb-3 h-100" style="max-width:250px; border-color:green !important;">
+<%elsif card.psa == 1 %>
+<div class="card mb-3 h-100" style="max-width:250px; border-color:red !important;">
 <%end%>
     <%split = data["data"]['name'].split
     splitc = split.join('_')
     %>
       <%= image_tag("http://yugiohprices.com/api/card_image/#{splitc}", class:"card-img-top") %>
       <div class="card-body">
-      <%if card.psa%>
-        <h5 class="card-title"><%= card.name %> <span style="color: #EEBC1D;">PSA-10</span></h5>
-        <%else%>
-        <h5 class="card-title"><%= card.name %></h5>
+      <%if card.psa == 10 %>
+        <h5 class="card-title"><%= card.name %> <br/><span style="color: #EEBC1D;">Perfect condition</span></h5>
+        <%elsif card.psa == 5 %>
+        <h5 class="card-title"><%= card.name %> <br/><span style="color: green;">Good condition</span></h5>
+        <%elsif card.psa == 1 %>
+        <h5 class="card-title"><%= card.name %> <br/><span style="color: red;">Bad condition</span></h5>
         <%end%>
         <p class="card-text">
         <b>Print tag:</b> <%= card.print_tag %>
@@ -32,18 +36,24 @@
         <b>Price:</b> <%= card.price %> €
         <br>
         <b>Suggested price:</b>
-        <%if card.psa%>
+        <%if card.psa == 10 %>
         <% 
         sugg = data['data']['price_data']['price_data']['data']['prices']['high']
         diff = sugg - card.price 
         %>
         <%= data['data']['price_data']['price_data']['data']['prices']['high'] %> €
-        <%else%>
+        <% elsif card.psa == 5 %>
         <% 
         sugg = data['data']['price_data']['price_data']['data']['prices']['average']
         diff = sugg - card.price 
         %>
         <%= data['data']['price_data']['price_data']['data']['prices']['average'] %> €
+        <% elsif card.psa == 1 %>
+        <% 
+        sugg = data['data']['price_data']['price_data']['data']['prices']['low']
+        diff = sugg - card.price 
+        %>
+        <%= data['data']['price_data']['price_data']['data']['prices']['low'] %> €
         <%end%>
         <br>
         <%if(diff > 0)%>

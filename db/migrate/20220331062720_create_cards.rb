@@ -4,7 +4,7 @@ class CreateCards < ActiveRecord::Migration[6.1]
       t.string :print_tag
       t.string :name
       t.float :price
-      t.boolean :psa
+      t.integer :psa
 
       t.timestamps
     end

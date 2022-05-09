@@ -1,0 +1,1 @@
+{"ast":null,"code":"import Chartkick from \"chartkick\";\nimport Chart from \"chart.js/auto\";\nimport \"chartjs-adapter-date-fns\";\nChartkick.use(Chart);","map":null,"metadata":{},"sourceType":"module"}

@@ -28,21 +28,17 @@
     <div class="row">
     <% end %>
     <div class="col-sm-3">
-    <%if card.psa%>
-<div class="card mb-3 h-100" style="max-width:250px; border-color:#EEBC1D !important;">
-<%else%>
+
 <div class="card mb-3 h-100" style="max-width:250px;">
-<%end%>
+
     <%split = data["data"]['name'].split
     splitc = split.join('_')
     %>
       <%= image_tag("http://yugiohprices.com/api/card_image/#{splitc}", class:"card-img-top") %>
       <div class="card-body">
-      <%if card.psa%>
-        <h5 class="card-title"><%= card.name %> <span style="color: #EEBC1D;">PSA-10</span></h5>
-        <%else%>
+
         <h5 class="card-title"><%= card.name %></h5>
-        <%end%>
+
         <p class="card-text">
         <b>Print tag:</b> <%= card.print_tag %>
         <br>
@@ -51,19 +47,11 @@
         <b>Price:</b> <%= card.price %> €
         <br>
         <b>Suggested price:</b>
-        <%if card.psa%>
-        <% 
-        sugg = data['data']['price_data']['price_data']['data']['prices']['high']
-        diff = sugg - card.price 
-        %>
-        <%= data['data']['price_data']['price_data']['data']['prices']['high'] %> €
-        <%else%>
         <% 
         sugg = data['data']['price_data']['price_data']['data']['prices']['average']
         diff = sugg - card.price 
         %>
         <%= data['data']['price_data']['price_data']['data']['prices']['average'] %> €
-        <%end%>
         <br>
         <%if(diff > 0)%>
         <span style="color:green;">Good deal</span>

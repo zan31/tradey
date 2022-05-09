@@ -40,7 +40,6 @@ splitc = split.join('+')
   <% if @card.errors.any? %>
     <div id="error_explanation" class="alert alert-danger">
       <h2><%= pluralize(@card.errors.count, "error") %> prohibited this card from being saved:</h2>
-
       <ul>
         <% @card.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -59,19 +58,32 @@ splitc = split.join('+')
      <option value="<%=i['print_tag']%>"><%=i['print_tag']%> | <%=i['name']%></option>
      <%end%>
     </select>
+<script>
 
+var card_select = document.getElementById("card_print_tag");
+
+card_select.addEventListener("change", function() {
+    fetch("http://city.zanhrastnik.com/api.php?card="+card_select.value)
+  .then(response => response.json())
+  .then(data => document.getElementById("sugg").innerHTML = "Suggested price: " + data["data"]["price_data"]["price_data"]["data"]["prices"]["average"] + "€");
+});
+  </script>
   </div>
-
+  <p id="sugg"></p>
   <div class="mb-3">
     <%= form.label :price, class:"form-label" %>
     <%= form.number_field :price, step: 0.01, min: 0, class:"form-control" %>
   </div>
 
-  <div class="mb-3">
-    <%= form.label 'Psa-10', class:"form-check-label" %>
-    <%= form.check_box :psa, class:"form-check-input" %>
-  </div>
-
+<div class="mb-3">
+<label class="form-label" for="card_psa">Pick condition</label>
+  <select class="form-select" name="card[psa]" id="card_psa">
+  <option selected disabled>Pick condition</option>
+  <option value="1">Rough condition</option>
+  <option value="5">Good condition</option>
+  <option value="10">Perfect condition</option>
+</select>
+</div>
   <div class="mb-3">
     <%= form.submit "List", class:"btn btn-primary", id:"login"%>
   </div>

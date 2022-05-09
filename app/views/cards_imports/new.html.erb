@@ -1,17 +1,7 @@
-<h1>Import Cards From Excel</h1>
+<h1 class="display-2">Import Cards From Excel</h1>
 
-<p>
-  Note: Only import spreadsheets that were previously downloaded from this
-  application.
-</p>
-
-<h3>Requirements</h3>
-<ul>
-  <li>Here you could list the validations you have in place for your model</li>
-  <li>That way your user has a better chance of successful import</li>
-</ul>
-
-<h5>Select File</h5>
+<h1 class="display-6">Requirements</h1>
+You will need print_tag, name, condition (psa: 1 = bad, 5 = good, 10 = perfect) and a price
 <%= form_for @cards_import do |f| %>
   <% if @cards_import.errors.any? %>
     <%= pluralize(@cards_import.errors.count, "error") %> prevented us from
@@ -22,6 +12,10 @@
       <% end %>
     </ul>
   <% end %>
-  <%= f.file_field :file %>
-  <%= f.submit "Import File" %>
+  <div class="mb-3">
+  <%= f.file_field :file, class:"form-control" %>
+  </div>
+  <div class="mb-3">
+  <%= f.submit "Import File", class:"btn btn-primary", id:"login" %>
+  </div>
 <% end %>
