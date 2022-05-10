@@ -28,12 +28,19 @@ Faraday.default_adapter = :net_http
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
        <% if user_signed_in? %> 
+       <%if current_user.user_role? && !current_user.superadmin_role %>
         <li class="nav-item">
           <%= link_to 'New card'.html_safe, new_card_path, class:"nav-link" %>
         </li>
         <li class="nav-item">
             <%= link_to 'Edit account'.html_safe, edit_user_registration_path, class:"nav-link" %>
           </li>
+        <%end%>
+        <%if current_user.superadmin_role? %>
+        <li class="nav-item">
+          <%= link_to 'Admin panel'.html_safe, rails_admin_path, class:"nav-link" %>
+          </li>
+        <%end%>
           <li class="nav-item">
             <%= link_to 'Logout'.html_safe, destroy_user_session_path, method: :delete, class:"nav-link"%>
           </li>
@@ -45,6 +52,7 @@ Faraday.default_adapter = :net_http
             <%= link_to 'Registration'.html_safe, new_user_registration_path, class:"nav-link"%>
           </li>
       <% end %>
+      <%if current_user.user_role? && !current_user.superadmin_role %>
       <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Card stuff
@@ -61,6 +69,7 @@ Faraday.default_adapter = :net_http
           </ul>
         </li>
       </ul>
+      <%end%>
       <%= link_to '<i class="bi bi-x-lg"></i>'.html_safe, root_path, class:"nav-link", style:"color:rgb(195,71,71);"%>
       <%= form_with url: search_path, method: :get, class:"d-flex"  , local: true do |f| %>
           <%= f.text_field :keyword, value: @keyword, class:"form-control me-2", type:"search", placeholder:"Search"%>

@@ -1,8 +1,5 @@
 RailsAdmin.config do |config|
-  config.asset_source = :webpacker
   config.parent_controller = 'ApplicationController'
-  ### Popular gems integration
-
   ## == Devise ==
   config.authenticate_with do
     warden.authenticate! scope: :user
@@ -10,7 +7,7 @@ RailsAdmin.config do |config|
   config.current_user_method(&:current_user)
 
   ## == CancanCan ==
-  #config.authorize_with :cancancan
+  config.authorize_with :cancancan
 
   ## == Pundit ==
   # config.authorize_with :pundit
@@ -18,7 +15,7 @@ RailsAdmin.config do |config|
   ## == PaperTrail ==
   # config.audit_with :paper_trail, 'User', 'PaperTrail::Version' # PaperTrail >= 3.0.0
 
-  ### More at https://github.com/railsadminteam/rails_admin/wiki/Base-configuration
+  ### More at https://github.com/sferik/rails_admin/wiki/Base-configuration
 
   ## == Gravatar integration ==
   ## To disable Gravatar integration in Navigation Bar set to false

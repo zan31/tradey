@@ -2,6 +2,8 @@ class User < ApplicationRecord
   has_many :cards
   has_many :favorites
 
+  validates :name, presence: true
+
   def self.current
     Thread.current[:user]
   end
