@@ -32442,3 +32442,526 @@ Processing by RailsAdmin::MainController#dashboard as HTML
 Completed 200 OK in 87ms (Views: 56.4ms | ActiveRecord: 9.9ms | Allocations: 35753)
 
 
+Started GET "/" for 127.0.0.1 at 2022-05-10 11:25:04 +0200
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (2.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 7.6ms | Allocations: 2134)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 137.3ms | Allocations: 39112)
+Completed 200 OK in 195ms (Views: 140.8ms | ActiveRecord: 18.3ms | Allocations: 54862)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2022-05-10 11:25:07 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 26ms (ActiveRecord: 2.1ms | Allocations: 6002)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-10 11:25:07 +0200
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.8ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 978)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 7010)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.8ms | Allocations: 7741)
+
+
+  
+ActionView::Template::Error (undefined method `user_role?' for nil:NilClass):
+    52:             <%= link_to 'Registration'.html_safe, new_user_registration_path, class:"nav-link"%>
+    53:           </li>
+    54:       <% end %>
+    55:       <%if current_user.user_role? && !current_user.superadmin_role %>
+    56:       <li class="nav-item dropdown">
+    57:           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    58:             Card stuff
+  
+app/views/layouts/application.html.erb:55
+Started GET "/" for 127.0.0.1 at 2022-05-10 11:25:10 +0200
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (2.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 986)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 59.5ms | Allocations: 6638)
+Completed 500 Internal Server Error in 62ms (ActiveRecord: 2.2ms | Allocations: 7277)
+
+
+  
+ActionView::Template::Error (undefined method `user_role?' for nil:NilClass):
+    52:             <%= link_to 'Registration'.html_safe, new_user_registration_path, class:"nav-link"%>
+    53:           </li>
+    54:       <% end %>
+    55:       <%if current_user.user_role? && !current_user.superadmin_role %>
+    56:       <li class="nav-item dropdown">
+    57:           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    58:             Card stuff
+  
+app/views/layouts/application.html.erb:55
+Started GET "/" for 127.0.0.1 at 2022-05-10 11:25:29 +0200
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (1.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1918)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 3819)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 1.0ms | Allocations: 5509)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+  <head>
+    <title>Tradey</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+      <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= favicon_link_tag asset_path('logo.png') %>
+  </head>
+
+  <body>
+  <% 
+require 'faraday'
+require 'faraday/net_http'
+Faraday.default_adapter = :net_http
+%>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <%= link_to image_tag("logopng.png", class:"logo"), root_path %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+       <% if user_signed_in? %> 
+       <%if current_user.user_role? && !current_user.superadmin_role %>
+        <li class="nav-item">
+          <%= link_to 'New card'.html_safe, new_card_path, class:"nav-link" %>
+        </li>
+        <li class="nav-item">
+            <%= link_to 'Edit account'.html_safe, edit_user_registration_path, class:"nav-link" %>
+          </li>
+
+        <%if current_user.superadmin_role? %>
+        <li class="nav-item">
+          <%= link_to 'Admin panel'.html_safe, rails_admin_path, class:"nav-link" %>
+          </li>
+        <%end%>
+          <li class="nav-item">
+            <%= link_to 'Logout'.html_safe, destroy_user_session_path, method: :delete, class:"nav-link"%>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to 'Login'.html_safe, new_user_session_path, class:"nav-link" %> 
+          </li>
+          <li class="nav-item" style="color: #fdd605;">
+            <%= link_to 'Registration'.html_safe, new_user_registration_path, class:"nav-link"%>
+          </li>
+      <% end %>
+      <%if current_user.user_role? && !current_user.superadmin_role %>
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Card stuff
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <% if user_signed_in? %>
+            <li><%= link_to 'Favorites'.html_safe, favorites_path, class:"nav-link"%></li>
+            <li><%= link_to 'Import cards'.html_safe, new_cards_import_path, class:"nav-link"%></li>
+            <li><%= link_to 'Your account'.html_safe, account_path(current_user.name), class:"nav-link"%></li>
+            <%end%>
+            <li><%= link_to 'Trending'.html_safe, trending_path, class:"nav-link"%></li>
+            <li><%= link_to 'Top'.html_safe, top_path, class:"nav-link"%></li>
+            
+          </ul>
+        </li>
+      </ul>
+      <%end%>
+      <%= link_to '<i class="bi bi-x-lg"></i>'.html_safe, root_path, class:"nav-link", style:"color:rgb(195,71,71);"%>
+      <%= form_with url: search_path, method: :get, class:"d-flex"  , local: true do |f| %>
+          <%= f.text_field :keyword, value: @keyword, class:"form-control me-2", type:"search", placeholder:"Search"%>
+          <%= f.submit 'Search', class:"btn btn-outline-danger", style:"border-color: rgb(195,71,71);", id:"srcbtn" %>
+        <% end %>
+    </div>
+  </div>
+</nav>
+  <% if flash[:notice] %>
+    <div class="alert alert-success" id="flash" role="alert"><%= notice %></div>
+    <script type="text/javascript">
+setTimeout(function () {
+  
+            // Closing the alert
+            document.querySelector('#flash').style.display = "none";
+        }, 2500);
+    </script>
+    <% end %>
+    <% if flash[:alert] %>
+    <div class="alert alert-danger" id="flash"  role="alert"><%= alert %></div>
+    <script type="text/javascript">
+setTimeout(function () {
+            // Closing the alert
+            document.querySelector('#flash').style.display = "none";
+        }, 5000);
+    </script>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>
+
+):
+1:    <!DOCTYPE html>
+2:    <html>
+3:      <head>
+4:        <title>Tradey</title>
+5:        <meta name="viewport" content="width=device-width,initial-scale=1">
+6:        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+7:        <%= csrf_meta_tags %>
+8:        <%= csp_meta_tag %>
+9:    
+10:          <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+11:      <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+12:      <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+13:      <%= favicon_link_tag asset_path('logo.png') %>
+14:      </head>
+15:    
+16:      <body>
+17:      <% 
+18:    require 'faraday'
+19:    require 'faraday/net_http'
+20:    Faraday.default_adapter = :net_http
+21:    %>
+22:      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+23:      <div class="container-fluid">
+24:        <%= link_to image_tag("logopng.png", class:"logo"), root_path %>
+25:        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+26:          <span class="navbar-toggler-icon"></span>
+27:        </button>
+28:        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+29:          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+30:           <% if user_signed_in? %> 
+31:           <%if current_user.user_role? && !current_user.superadmin_role %>
+32:            <li class="nav-item">
+33:              <%= link_to 'New card'.html_safe, new_card_path, class:"nav-link" %>
+34:            </li>
+35:            <li class="nav-item">
+36:                <%= link_to 'Edit account'.html_safe, edit_user_registration_path, class:"nav-link" %>
+37:              </li>
+38:    
+39:            <%if current_user.superadmin_role? %>
+40:            <li class="nav-item">
+41:              <%= link_to 'Admin panel'.html_safe, rails_admin_path, class:"nav-link" %>
+42:              </li>
+43:            <%end%>
+44:              <li class="nav-item">
+45:                <%= link_to 'Logout'.html_safe, destroy_user_session_path, method: :delete, class:"nav-link"%>
+46:              </li>
+47:            <% else %>
+48:              <li class="nav-item">
+49:                <%= link_to 'Login'.html_safe, new_user_session_path, class:"nav-link" %> 
+50:              </li>
+51:              <li class="nav-item" style="color: #fdd605;">
+52:                <%= link_to 'Registration'.html_safe, new_user_registration_path, class:"nav-link"%>
+53:              </li>
+54:          <% end %>
+55:          <%if current_user.user_role? && !current_user.superadmin_role %>
+56:          <li class="nav-item dropdown">
+57:              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+58:                Card stuff
+59:              </a>
+60:              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+61:                <% if user_signed_in? %>
+62:                <li><%= link_to 'Favorites'.html_safe, favorites_path, class:"nav-link"%></li>
+63:                <li><%= link_to 'Import cards'.html_safe, new_cards_import_path, class:"nav-link"%></li>
+64:                <li><%= link_to 'Your account'.html_safe, account_path(current_user.name), class:"nav-link"%></li>
+65:                <%end%>
+66:                <li><%= link_to 'Trending'.html_safe, trending_path, class:"nav-link"%></li>
+67:                <li><%= link_to 'Top'.html_safe, top_path, class:"nav-link"%></li>
+68:                
+69:              </ul>
+70:            </li>
+71:          </ul>
+72:          <%end%>
+73:          <%= link_to '<i class="bi bi-x-lg"></i>'.html_safe, root_path, class:"nav-link", style:"color:rgb(195,71,71);"%>
+74:          <%= form_with url: search_path, method: :get, class:"d-flex"  , local: true do |f| %>
+75:              <%= f.text_field :keyword, value: @keyword, class:"form-control me-2", type:"search", placeholder:"Search"%>
+76:              <%= f.submit 'Search', class:"btn btn-outline-danger", style:"border-color: rgb(195,71,71);", id:"srcbtn" %>
+77:            <% end %>
+78:        </div>
+79:      </div>
+80:    </nav>
+81:      <% if flash[:notice] %>
+82:        <div class="alert alert-success" id="flash" role="alert"><%= notice %></div>
+83:        <script type="text/javascript">
+84:    setTimeout(function () {
+85:      
+86:                // Closing the alert
+87:                document.querySelector('#flash').style.display = "none";
+88:            }, 2500);
+89:        </script>
+90:        <% end %>
+91:        <% if flash[:alert] %>
+92:        <div class="alert alert-danger" id="flash"  role="alert"><%= alert %></div>
+93:        <script type="text/javascript">
+94:    setTimeout(function () {
+95:                // Closing the alert
+96:                document.querySelector('#flash').style.display = "none";
+97:            }, 5000);
+98:        </script>
+99:        <% end %>
+100:        <%= yield %>
+101:      </body>
+102:    </html>
+  
+app/views/layouts/application.html.erb:105: syntax error, unexpected end-of-input, expecting `end'
+app/views/layouts/application.html.erb:105: syntax error, unexpected end-of-input, expecting `end'
+app/views/layouts/application.html.erb:105: syntax error, unexpected end-of-input, expecting `end'
+app/views/layouts/application.html.erb:105: syntax error, unexpected end-of-input, expecting `end'
+app/views/layouts/application.html.erb:105: syntax error, unexpected end-of-input, expecting `end'
+app/views/layouts/application.html.erb:105: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/" for 127.0.0.1 at 2022-05-10 11:28:24 +0200
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (1.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 6.7ms | Allocations: 1918)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 7918)
+Completed 200 OK in 22ms (Views: 18.1ms | ActiveRecord: 1.1ms | Allocations: 9737)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-10 11:28:46 +0200
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.8ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1909)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 8526)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.8ms | Allocations: 10257)
+
+
+  
+ActionView::Template::Error (undefined method `user_role?' for nil:NilClass):
+    53:           </li>
+    54:       <% end %>
+    55:       <%end%>
+    56:       <%if current_user.user_role? && !current_user.superadmin_role %>
+    57:       
+    58:       <li class="nav-item dropdown">
+    59:           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+  
+app/views/layouts/application.html.erb:56
+Started GET "/" for 127.0.0.1 at 2022-05-10 11:29:31 +0200
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (2.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 10.3ms | Allocations: 1910)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 38.6ms | Allocations: 8609)
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 2.3ms | Allocations: 10348)
+
+
+  
+ActionView::Template::Error (undefined method `user_role?' for nil:NilClass):
+    53:             <%= link_to 'Registration'.html_safe, new_user_registration_path, class:"nav-link"%>
+    54:           </li>
+    55:       
+    56:       <%if current_user.user_role? && !current_user.superadmin_role %>
+    57:       <li class="nav-item dropdown">
+    58:           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    59:             Card stuff
+  
+app/views/layouts/application.html.erb:56
+Started GET "/" for 127.0.0.1 at 2022-05-10 11:29:33 +0200
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (1.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 876)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 6362)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 1.4ms | Allocations: 6953)
+
+
+  
+ActionView::Template::Error (undefined method `user_role?' for nil:NilClass):
+    53:             <%= link_to 'Registration'.html_safe, new_user_registration_path, class:"nav-link"%>
+    54:           </li>
+    55:       
+    56:       <%if current_user.user_role? && !current_user.superadmin_role %>
+    57:       <li class="nav-item dropdown">
+    58:           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    59:             Card stuff
+  
+app/views/layouts/application.html.erb:56
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2022-05-10 11:30:34 +0200
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (2.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 9.6ms | Allocations: 1910)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 31.1ms | Allocations: 7991)
+Completed 200 OK in 39ms (Views: 34.1ms | ActiveRecord: 2.0ms | Allocations: 9701)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-05-10 11:30:36 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.6ms | Allocations: 267)
+  Rendered devise/shared/_links.html.erb (Duration: 3.1ms | Allocations: 699)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 20.5ms | Allocations: 5141)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 34.1ms | Allocations: 10017)
+Completed 200 OK in 43ms (Views: 40.6ms | ActiveRecord: 0.0ms | Allocations: 12468)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-05-10 11:30:46 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.5ms | Allocations: 346)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 8.3ms | Allocations: 2908)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.9ms | Allocations: 7813)
+Completed 200 OK in 20ms (Views: 18.5ms | ActiveRecord: 0.0ms | Allocations: 9612)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-05-10 11:30:47 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"zan.hrastnik31@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "zan.hrastnik31@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 229ms (ActiveRecord: 2.6ms | Allocations: 5192)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-10 11:30:48 +0200
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (1.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 717)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 5683)
+Completed 200 OK in 15ms (Views: 9.3ms | ActiveRecord: 2.1ms | Allocations: 7380)
+
+
+Started GET "/admin" for 127.0.0.1 at 2022-05-10 11:30:49 +0200
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "cards" WHERE (TRUE=TRUE)[0m
+  [1m[36mCard Load (0.7ms)[0m  [1m[34mSELECT "cards".* FROM "cards" ORDER BY "cards"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites"[0m
+  [1m[36mFavorite Load (0.7ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" ORDER BY "favorites"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering layout /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/application.html.erb
+  Rendering /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/rails_admin/main/dashboard.html.erb within layouts/rails_admin/application
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/rails_admin/main/dashboard.html.erb within layouts/rails_admin/application (Duration: 7.6ms | Allocations: 6428)
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/_head.html.erb (Duration: 26.9ms | Allocations: 20016)
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/_secondary_navigation.html.erb (Duration: 3.4ms | Allocations: 1322)
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/_navigation.html.erb (Duration: 5.0ms | Allocations: 1941)
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/_sidebar_navigation.html.erb (Duration: 2.1ms | Allocations: 1309)
+  Rendering /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/content.html.erb
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/content.html.erb (Duration: 2.5ms | Allocations: 897)
+  Rendered layout /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/application.html.erb (Duration: 47.3ms | Allocations: 32217)
+Completed 200 OK in 191ms (Views: 50.3ms | ActiveRecord: 21.4ms | Allocations: 108444)
+
+
+Started GET "/admin" for 127.0.0.1 at 2022-05-10 11:30:49 +0200
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "cards" WHERE (TRUE=TRUE)[0m
+  [1m[36mCard Load (2.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" ORDER BY "cards"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites"[0m
+  [1m[36mFavorite Load (1.8ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" ORDER BY "favorites"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering layout /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/application.html.erb
+  Rendering /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/rails_admin/main/dashboard.html.erb within layouts/rails_admin/application
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/rails_admin/main/dashboard.html.erb within layouts/rails_admin/application (Duration: 18.0ms | Allocations: 5100)
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/_head.html.erb (Duration: 32.1ms | Allocations: 18081)
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/_secondary_navigation.html.erb (Duration: 1.6ms | Allocations: 793)
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/_navigation.html.erb (Duration: 2.1ms | Allocations: 995)
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/_sidebar_navigation.html.erb (Duration: 1.3ms | Allocations: 1126)
+  Rendering /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/content.html.erb
+  Rendered /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/content.html.erb (Duration: 1.0ms | Allocations: 595)
+  Rendered layout /home/zan31/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rails_admin-3.0.0/app/views/layouts/rails_admin/application.html.erb (Duration: 55.9ms | Allocations: 26428)
+Completed 200 OK in 101ms (Views: 56.9ms | ActiveRecord: 14.7ms | Allocations: 35734)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2022-05-10 11:30:56 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 9ms (ActiveRecord: 1.6ms | Allocations: 2131)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-10 11:30:56 +0200
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (1.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 877)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 5748)
+Completed 200 OK in 11ms (Views: 9.2ms | ActiveRecord: 1.0ms | Allocations: 6323)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-05-10 11:30:57 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 45)
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 163)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 7.2ms | Allocations: 2004)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.2ms | Allocations: 6672)
+Completed 200 OK in 25ms (Views: 22.6ms | ActiveRecord: 0.0ms | Allocations: 7386)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-05-10 11:30:58 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 216)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1733)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 6400)
+Completed 200 OK in 14ms (Views: 12.2ms | ActiveRecord: 0.0ms | Allocations: 7158)
+
+
