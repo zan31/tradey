@@ -1,24 +1,42 @@
-# README
+## Tech Stack
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+**Rails:** 6
 
-Things you may want to cover:
+**Ruby:** 3
 
-* Ruby version
+![Noizer Logo](https://i.imgur.com/EGvfrnq.png)
 
-* System dependencies
+**Live preview:** [https://tradey-ruby.herokuapp.com](https://tradey-ruby.herokuapp.com)
 
-* Configuration
+##### **Tradey** is a card tradin site built on Ruby on rails with the help of a free API.
 
-* Database creation
+It has a bunch of features including
+- User profiles
+- Favorites
+- Trending cards
+- Price history chart
 
-* Database initialization
+Administrators have access to an **Admin Panel**, which has been added using the [rails_admin](https://rubygems.org/gems/rails_admin) gem. And authenticated with [cancan](https://github.com/ryanb/cancan)
 
-* How to run the test suite
+## Screenshots
 
-* Services (job queues, cache servers, search engines, etc.)
+![Login Page](https://i.imgur.com/8P1kAzW.png)
 
-* Deployment instructions
+This is the **Login Page**. This is required for most of the site functionality but you can always just browse cards. The login system is part of the [Devise](https://rubygems.org/gems/devise) gem.
 
-* ...
+![Register Page](https://i.imgur.com/P1BW0or.png)
+
+By clicking the *Sign Up* button on the login page, you'll be greeted with this. This is the **Sign Up Page**.
+
+![Main Page](https://i.imgur.com/FpbNTK0.png)
+
+When you login, you'll see this. This is the **Home page**. It basically desplays to you all the cards in time order.
+
+![New Card Page](https://i.imgur.com/WG5d2jd.png)
+
+When you click the **New card** link on the home page, you'll end up here. This page is custom coded and offers you to search for cards and then shows you results of the cards we found.
+
+![Search page](https://i.imgur.com/68Kv8FE.png)
+
+With the navbar searchbar you can search for cards and users, and it displays them.
+
