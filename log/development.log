@@ -29415,3 +29415,1292 @@ Processing by CardsController#index as HTML
 Completed 200 OK in 874ms (Views: 867.0ms | ActiveRecord: 2.3ms | Allocations: 9899)
 
 
+Started GET "/" for 127.0.0.1 at 2022-05-10 07:59:07 +0200
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (1.7ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 1179.2ms | Allocations: 13803)
+  Rendered layout layouts/application.html.erb (Duration: 1180.0ms | Allocations: 13897)
+Completed 500 Internal Server Error in 1223ms (ActiveRecord: 18.8ms | Allocations: 28620)
+
+
+  
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+    44:         <%= data['data']['price_data']['price_data']['data']['prices']['high'] %> €
+    45:         <% elsif card.psa == 5 %>
+    46:         <% 
+    47:         sugg = data['data']['price_data']['price_data']['data']['prices']['average']
+    48:         diff = sugg - card.price 
+    49:         %>
+    50:         <%= data['data']['price_data']['price_data']['data']['prices']['average'] %> €
+  
+app/views/cards/index.html.erb:47
+app/views/cards/index.html.erb:4:in `each'
+app/views/cards/index.html.erb:4
+Started GET "/" for 127.0.0.1 at 2022-05-10 07:59:12 +0200
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (2.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 1194.2ms | Allocations: 4868)
+  Rendered layout layouts/application.html.erb (Duration: 1194.7ms | Allocations: 4937)
+Completed 500 Internal Server Error in 1205ms (ActiveRecord: 4.3ms | Allocations: 6648)
+
+
+  
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+    44:         <%= data['data']['price_data']['price_data']['data']['prices']['high'] %> €
+    45:         <% elsif card.psa == 5 %>
+    46:         <% 
+    47:         sugg = data['data']['price_data']['price_data']['data']['prices']['average']
+    48:         diff = sugg - card.price 
+    49:         %>
+    50:         <%= data['data']['price_data']['price_data']['data']['prices']['average'] %> €
+  
+app/views/cards/index.html.erb:47
+app/views/cards/index.html.erb:4:in `each'
+app/views/cards/index.html.erb:4
+Started GET "/" for 127.0.0.1 at 2022-05-10 07:59:17 +0200
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (2.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 914.1ms | Allocations: 4699)
+  Rendered layout layouts/application.html.erb (Duration: 914.5ms | Allocations: 4768)
+Completed 500 Internal Server Error in 924ms (ActiveRecord: 4.3ms | Allocations: 6215)
+
+
+  
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+    44:         <%= data['data']['price_data']['price_data']['data']['prices']['high'] %> €
+    45:         <% elsif card.psa == 5 %>
+    46:         <% 
+    47:         sugg = data['data']['price_data']['price_data']['data']['prices']['average']
+    48:         diff = sugg - card.price 
+    49:         %>
+    50:         <%= data['data']['price_data']['price_data']['data']['prices']['average'] %> €
+  
+app/views/cards/index.html.erb:47
+app/views/cards/index.html.erb:4:in `each'
+app/views/cards/index.html.erb:4
+Started GET "/new_car" for 127.0.0.1 at 2022-05-10 07:59:26 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/new_car"):
+  
+Started GET "/new_card" for 127.0.0.1 at 2022-05-10 07:59:29 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/new_card"):
+  
+Started GET "/cards/new" for 127.0.0.1 at 2022-05-10 07:59:34 +0200
+Processing by CardsController#new as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/new.html.erb within layouts/application
+  Rendered cards/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 747)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 97.7ms | Allocations: 37413)
+Completed 200 OK in 109ms (Views: 99.1ms | ActiveRecord: 1.8ms | Allocations: 39337)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-10 07:59:36 +0200
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (2.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 1113.4ms | Allocations: 5047)
+  Rendered layout layouts/application.html.erb (Duration: 1113.8ms | Allocations: 5116)
+Completed 500 Internal Server Error in 1124ms (ActiveRecord: 4.0ms | Allocations: 6822)
+
+
+  
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+    44:         <%= data['data']['price_data']['price_data']['data']['prices']['high'] %> €
+    45:         <% elsif card.psa == 5 %>
+    46:         <% 
+    47:         sugg = data['data']['price_data']['price_data']['data']['prices']['average']
+    48:         diff = sugg - card.price 
+    49:         %>
+    50:         <%= data['data']['price_data']['price_data']['data']['prices']['average'] %> €
+  
+app/views/cards/index.html.erb:47
+app/views/cards/index.html.erb:4:in `each'
+app/views/cards/index.html.erb:4
+Started GET "/" for 127.0.0.1 at 2022-05-10 08:00:05 +0200
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (2.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 1074.9ms | Allocations: 5894)
+  Rendered layout layouts/application.html.erb (Duration: 1075.4ms | Allocations: 5968)
+Completed 500 Internal Server Error in 1088ms (ActiveRecord: 3.8ms | Allocations: 8545)
+
+
+  
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+    44:         <%= data['data']['price_data']['price_data']['data']['prices']['high'] %> €
+    45:         <% elsif card.psa == 5 %>
+    46:         <% 
+    47:         sugg = data['data']['price_data']['price_data']['data']['prices']['average']
+    48:         diff = sugg - card.price 
+    49:         %>
+    50:         <%= data['data']['price_data']['price_data']['data']['prices']['average'] %> €
+  
+app/views/cards/index.html.erb:47
+app/views/cards/index.html.erb:4:in `each'
+app/views/cards/index.html.erb:4
+Started GET "/" for 127.0.0.1 at 2022-05-10 08:00:30 +0200
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (1.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 900.9ms | Allocations: 5847)
+  Rendered layout layouts/application.html.erb (Duration: 901.3ms | Allocations: 5921)
+Completed 500 Internal Server Error in 909ms (ActiveRecord: 2.3ms | Allocations: 8635)
+
+
+  
+ActionView::Template::Error (undefined method `>' for nil:NilClass):
+    52:         <%= data['data']['price_data']['price_data']['data']['prices']['low'] %> €
+    53:         <%end%>
+    54:         <br>
+    55:         <%if(diff > 0)%>
+    56:         <span style="color:green;">Good deal</span>
+    57:         <%end%>
+    58:         <%if(diff < 0)%>
+  
+app/views/cards/index.html.erb:55
+app/views/cards/index.html.erb:4:in `each'
+app/views/cards/index.html.erb:4
+Started GET "/" for 127.0.0.1 at 2022-05-10 08:00:50 +0200
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (2.7ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 796.6ms | Allocations: 5894)
+  Rendered layout layouts/application.html.erb (Duration: 797.5ms | Allocations: 5968)
+Completed 500 Internal Server Error in 812ms (ActiveRecord: 4.8ms | Allocations: 8682)
+
+
+  
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+    44:         <%= data['data']['price_data']['price_data']['data']['prices']['high'] %> €
+    45:         <% elsif card.psa == 5 %>
+    46:         <% 
+    47:         sugg = data['data']['price_data']['price_data']['data']['prices']['high']
+    48:         diff = sugg - card.price 
+    49:         %>
+    50:         <%= data['data']['price_data']['price_data']['data']['prices']['average'] %> €
+  
+app/views/cards/index.html.erb:47
+app/views/cards/index.html.erb:4:in `each'
+app/views/cards/index.html.erb:4
+Started GET "/" for 127.0.0.1 at 2022-05-10 08:01:19 +0200
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (2.8ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 631.1ms | Allocations: 5878)
+  Rendered layout layouts/application.html.erb (Duration: 631.5ms | Allocations: 5952)
+Completed 500 Internal Server Error in 645ms (ActiveRecord: 4.4ms | Allocations: 8666)
+
+
+  
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+    46:         <% 
+    47:        diff = 2
+    48:         %>
+    49:         <%= data['data']['price_data']['price_data']['data']['prices']['average'] %> €
+    50:         <% elsif card.psa == 1 %>
+    51:         <% 
+    52:         sugg = data['data']['price_data']['price_data']['data']['prices']['low']
+  
+app/views/cards/index.html.erb:49
+app/views/cards/index.html.erb:4:in `each'
+app/views/cards/index.html.erb:4
+Started GET "/" for 127.0.0.1 at 2022-05-10 08:01:25 +0200
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (2.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 849.5ms | Allocations: 4546)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 868.0ms | Allocations: 10558)
+Completed 200 OK in 883ms (Views: 872.1ms | ActiveRecord: 3.8ms | Allocations: 13317)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-10 08:01:59 +0200
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (1.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 900.9ms | Allocations: 6057)
+  Rendered layout layouts/application.html.erb (Duration: 901.3ms | Allocations: 6131)
+Completed 500 Internal Server Error in 911ms (ActiveRecord: 2.5ms | Allocations: 8863)
+
+
+  
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+    44:         <%= data['data']['price_data']['price_data']['data']['prices']['high'] %> €
+    45:         <% elsif card.psa == 5 %>
+    46:        <% 
+    47:         sugg = data['data']['price_data']['price_data']['data']['prices']['high']
+    48:         diff = sugg - card.price 
+    49:         %>
+    50:         <%= data['data']['price_data']['price_data']['data']['prices']['high'] %> €
+  
+app/views/cards/index.html.erb:47
+app/views/cards/index.html.erb:4:in `each'
+app/views/cards/index.html.erb:4
+Started GET "/" for 127.0.0.1 at 2022-05-10 08:02:11 +0200
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (2.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 996.8ms | Allocations: 4547)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 1014.6ms | Allocations: 10556)
+Completed 200 OK in 1030ms (Views: 1018.2ms | ActiveRecord: 3.9ms | Allocations: 13315)
+
+
+Started GET "/cards/1" for 127.0.0.1 at 2022-05-10 08:02:13 +0200
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mCard Load (1.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:78:in `set_card'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  Rendered cards/show.html.erb within layouts/application (Duration: 360.4ms | Allocations: 3556)
+  Rendered layout layouts/application.html.erb (Duration: 360.8ms | Allocations: 3624)
+Completed 500 Internal Server Error in 376ms (ActiveRecord: 3.6ms | Allocations: 6103)
+
+
+  
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+    42:         <%= data['data']['price_data']['price_data']['data']['prices']['high'] %> €
+    43:         <% elsif @card.psa == 5 %>
+    44:         <% 
+    45:         sugg = data['data']['price_data']['price_data']['data']['prices']['average']
+    46:         diff = sugg - @card.price 
+    47:         %>
+    48:         <%= data['data']['price_data']['price_data']['data']['prices']['average'] %> €
+  
+app/views/cards/show.html.erb:45
+Started GET "/" for 127.0.0.1 at 2022-05-10 08:02:18 +0200
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (1.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 988.5ms | Allocations: 3405)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 1003.3ms | Allocations: 8315)
+Completed 200 OK in 1010ms (Views: 1002.6ms | ActiveRecord: 2.7ms | Allocations: 9781)
+
+
+Started GET "/accounts/zan31" for 127.0.0.1 at 2022-05-10 08:02:21 +0200
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"zan31"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["name", "zan31"], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:13:in `load_user'
+  Rendering layout layouts/application.html.erb
+  Rendering accounts/show.html.erb within layouts/application
+  [1m[36mCard Load (1.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/accounts/show.html.erb:6
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/accounts/show.html.erb:52
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/accounts/show.html.erb:52
+  Rendered accounts/show.html.erb within layouts/application (Duration: 845.1ms | Allocations: 9807)
+  Rendered layout layouts/application.html.erb (Duration: 845.5ms | Allocations: 9884)
+Completed 500 Internal Server Error in 856ms (ActiveRecord: 5.7ms | Allocations: 13418)
+
+
+  
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+    32:         <b>Suggested price:</b>
+    33: 
+    34:         <% 
+    35:         sugg = data['data']['price_data']['price_data']['data']['prices']['average']
+    36:         diff = sugg - card.price 
+    37:         %>
+    38:         <%= data['data']['price_data']['price_data']['data']['prices']['average'] %> €
+  
+app/views/accounts/show.html.erb:35
+app/views/accounts/show.html.erb:6:in `each'
+app/views/accounts/show.html.erb:6
+Started GET "/" for 127.0.0.1 at 2022-05-10 08:03:08 +0200
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (1.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 899.8ms | Allocations: 3416)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 914.9ms | Allocations: 8475)
+Completed 200 OK in 922ms (Views: 914.7ms | ActiveRecord: 2.6ms | Allocations: 10037)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-10 08:05:29 +0200
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (1.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 976.7ms | Allocations: 4707)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 994.9ms | Allocations: 10697)
+Completed 200 OK in 1004ms (Views: 996.2ms | ActiveRecord: 2.5ms | Allocations: 13318)
+
+
+Started GET "/accounts/zan31" for 127.0.0.1 at 2022-05-10 08:05:33 +0200
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"zan31"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["name", "zan31"], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:13:in `load_user'
+  Rendering layout layouts/application.html.erb
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1713)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | Allocations: 1788)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 2.7ms | Allocations: 5033)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <% content_for :title, @user.name %>
+<div id="wrapper" style="margin-top: 2em;">
+<div class="container" id="main-page">
+<h1 class="display-2">These are the cards of <%= @user.name%></h1>
+<% $x = 0 %>
+<% @cards.reverse.each do |card| %>
+<%response = Faraday.get("http://yugiohprices.com/api/price_for_print_tag/#{card.print_tag}")%>
+<% data = JSON.parse(response.body) %>
+    <% if($x % 4 == 0 || $x == 0) %>
+    </div>
+    <div class="row">
+    <% end %>
+    <div class="col-sm-3">
+
+<div class="card mb-3 h-100" style="max-width:250px;">
+
+    <%split = data["data"]['name'].split
+    splitc = split.join('_')
+    %>
+      <%= image_tag("http://yugiohprices.com/api/card_image/#{splitc}", class:"card-img-top") %>
+      <div class="card-body">
+
+        <h5 class="card-title"><%= card.name %></h5>
+
+        <p class="card-text">
+        <b>Print tag:</b> <%= card.print_tag %>
+        <br>
+        <b>Set name:</b> <%= data['data']['price_data']['name'] %>
+        <br>
+        <b>Price:</b> <%= card.price %> €
+        <br>
+        <b>Suggested price:</b>
+
+        <% 
+        if data['data']['price_data']['price_data']['data']['prices']['average']
+        %>
+        <%
+        sugg = data['data']['price_data']['price_data']['data']['prices']['average']
+        diff = sugg - card.price 
+        %>
+        <%= data['data']['price_data']['price_data']['data']['prices']['average'] %> €
+        <br>
+        <%if(diff > 0)%>
+        <span style="color:green;">Good deal</span>
+        <%end%>
+        <%if(diff < 0)%>
+        <span style="color:red;">Overpriced</span>
+        <%end%>
+        <%if(diff == 0)%>
+        <span style="color:orange;">Perfect price</span>
+        <%else%>
+        Price data is unavalaible!
+        <%end%>
+        </p>
+        <%if user_signed_in? %>
+      <% if(current_user.id == card.user.id)%> 
+        <%= link_to 'Delete', card, method: :delete, data: { confirm: 'Are you sure?' }, class:"link-danger" %>
+        <%end%>
+        <%end%> 
+  </div>
+<div class="card-footer text-muted">
+    Listed <%= time_ago_in_words(card.created_at) %> ago
+</div>
+</div>
+
+    </div>
+      <% $x = $x + 1 %>
+    <% end %>
+    <% if($x % 4 == 0 || $x == 0) %>
+    </div>
+    <% $x = 0 %>
+    <% end %>
+</div>
+</div>
+
+):
+1:    <% content_for :title, @user.name %>
+2:    <div id="wrapper" style="margin-top: 2em;">
+3:    <div class="container" id="main-page">
+4:    <h1 class="display-2">These are the cards of <%= @user.name%></h1>
+5:    <% $x = 0 %>
+6:    <% @cards.reverse.each do |card| %>
+7:    <%response = Faraday.get("http://yugiohprices.com/api/price_for_print_tag/#{card.print_tag}")%>
+8:    <% data = JSON.parse(response.body) %>
+9:        <% if($x % 4 == 0 || $x == 0) %>
+10:        </div>
+11:        <div class="row">
+12:        <% end %>
+13:        <div class="col-sm-3">
+14:    
+15:    <div class="card mb-3 h-100" style="max-width:250px;">
+16:    
+17:        <%split = data["data"]['name'].split
+18:        splitc = split.join('_')
+19:        %>
+20:          <%= image_tag("http://yugiohprices.com/api/card_image/#{splitc}", class:"card-img-top") %>
+21:          <div class="card-body">
+22:    
+23:            <h5 class="card-title"><%= card.name %></h5>
+24:    
+25:            <p class="card-text">
+26:            <b>Print tag:</b> <%= card.print_tag %>
+27:            <br>
+28:            <b>Set name:</b> <%= data['data']['price_data']['name'] %>
+29:            <br>
+30:            <b>Price:</b> <%= card.price %> €
+31:            <br>
+32:            <b>Suggested price:</b>
+33:    
+34:            <% 
+35:            if data['data']['price_data']['price_data']['data']['prices']['average']
+36:            %>
+37:            <%
+38:            sugg = data['data']['price_data']['price_data']['data']['prices']['average']
+39:            diff = sugg - card.price 
+40:            %>
+41:            <%= data['data']['price_data']['price_data']['data']['prices']['average'] %> €
+42:            <br>
+43:            <%if(diff > 0)%>
+44:            <span style="color:green;">Good deal</span>
+45:            <%end%>
+46:            <%if(diff < 0)%>
+47:            <span style="color:red;">Overpriced</span>
+48:            <%end%>
+49:            <%if(diff == 0)%>
+50:            <span style="color:orange;">Perfect price</span>
+51:            <%else%>
+52:            Price data is unavalaible!
+53:            <%end%>
+54:            </p>
+55:            <%if user_signed_in? %>
+56:          <% if(current_user.id == card.user.id)%> 
+57:            <%= link_to 'Delete', card, method: :delete, data: { confirm: 'Are you sure?' }, class:"link-danger" %>
+58:            <%end%>
+59:            <%end%> 
+60:      </div>
+61:    <div class="card-footer text-muted">
+62:        Listed <%= time_ago_in_words(card.created_at) %> ago
+63:    </div>
+64:    </div>
+65:    
+66:        </div>
+67:          <% $x = $x + 1 %>
+68:        <% end %>
+69:        <% if($x % 4 == 0 || $x == 0) %>
+70:        </div>
+71:        <% $x = 0 %>
+72:        <% end %>
+73:    </div>
+74:    </div>
+  
+app/views/accounts/show.html.erb:77: syntax error, unexpected end-of-input, expecting `end'
+app/views/accounts/show.html.erb:77: syntax error, unexpected end-of-input, expecting `end'
+app/views/accounts/show.html.erb:77: syntax error, unexpected end-of-input, expecting `end'
+app/views/accounts/show.html.erb:77: syntax error, unexpected end-of-input, expecting `end'
+app/views/accounts/show.html.erb:77: syntax error, unexpected end-of-input, expecting `end'
+app/views/accounts/show.html.erb:77: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/accounts/zan31" for 127.0.0.1 at 2022-05-10 08:05:56 +0200
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"zan31"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["name", "zan31"], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:13:in `load_user'
+  Rendering layout layouts/application.html.erb
+  Rendering accounts/show.html.erb within layouts/application
+  [1m[36mCard Load (1.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/accounts/show.html.erb:6
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/accounts/show.html.erb:57
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/accounts/show.html.erb:57
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/accounts/show.html.erb:57
+  Rendered accounts/show.html.erb within layouts/application (Duration: 1260.8ms | Allocations: 6670)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 1278.3ms | Allocations: 12666)
+Completed 200 OK in 1291ms (Views: 1278.3ms | ActiveRecord: 5.1ms | Allocations: 16313)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-10 08:06:17 +0200
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (2.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 946.1ms | Allocations: 4719)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 962.2ms | Allocations: 9920)
+Completed 200 OK in 977ms (Views: 963.1ms | ActiveRecord: 4.8ms | Allocations: 12363)
+
+
+Started GET "/cards/1" for 127.0.0.1 at 2022-05-10 08:06:19 +0200
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mCard Load (1.7ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:78:in `set_card'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cards/show.html.erb:69
+  Rendered cards/show.html.erb within layouts/application (Duration: 640.7ms | Allocations: 6650)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 654.4ms | Allocations: 11542)
+Completed 200 OK in 668ms (Views: 653.9ms | ActiveRecord: 5.4ms | Allocations: 13872)
+
+
+Started GET "/cards/1" for 127.0.0.1 at 2022-05-10 08:07:59 +0200
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mCard Load (1.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:78:in `set_card'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cards/show.html.erb:69
+  Rendered cards/show.html.erb within layouts/application (Duration: 762.3ms | Allocations: 7052)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 772.5ms | Allocations: 13027)
+Completed 200 OK in 785ms (Views: 774.7ms | ActiveRecord: 4.5ms | Allocations: 16225)
+
+
+Started GET "/cards" for 127.0.0.1 at 2022-05-10 08:08:01 +0200
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (2.7ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 1110.1ms | Allocations: 4444)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 1126.3ms | Allocations: 9354)
+Completed 200 OK in 1133ms (Views: 1124.5ms | ActiveRecord: 3.7ms | Allocations: 11059)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2022-05-10 08:20:22 +0200
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.7ms | Allocations: 267)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 14.4ms | Allocations: 3847)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 31.2ms | Allocations: 9825)
+Completed 200 OK in 76ms (Views: 38.9ms | ActiveRecord: 19.4ms | Allocations: 18394)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2022-05-10 08:22:09 +0200
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.2ms | Allocations: 229)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 9.6ms | Allocations: 2518)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 26.6ms | Allocations: 8473)
+Completed 200 OK in 41ms (Views: 33.3ms | ActiveRecord: 1.5ms | Allocations: 12212)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2022-05-10 08:22:26 +0200
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.5ms | Allocations: 229)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 10.2ms | Allocations: 2500)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 28.5ms | Allocations: 8455)
+Completed 200 OK in 45ms (Views: 35.7ms | ActiveRecord: 1.6ms | Allocations: 12186)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2022-05-10 08:22:41 +0200
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 230)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 4.2ms | Allocations: 2507)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 8480)
+Completed 200 OK in 31ms (Views: 17.0ms | ActiveRecord: 1.1ms | Allocations: 12229)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2022-05-10 08:23:12 +0200
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.4ms | Allocations: 230)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 10.1ms | Allocations: 2496)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 27.1ms | Allocations: 8452)
+Completed 200 OK in 44ms (Views: 34.7ms | ActiveRecord: 1.7ms | Allocations: 12191)
+
+
+Started PUT "/users" for 127.0.0.1 at 2022-05-10 08:23:47 +0200
+Processing by Devise::RegistrationsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"zan31", "email"=>"zan.hrastnik31@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "commit"=>"Edit"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (1.8ms)[0m  [1m[33mUPDATE "users" SET "encrypted_password" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["encrypted_password", "$2a$12$zK/bouZ5e2CaM7TxMLYBtO7sNkNOL0eeFPR4xZPRrlpsdRbr0wnNK"], ["updated_at", "2022-05-10 06:23:47.578586"], ["id", 1]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 442ms (ActiveRecord: 7.0ms | Allocations: 12980)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-10 08:23:47 +0200
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (1.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 1469.3ms | Allocations: 4870)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 1483.5ms | Allocations: 10098)
+Completed 200 OK in 1492ms (Views: 1485.0ms | ActiveRecord: 2.6ms | Allocations: 12610)
+
+
+Started GET "/favorites" for 127.0.0.1 at 2022-05-10 08:41:32 +0200
+Processing by FavoritesController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering favorites/index.html.erb within layouts/application
+  [1m[36mFavorite Load (1.9ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/favorites/index.html.erb:5
+  Rendered favorites/index.html.erb within layouts/application (Duration: 423.5ms | Allocations: 4764)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 438.7ms | Allocations: 9941)
+Completed 200 OK in 483ms (Views: 435.7ms | ActiveRecord: 24.1ms | Allocations: 18686)
+
+
+Started GET "/accounts/zan31" for 127.0.0.1 at 2022-05-10 08:41:34 +0200
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"zan31"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["name", "zan31"], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:13:in `load_user'
+  Rendering layout layouts/application.html.erb
+  Rendering accounts/show.html.erb within layouts/application
+  [1m[36mCard Load (1.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/accounts/show.html.erb:6
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/accounts/show.html.erb:57
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/accounts/show.html.erb:57
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/accounts/show.html.erb:57
+  Rendered accounts/show.html.erb within layouts/application (Duration: 1078.8ms | Allocations: 6728)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 1087.3ms | Allocations: 11918)
+Completed 200 OK in 1101ms (Views: 1086.9ms | ActiveRecord: 6.2ms | Allocations: 15200)
+
+
+Started GET "/cards_imports/new" for 127.0.0.1 at 2022-05-10 08:41:36 +0200
+Processing by CardsImportsController#new as HTML
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cards_imports/new.html.erb within layouts/application
+  Rendered cards_imports/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 923)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | Allocations: 6119)
+Completed 200 OK in 28ms (Views: 16.5ms | ActiveRecord: 2.6ms | Allocations: 9535)
+
+
+Started GET "/cards_imports/new" for 127.0.0.1 at 2022-05-10 08:43:44 +0200
+Processing by CardsImportsController#new as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cards_imports/new.html.erb within layouts/application
+  Rendered cards_imports/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 697)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.2ms | Allocations: 6676)
+Completed 200 OK in 32ms (Views: 24.4ms | ActiveRecord: 1.7ms | Allocations: 9553)
+
+
+Started GET "/favorites" for 127.0.0.1 at 2022-05-10 08:44:47 +0200
+Processing by FavoritesController#index as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering favorites/index.html.erb within layouts/application
+  [1m[36mFavorite Load (8.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/favorites/index.html.erb:5
+  Rendered favorites/index.html.erb within layouts/application (Duration: 528.3ms | Allocations: 2474)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 535.0ms | Allocations: 7691)
+Completed 200 OK in 603ms (Views: 545.9ms | ActiveRecord: 10.4ms | Allocations: 10307)
+
+
+Started GET "/favorites/1" for 127.0.0.1 at 2022-05-10 08:45:09 +0200
+Processing by FavoritesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mFavorite Load (1.0ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:65:in `set_favorite'
+  Rendering layout layouts/application.html.erb
+  Rendering favorites/show.html.erb within layouts/application
+  Rendered favorites/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 255)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 5155)
+Completed 200 OK in 23ms (Views: 8.9ms | ActiveRecord: 3.7ms | Allocations: 7591)
+
+
+Started GET "/favorites" for 127.0.0.1 at 2022-05-10 08:45:10 +0200
+Processing by FavoritesController#index as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering favorites/index.html.erb within layouts/application
+  [1m[36mFavorite Load (2.1ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/favorites/index.html.erb:5
+  Rendered favorites/index.html.erb within layouts/application (Duration: 396.8ms | Allocations: 1728)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 404.3ms | Allocations: 6620)
+Completed 200 OK in 416ms (Views: 403.5ms | ActiveRecord: 4.4ms | Allocations: 8121)
+
+
+Started GET "/favorites" for 127.0.0.1 at 2022-05-10 08:45:25 +0200
+Processing by FavoritesController#index as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering favorites/index.html.erb within layouts/application
+  [1m[36mFavorite Load (2.1ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/favorites/index.html.erb:5
+  Rendered favorites/index.html.erb within layouts/application (Duration: 393.2ms | Allocations: 2397)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 410.2ms | Allocations: 8390)
+Completed 200 OK in 424ms (Views: 413.8ms | ActiveRecord: 3.6ms | Allocations: 11049)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2022-05-10 08:45:29 +0200
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.2ms | Allocations: 229)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 9.3ms | Allocations: 2496)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.6ms | Allocations: 7662)
+Completed 200 OK in 42ms (Views: 29.9ms | ActiveRecord: 2.7ms | Allocations: 11051)
+
+
+Started GET "/cards/new" for 127.0.0.1 at 2022-05-10 08:45:33 +0200
+Processing by CardsController#new as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/new.html.erb within layouts/application
+  Rendered cards/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 791)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 6011)
+Completed 200 OK in 33ms (Views: 22.7ms | ActiveRecord: 2.1ms | Allocations: 8622)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2022-05-10 08:45:34 +0200
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 45)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1555)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 6448)
+Completed 200 OK in 23ms (Views: 13.4ms | ActiveRecord: 1.8ms | Allocations: 8528)
+
+
+Started GET "/cards/new" for 127.0.0.1 at 2022-05-10 08:45:35 +0200
+Processing by CardsController#new as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/new.html.erb within layouts/application
+  Rendered cards/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 73)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 27.7ms | Allocations: 4969)
+Completed 200 OK in 41ms (Views: 29.2ms | ActiveRecord: 2.3ms | Allocations: 6463)
+
+
+Started GET "/trending" for 127.0.0.1 at 2022-05-10 08:45:43 +0200
+Processing by CardsController#trending as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/trending.html.erb within layouts/application
+  Rendered cards/trending.html.erb within layouts/application (Duration: 398.8ms | Allocations: 5393)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 413.0ms | Allocations: 10321)
+Completed 200 OK in 420ms (Views: 414.0ms | ActiveRecord: 1.1ms | Allocations: 11921)
+
+
+Started GET "/cards_imports/new" for 127.0.0.1 at 2022-05-10 08:46:02 +0200
+Processing by CardsImportsController#new as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cards_imports/new.html.erb within layouts/application
+  Rendered cards_imports/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 696)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.1ms | Allocations: 5880)
+Completed 200 OK in 36ms (Views: 26.4ms | ActiveRecord: 1.8ms | Allocations: 8227)
+
+
+Started GET "/favorites" for 127.0.0.1 at 2022-05-10 08:46:04 +0200
+Processing by FavoritesController#index as HTML
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering favorites/index.html.erb within layouts/application
+  [1m[36mFavorite Load (2.5ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/favorites/index.html.erb:5
+  Rendered favorites/index.html.erb within layouts/application (Duration: 225.3ms | Allocations: 1787)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 232.4ms | Allocations: 6680)
+Completed 200 OK in 245ms (Views: 231.2ms | ActiveRecord: 4.9ms | Allocations: 8408)
+
+
+Started GET "/accounts/zan31" for 127.0.0.1 at 2022-05-10 08:46:06 +0200
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"zan31"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["name", "zan31"], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:13:in `load_user'
+  Rendering layout layouts/application.html.erb
+  Rendering accounts/show.html.erb within layouts/application
+  [1m[36mCard Load (2.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/accounts/show.html.erb:6
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/accounts/show.html.erb:57
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/accounts/show.html.erb:57
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/accounts/show.html.erb:57
+  Rendered accounts/show.html.erb within layouts/application (Duration: 945.1ms | Allocations: 6661)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 960.9ms | Allocations: 11850)
+Completed 200 OK in 979ms (Views: 960.6ms | ActiveRecord: 8.7ms | Allocations: 15019)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2022-05-10 08:46:08 +0200
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 45)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 5.8ms | Allocations: 1522)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.4ms | Allocations: 6402)
+Completed 200 OK in 33ms (Views: 22.7ms | ActiveRecord: 1.9ms | Allocations: 8339)
+
+
+Started GET "/cards/new" for 127.0.0.1 at 2022-05-10 08:46:09 +0200
+Processing by CardsController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/new.html.erb within layouts/application
+  Rendered cards/new.html.erb within layouts/application (Duration: 0.3ms | Allocations: 73)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | Allocations: 4967)
+Completed 200 OK in 17ms (Views: 11.7ms | ActiveRecord: 1.0ms | Allocations: 6458)
+
+
+Started GET "/cards" for 127.0.0.1 at 2022-05-10 08:46:10 +0200
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (2.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 1343.1ms | Allocations: 4466)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 1356.6ms | Allocations: 9374)
+Completed 200 OK in 1368ms (Views: 1356.0ms | ActiveRecord: 4.1ms | Allocations: 10979)
+
+
+Started GET "/cards/3" for 127.0.0.1 at 2022-05-10 08:47:57 +0200
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mCard Load (2.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:78:in `set_card'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cards/show.html.erb:73
+Started GET "/cards/3" for 127.0.0.1 at 2022-05-10 08:47:58 +0200
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mCard Load (2.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:78:in `set_card'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  Rendered cards/show.html.erb within layouts/application (Duration: 871.9ms | Allocations: 15263)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 879.3ms | Allocations: 20173)
+Completed 200 OK in 893ms (Views: 879.2ms | ActiveRecord: 5.2ms | Allocations: 22361)
+
+
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cards/show.html.erb:73
+  Rendered cards/show.html.erb within layouts/application (Duration: 796.3ms | Allocations: 14607)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 810.3ms | Allocations: 19500)
+Completed 200 OK in 851ms (Views: 809.4ms | ActiveRecord: 22.4ms | Allocations: 26083)
+
+
+Started GET "/cards" for 127.0.0.1 at 2022-05-10 08:48:07 +0200
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (3.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:4
+Started GET "/cards/2" for 127.0.0.1 at 2022-05-10 08:48:07 +0200
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mCard Load (1.8ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:78:in `set_card'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  Rendered cards/index.html.erb within layouts/application (Duration: 990.6ms | Allocations: 7635)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 1005.6ms | Allocations: 12527)
+Completed 200 OK in 1017ms (Views: 1003.9ms | ActiveRecord: 5.6ms | Allocations: 13994)
+
+
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cards/show.html.erb:73
+  Rendered cards/show.html.erb within layouts/application (Duration: 968.1ms | Allocations: 11944)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 983.0ms | Allocations: 16836)
+Completed 200 OK in 998ms (Views: 982.5ms | ActiveRecord: 6.3ms | Allocations: 18881)
+
+
+Started GET "/cards" for 127.0.0.1 at 2022-05-10 08:48:12 +0200
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (1.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:4
+Started GET "/cards/1" for 127.0.0.1 at 2022-05-10 08:48:13 +0200
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mCard Load (1.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:78:in `set_card'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  Rendered cards/index.html.erb within layouts/application (Duration: 928.0ms | Allocations: 7641)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 941.8ms | Allocations: 12535)
+Completed 200 OK in 949ms (Views: 941.4ms | ActiveRecord: 2.9ms | Allocations: 14002)
+
+
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cards/show.html.erb:73
+  Rendered cards/show.html.erb within layouts/application (Duration: 812.5ms | Allocations: 11927)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 826.8ms | Allocations: 16837)
+Completed 200 OK in 841ms (Views: 825.8ms | ActiveRecord: 5.8ms | Allocations: 18882)
+
+
+Started GET "/cards" for 127.0.0.1 at 2022-05-10 08:48:17 +0200
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (3.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 685.9ms | Allocations: 3561)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 694.5ms | Allocations: 8453)
+Completed 200 OK in 705ms (Views: 693.4ms | ActiveRecord: 5.2ms | Allocations: 9920)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2022-05-10 08:51:00 +0200
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 44)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1483)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.9ms | Allocations: 6381)
+Completed 200 OK in 25ms (Views: 17.2ms | ActiveRecord: 1.3ms | Allocations: 8227)
+
+
+Started GET "/cards/new" for 127.0.0.1 at 2022-05-10 08:51:04 +0200
+Processing by CardsController#new as HTML
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/new.html.erb within layouts/application
+  Rendered cards/new.html.erb within layouts/application (Duration: 0.4ms | Allocations: 73)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.0ms | Allocations: 4966)
+Completed 200 OK in 27ms (Views: 17.3ms | ActiveRecord: 2.7ms | Allocations: 6452)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-10 08:51:05 +0200
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (2.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 1065.8ms | Allocations: 3574)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 1074.0ms | Allocations: 8466)
+Completed 200 OK in 1081ms (Views: 1072.5ms | ActiveRecord: 3.7ms | Allocations: 9933)
+
+
+Started GET "/cards/2" for 127.0.0.1 at 2022-05-10 08:51:12 +0200
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mCard Load (1.9ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:78:in `set_card'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cards/show.html.erb:73
+  Rendered cards/show.html.erb within layouts/application (Duration: 634.4ms | Allocations: 5437)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 649.1ms | Allocations: 10331)
+Completed 200 OK in 661ms (Views: 647.9ms | ActiveRecord: 5.1ms | Allocations: 12376)
+
+
+Started GET "/cards" for 127.0.0.1 at 2022-05-10 08:51:20 +0200
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (1.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 1054.2ms | Allocations: 3557)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 1065.6ms | Allocations: 8457)
+Completed 200 OK in 1074ms (Views: 1065.2ms | ActiveRecord: 2.5ms | Allocations: 9924)
+
+
+Started GET "/cards/new" for 127.0.0.1 at 2022-05-10 08:54:53 +0200
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CardsController#new as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/new.html.erb within layouts/application
+  Rendered cards/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1109)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 82.6ms | Allocations: 37999)
+Completed 200 OK in 136ms (Views: 86.4ms | ActiveRecord: 14.1ms | Allocations: 56832)
+
+
+Started GET "/cards/new?card=dark+magician" for 127.0.0.1 at 2022-05-10 08:54:58 +0200
+Processing by CardsController#new as HTML
+  Parameters: {"card"=>"dark magician"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/new.html.erb within layouts/application
+  Rendered cards/new.html.erb within layouts/application (Duration: 487.3ms | Allocations: 5751)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 495.6ms | Allocations: 10837)
+Completed 200 OK in 506ms (Views: 496.8ms | ActiveRecord: 2.0ms | Allocations: 12652)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2022-05-10 08:55:39 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (1.9ms)[0m  [1m[33mUPDATE "users" SET "remember_created_at" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["remember_created_at", nil], ["updated_at", "2022-05-10 06:55:39.477390"], ["id", 1]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 32ms (ActiveRecord: 7.9ms | Allocations: 7367)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-10 08:55:39 +0200
+Processing by CardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (1.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 1265.4ms | Allocations: 5005)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 1274.5ms | Allocations: 10017)
+Completed 200 OK in 1279ms (Views: 1274.1ms | ActiveRecord: 1.3ms | Allocations: 10957)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-05-10 08:55:42 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 3.9ms | Allocations: 781)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 20.7ms | Allocations: 4223)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 36.4ms | Allocations: 9182)
+Completed 200 OK in 48ms (Views: 44.9ms | ActiveRecord: 0.0ms | Allocations: 11485)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-05-10 09:10:16 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.5ms | Allocations: 235)
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 227)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 12.0ms | Allocations: 3201)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.5ms | Allocations: 8031)
+Completed 200 OK in 30ms (Views: 26.2ms | Allocations: 9884)
+
+
+Started GET "/search?keyword=dark&commit=Search" for 127.0.0.1 at 2022-05-10 09:11:15 +0200
+Processing by CardsController#search as HTML
+  Parameters: {"keyword"=>"dark", "commit"=>"Search"}
+  Rendering layout layouts/application.html.erb
+  Rendering cards/_card.html.erb within layouts/application
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (LOWER(name) like'%dark%')[0m
+  ↳ app/views/cards/_card.html.erb:1
+  [1m[36mCard Load (1.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE (LOWER(name) like'%dark%' OR Lower(print_tag) like'%dark%')[0m
+  ↳ app/views/cards/_card.html.erb:23
+  Rendered cards/_card.html.erb within layouts/application (Duration: 405.9ms | Allocations: 3470)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 414.1ms | Allocations: 8301)
+Completed 200 OK in 433ms (Views: 410.8ms | ActiveRecord: 13.7ms | Allocations: 13504)
+
+
+Started GET "/search?keyword=zan&commit=Search" for 127.0.0.1 at 2022-05-10 09:11:25 +0200
+Processing by CardsController#search as HTML
+  Parameters: {"keyword"=>"zan", "commit"=>"Search"}
+  Rendering layout layouts/application.html.erb
+  Rendering cards/_card.html.erb within layouts/application
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (LOWER(name) like'%zan%')[0m
+  ↳ app/views/cards/_card.html.erb:1
+  [1m[35m (4.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/cards/_card.html.erb:6
+  [1m[36mCard Load (2.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE (LOWER(name) like'%zan%' OR Lower(print_tag) like'%zan%')[0m
+  ↳ app/views/cards/_card.html.erb:23
+  Rendered cards/_card.html.erb within layouts/application (Duration: 18.1ms | Allocations: 2360)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 40.0ms | Allocations: 7176)
+Completed 200 OK in 45ms (Views: 32.3ms | ActiveRecord: 8.9ms | Allocations: 7914)
+
+
+Started GET "/accounts/zan31" for 127.0.0.1 at 2022-05-10 09:11:26 +0200
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"zan31"}
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["name", "zan31"], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:13:in `load_user'
+  Rendering layout layouts/application.html.erb
+  Rendering accounts/show.html.erb within layouts/application
+  [1m[36mCard Load (6.7ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/accounts/show.html.erb:6
+  Rendered accounts/show.html.erb within layouts/application (Duration: 1123.4ms | Allocations: 4591)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 1190.0ms | Allocations: 9717)
+Completed 200 OK in 1208ms (Views: 1188.5ms | ActiveRecord: 10.8ms | Allocations: 12704)
+
+

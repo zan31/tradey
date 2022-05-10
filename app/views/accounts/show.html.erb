@@ -32,11 +32,13 @@
         <b>Suggested price:</b>
 
         <% 
+        if data['data']['price_data']['price_data']['data']['prices']['average']
+        %>
+        <%
         sugg = data['data']['price_data']['price_data']['data']['prices']['average']
         diff = sugg - card.price 
         %>
         <%= data['data']['price_data']['price_data']['data']['prices']['average'] %> €
-
         <br>
         <%if(diff > 0)%>
         <span style="color:green;">Good deal</span>
@@ -46,6 +48,9 @@
         <%end%>
         <%if(diff == 0)%>
         <span style="color:orange;">Perfect price</span>
+        <%end%>
+        <%else%>
+        Price data is unavalaible!
         <%end%>
         </p>
         <%if user_signed_in? %>

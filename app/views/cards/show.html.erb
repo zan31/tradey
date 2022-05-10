@@ -34,6 +34,7 @@
         <b>Price: </b><%= @card.price %> €
         <br>
         <b>Suggested price:</b>
+        <%if data['data']['price_data']['price_data']['status'] == "success"%>
         <%if @card.psa == 10 %>
         <% 
         sugg = data['data']['price_data']['price_data']['data']['prices']['high']
@@ -62,6 +63,9 @@
         <%end%>
         <%if(diff == 0)%>
         <span style="color:orange;">Perfect price</span>
+        <%end%>
+        <%else%>
+        Price data is unavalaible!
         <%end%>
         </p>
         <%= link_to '<i class="bi bi-door-closed-fill"></i> Back'.html_safe, cards_path %>
