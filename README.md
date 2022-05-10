@@ -28,7 +28,7 @@ This is the **Login Page**. This is required for most of the site functionality 
 
 By clicking the *Sign Up* button on the login page, you'll be greeted with this. This is the **Sign Up Page**.
 
-![Main Page](https://i.imgur.com/iOfyfhR.png)
+![Main Page](https://i.imgur.com/ZYLcQ1T.png)
 
 When you login, you'll see this. This is the **Home page**. It basically desplays to you all the cards in time order.
 
